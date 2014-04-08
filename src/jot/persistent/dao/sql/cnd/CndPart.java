@@ -1,4 +1,4 @@
-package jot.persistent.dao.cnd;
+package jot.persistent.dao.sql.cnd;
 
 /**
  * 查询语句标の

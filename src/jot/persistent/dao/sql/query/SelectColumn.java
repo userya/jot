@@ -1,6 +1,6 @@
-package jot.persistent.dao.query;
+package jot.persistent.dao.sql.query;
 
-import jot.persistent.dao.function.Function;
+import jot.persistent.dao.sql.function.Function;
 import jot.persistent.model.physical.Column;
 
 public interface SelectColumn {

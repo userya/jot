@@ -1,4 +1,4 @@
-package jot.persistent.dao.query;
+package jot.persistent.dao.sql.query;
 
 public interface SelectTable extends SelectPart {
 

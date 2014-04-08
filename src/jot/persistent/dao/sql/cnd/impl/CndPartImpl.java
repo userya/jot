@@ -1,8 +1,8 @@
-package jot.persistent.dao.cnd.impl;
+package jot.persistent.dao.sql.cnd.impl;
 
-import jot.persistent.dao.cnd.CndField;
-import jot.persistent.dao.cnd.CndOperation;
-import jot.persistent.dao.cnd.CndPart;
+import jot.persistent.dao.sql.cnd.CndField;
+import jot.persistent.dao.sql.cnd.CndOperation;
+import jot.persistent.dao.sql.cnd.CndPart;
 
 public class CndPartImpl implements CndPart {
 

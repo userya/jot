@@ -1,6 +1,6 @@
-package jot.persistent.dao.query;
+package jot.persistent.dao.sql.query;
 
-import jot.persistent.dao.cnd.CndPart;
+import jot.persistent.dao.sql.cnd.CndPart;
 
 public interface Join {
 

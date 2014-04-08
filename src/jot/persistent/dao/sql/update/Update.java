@@ -1,8 +1,8 @@
-package jot.persistent.dao.update;
+package jot.persistent.dao.sql.update;
 
 import java.util.List;
 
-import jot.persistent.dao.cnd.CndPart;
+import jot.persistent.dao.sql.cnd.CndPart;
 
 
 public interface Update {

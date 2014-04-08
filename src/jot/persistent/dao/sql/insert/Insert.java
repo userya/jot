@@ -1,4 +1,4 @@
-package jot.persistent.dao.insert;
+package jot.persistent.dao.sql.insert;
 
 import jot.persistent.model.physical.Table;
 
