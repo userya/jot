@@ -10,6 +10,8 @@ import jot.persistent.dao.cnd.CndPart;
  *
  */
 public interface Select extends SelectPart {
+	
+	boolean isDistinct();
 
 	/**
 	 * 查询字段
@@ -34,7 +36,26 @@ public interface Select extends SelectPart {
 	 * @return
 	 */
 	List<CndPart> getConditions();
+	
+	/**
+	 * 排序
+	 * @return
+	 */
+	List<Order> getOrders();
 
+	
+	/**
+	 * 聚合
+	 * @return
+	 */
+	List<Group> getGroups();
+	
+	/**
+	 * Having子句
+	 * @return
+	 */
+	Having getHaving();
+	
 	/**
 	 * 生成SQL
 	 * @return

@@ -2,7 +2,16 @@ package jot.persistent.dao.cnd;
 
 /**
  * 查询语句标の
- * @author user
+ * 
+ * a.id = ?
+ * a.id = b.id
+ * a.id between ? and ?
+ * exists(select 1 from xx where xx.c1 = a.id)
+ * a.id is not null
+ * a.id in (?,?,?)
+ * sum(a.id) > ?
+ * 
+ * @author jkyang
  *
  */
 public interface CndPart {

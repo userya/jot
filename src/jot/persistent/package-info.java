@@ -1,5 +1,5 @@
 /**
- * �־ò�
+ * 数据访问
  *
  */
 package jot.persistent;
