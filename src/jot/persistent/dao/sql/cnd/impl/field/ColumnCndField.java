@@ -1,4 +1,4 @@
-package jot.persistent.dao.sql.cnd.impl;
+package jot.persistent.dao.sql.cnd.impl.field;
 
 import jot.persistent.dao.sql.cnd.CndColumn;
 import jot.persistent.dao.sql.cnd.CndField;

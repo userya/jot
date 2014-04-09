@@ -56,10 +56,11 @@ public interface Select extends SelectPart {
 	 */
 	Having getHaving();
 	
+	
 	/**
 	 * 生成SQL
 	 * @return
 	 */
-	String getSql();
+	String getSql(int level);
 
 }

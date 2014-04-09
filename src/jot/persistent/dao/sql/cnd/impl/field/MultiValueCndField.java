@@ -1,4 +1,4 @@
-package jot.persistent.dao.sql.cnd.impl;
+package jot.persistent.dao.sql.cnd.impl.field;
 
 import java.util.ArrayList;
 import java.util.List;

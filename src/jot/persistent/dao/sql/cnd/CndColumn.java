@@ -1,9 +1,10 @@
 package jot.persistent.dao.sql.cnd;
 
+import jot.persistent.dao.sql.SqlPart;
 import jot.persistent.dao.sql.function.Function;
 import jot.persistent.model.physical.Column;
 
-public interface CndColumn {
+public interface CndColumn extends SqlPart {
 	
 	Column getColumn();
 

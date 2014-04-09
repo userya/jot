@@ -1,6 +1,7 @@
-package jot.persistent.dao.sql.cnd.impl;
+package jot.persistent.dao.sql.cnd.impl.part;
 
 import jot.persistent.dao.sql.cnd.CndOperationType;
+import jot.persistent.dao.sql.cnd.impl.CndOperationImpl;
 
 public class EqualCndPart extends BaseCndPartImpl {
 

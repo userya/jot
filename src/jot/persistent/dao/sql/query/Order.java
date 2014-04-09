@@ -1,9 +1,9 @@
 package jot.persistent.dao.sql.query;
 
-public interface Order {
+import jot.persistent.dao.sql.SqlPart;
+
+public interface Order extends SqlPart{
 
 	SelectColumn getColumn();
-	
-	
 	
 }
