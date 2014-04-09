@@ -13,7 +13,7 @@ public class BaseCndPartImpl implements CndPart {
 
 	@Override
 	public CndOperation getCndOperation() {
-		return cndOperation;
+		return cndOperation;  
 	}
 
 	@Override
