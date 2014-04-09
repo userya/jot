@@ -24,13 +24,27 @@ public class CndColumnImpl implements CndColumn {
 	}
 
 	@Override
-	public void appendSql(StringBuilder sql, AliasMap aliasMap) {
+	public void appendSql(StringBuilder sql) {
 		
 	}
 
 	@Override
 	public SelectPart getSelectPart() {
 		return null;
+	}
+
+	@Override
+	public String getColumnAlias() {
+		SelectPart sp = getSelectPart();
+		String c = sp.getAlias() + "_" + getColumn().getName();
+		return c;
+	}
+
+	@Override
+	public String getColumnName() {
+		SelectPart sp = getSelectPart();
+		String c = sp.getAlias() + "." + getColumn().getName();
+		return c;
 	}
 
 }

@@ -5,11 +5,11 @@ import java.util.List;
 import jot.persistent.dao.sql.AliasGenerator;
 import jot.persistent.dao.sql.AliasMap;
 import jot.persistent.dao.sql.AliasMapImpl;
-import jot.persistent.dao.sql.cnd.CndPart;
-import jot.persistent.dao.sql.query.Group;
+import jot.persistent.dao.sql.cnd.Where;
+import jot.persistent.dao.sql.query.Groups;
 import jot.persistent.dao.sql.query.Having;
 import jot.persistent.dao.sql.query.Join;
-import jot.persistent.dao.sql.query.Order;
+import jot.persistent.dao.sql.query.Orders;
 import jot.persistent.dao.sql.query.Select;
 import jot.persistent.dao.sql.query.SelectColumn;
 import jot.persistent.dao.sql.query.SelectPart;
@@ -42,19 +42,13 @@ public class SelectImpl implements Select {
 	}
 
 	@Override
-	public List<CndPart> getConditions() {
+	public Orders getOrders() {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
-	public List<Order> getOrders() {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public List<Group> getGroups() {
+	public Groups getGroups() {
 		// TODO Auto-generated method stub
 		return null;
 	}
@@ -66,7 +60,7 @@ public class SelectImpl implements Select {
 	}
 
 	@Override
-	public void appendSql(StringBuilder sql, AliasMap aliasMap) {
+	public void appendSql(StringBuilder sql) {
 		sql.append("select ");
 		if (isDistinct()) {
 			sql.append("distinct ");
@@ -78,41 +72,69 @@ public class SelectImpl implements Select {
 		}
 		for (int i = 0; i < columns.size(); i++) {
 			SelectColumn selectColumn = columns.get(i);
-			SelectPart sp = selectColumn.getSelectPart();
-			String alias = aliasMap.getAlias(sp);
-			String cname = selectColumn.getColumn().getName();
-			sql.append(alias).append(".").append(cname);
-
+			sql.append(selectColumn.getColumnName());
 			// alias
 			sql.append(" ");
-			sql.append(alias).append("_").append(cname);
+			sql.append(selectColumn.getColumnAlias());
 			if (i != columns.size() - 1) {
 				sql.append(",");
 			}
 		}
+		sql.append(" from ");
 		SelectPart sp = this.getMainSelectPart();
 		if (sp instanceof Select) {
-
+			sql.append("(");
+			sp.appendSql(sql);
+			sql.append(")");
 		} else if (sp instanceof SelectTable) {
-
+			sp.appendSql(sql);
+		}
+		sql.append(" as ");
+		sql.append(sp.getAlias());
+		if (this.getJoins() != null) {
+			for (int i = 0; i < this.getJoins().size(); i++) {
+				Join join = getJoins().get(i);
+				join.appendSql(sql);
+			}
+		}
+		if (this.getWhere() != null) {
+			getWhere().appendSql(sql);
+		}
+		if (this.getGroups() != null) {
+			getGroups().appendSql(sql);
+		}
+		if (this.getHaving() != null) {
+			getHaving().appendSql(sql);
+		}
+		if (this.getOrders() != null) {
+			getOrders().appendSql(sql);
 		}
 	}
 
-	public void build() {
+	
 
-	}
-
-	protected void build(int level) {
+	/**
+	 * select a1,a2 from xx a join xx1 b on a.id = b.id where xx = ?
+	 * 
+	 * select a1,a2 from (select aa as a1,bb as b1from xx where xx = ?) bb left
+	 * join xx on bb.a1 = xx.id where xx = ?
+	 */
+	public void build(int level) {
 		// 分配别名：表别名，字段别名
 		AliasGenerator aliasGenerator = new AliasGenerator(level);
 		SelectPart main = getMainSelectPart();
 		String mainAlias = aliasGenerator.getNextAlias();
+		main.setAlias(mainAlias);
 		List<Join> joins = getJoins();
 		if (joins != null) {
 			for (Join join : joins) {
 				SelectPart sp = join.getSelectPart();
 				String jAlias = aliasGenerator.getNextAlias();
 				sp.setAlias(jAlias);
+				if (sp instanceof Select) {
+					Select select = (Select) sp;
+					select.build(++level);
+				}
 			}
 		}
 	}
@@ -133,7 +155,7 @@ public class SelectImpl implements Select {
 			}
 		}
 		StringBuilder sql = new StringBuilder();
-		appendSql(sql, aliasMap);
+		appendSql(sql);
 		return sql.toString();
 	}
 
@@ -146,7 +168,12 @@ public class SelectImpl implements Select {
 	@Override
 	public void setAlias(String alias) {
 		// TODO Auto-generated method stub
-		
+
+	}
+
+	@Override
+	public Where getWhere() {
+		return null;
 	}
 
 }

@@ -12,6 +12,6 @@ public interface SqlPart {
 	 * 生成SQL
 	 * @return
 	 */
-	void appendSql(StringBuilder sql, AliasMap aliasMap);
+	void appendSql(StringBuilder sql);
 	
 }

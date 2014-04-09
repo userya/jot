@@ -8,6 +8,18 @@ import jot.persistent.model.physical.Column;
 public interface CndColumn extends SqlPart {
 	
 	/**
+	 * 字段别名
+	 * @return
+	 */
+	String getColumnAlias();
+	
+	/**
+	 * 字段真实名称
+	 * @return
+	 */
+	String getColumnName();
+	
+	/**
 	 * @return
 	 */
 	SelectPart getSelectPart();

@@ -2,17 +2,22 @@ package jot.persistent.dao.sql.query;
 
 import java.util.List;
 
-import jot.persistent.dao.sql.cnd.CndPart;
+import jot.persistent.dao.sql.cnd.Where;
 
 /**
  * 查询描述
+ * select 语句
  * @author user
  *
  */
 public interface Select extends SelectPart {
 	
-	
+	/**
+	 * 排重
+	 * @return
+	 */
 	boolean isDistinct();
+	
 	
 	/**
 	 * 查询字段
@@ -36,20 +41,19 @@ public interface Select extends SelectPart {
 	 * 查询条件
 	 * @return
 	 */
-	List<CndPart> getConditions();
+	Where getWhere();
 	
 	/**
 	 * 排序
 	 * @return
 	 */
-	List<Order> getOrders();
-
+	Orders getOrders();
 	
 	/**
 	 * 聚合
 	 * @return
 	 */
-	List<Group> getGroups();
+	Groups getGroups();
 	
 	/**
 	 * Having子句
@@ -64,4 +68,10 @@ public interface Select extends SelectPart {
 	 */
 	String getSql(int level);
 
+	/**
+	 * 编译，顶层level = 0
+	 * @param level
+	 */
+	void build(int level) ;
+	
 }

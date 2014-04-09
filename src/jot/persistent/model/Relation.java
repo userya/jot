@@ -4,9 +4,9 @@ import jot.persistent.model.physical.Table;
 
 public interface Relation {
 
-	Table getTargetTable();
-
 	String getSourceColumnName();
+	
+	Table getTargetTable();
 
 	String getTargetColumnName();
 
