@@ -11,8 +11,9 @@ import jot.persistent.dao.sql.cnd.CndPart;
  */
 public interface Select extends SelectPart {
 	
+	
 	boolean isDistinct();
-
+	
 	/**
 	 * 查询字段
 	 * @return

@@ -3,6 +3,7 @@ package jot.persistent.dao.sql.cnd.impl;
 import jot.persistent.dao.sql.AliasMap;
 import jot.persistent.dao.sql.cnd.CndColumn;
 import jot.persistent.dao.sql.function.Function;
+import jot.persistent.dao.sql.query.SelectPart;
 import jot.persistent.model.physical.Column;
 
 public class CndColumnImpl implements CndColumn {
@@ -24,8 +25,12 @@ public class CndColumnImpl implements CndColumn {
 
 	@Override
 	public void appendSql(StringBuilder sql, AliasMap aliasMap) {
-		// TODO Auto-generated method stub
 		
+	}
+
+	@Override
+	public SelectPart getSelectPart() {
+		return null;
 	}
 
 }

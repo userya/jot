@@ -8,5 +8,9 @@ import jot.persistent.dao.sql.SqlPart;
  *
  */
 public interface SelectPart extends SqlPart {
-
+	
+	String getAlias();
+	
+	void setAlias(String alias);
+	
 }

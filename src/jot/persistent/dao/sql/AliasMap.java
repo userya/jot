@@ -14,4 +14,5 @@ public interface AliasMap {
 
 	String getAlias(SelectPart select);
 	
+	int getLevel();
 }
