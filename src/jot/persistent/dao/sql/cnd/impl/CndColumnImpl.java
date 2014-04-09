@@ -39,7 +39,13 @@ public class CndColumnImpl implements CndColumn {
 	public String getColumnAlias() {
 		SelectPart sp = getSelectPart();
 		if(sp instanceof Select) {
-			return sp.getAlias() + "_" + getColumn().getName();
+			Select s = (Select)sp;
+			List<SelectColumn> sc = s.getSelectColumns();
+			for (SelectColumn selectColumn : sc) {
+				if(selectColumn.getColumn().equals(this.getColumn())){
+					return sp.getAlias() + "_" + selectColumn.getColumnAlias();
+				}
+			}
 		}
 		String c = sp.getAlias() + "_" + getColumn().getName();
 		return c;

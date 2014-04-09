@@ -162,8 +162,7 @@ public class SelectTest {
 	}
 	
 	public static void main(String[] args) {
-		SelectTest s = new SelectTest()
-		;
+		SelectTest s = new SelectTest()	;
 		s.testSingle();
 		s.testMult();
 	}
