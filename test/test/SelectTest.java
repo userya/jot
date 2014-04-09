@@ -163,8 +163,11 @@ public class SelectTest {
 	
 	public static void main(String[] args) {
 		SelectTest s = new SelectTest()	;
+		long start = System.currentTimeMillis();
 		s.testSingle();
 		s.testMult();
+		long end = System.currentTimeMillis();
+		System.out.println(end -start);
 	}
 	
 }
