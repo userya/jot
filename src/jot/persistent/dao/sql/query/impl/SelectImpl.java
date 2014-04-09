@@ -3,8 +3,6 @@ package jot.persistent.dao.sql.query.impl;
 import java.util.List;
 
 import jot.persistent.dao.sql.AliasGenerator;
-import jot.persistent.dao.sql.AliasMap;
-import jot.persistent.dao.sql.AliasMapImpl;
 import jot.persistent.dao.sql.cnd.Where;
 import jot.persistent.dao.sql.query.Groups;
 import jot.persistent.dao.sql.query.Having;
@@ -92,6 +90,10 @@ public class SelectImpl implements Select {
 		SelectPart main = getMainSelectPart();
 		String mainAlias = aliasGenerator.getNextAlias();
 		main.setAlias(mainAlias);
+		if(main instanceof Select) {
+			Select select = (Select) main;
+			select.build(++level);
+		}
 		List<Join> joins = getJoins();
 		if (joins != null) {
 			for (Join join : joins) {

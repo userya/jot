@@ -11,8 +11,7 @@ public class EqualCndPart extends BaseCndPartImpl {
 
 	@Override
 	public void appendSql(StringBuilder sql) {
-		// TODO Auto-generated method stub
-		
+		sql.append("[TODO add cnd part]");
 	}
 
 }
