@@ -4,6 +4,6 @@ import jot.persistent.dao.sql.SqlPart;
 
 public interface Where extends SqlPart {
 
-	
+	CndSection getCndSection();
 	
 }

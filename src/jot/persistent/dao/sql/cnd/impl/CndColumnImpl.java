@@ -1,6 +1,5 @@
 package jot.persistent.dao.sql.cnd.impl;
 
-import jot.persistent.dao.sql.AliasMap;
 import jot.persistent.dao.sql.cnd.CndColumn;
 import jot.persistent.dao.sql.function.Function;
 import jot.persistent.dao.sql.query.SelectPart;
@@ -8,9 +7,13 @@ import jot.persistent.model.physical.Column;
 
 public class CndColumnImpl implements CndColumn {
 
+	private Column column;
+
+	private SelectPart selectPart;
+
 	@Override
 	public Column getColumn() {
-		return null;
+		return column;
 	}
 
 	@Override
@@ -24,13 +27,8 @@ public class CndColumnImpl implements CndColumn {
 	}
 
 	@Override
-	public void appendSql(StringBuilder sql) {
-		
-	}
-
-	@Override
 	public SelectPart getSelectPart() {
-		return null;
+		return selectPart;
 	}
 
 	@Override

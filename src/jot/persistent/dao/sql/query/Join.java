@@ -1,7 +1,7 @@
 package jot.persistent.dao.sql.query;
 
 import jot.persistent.dao.sql.SqlPart;
-import jot.persistent.dao.sql.cnd.CndPart;
+import jot.persistent.dao.sql.cnd.CndSection;
 
 public interface Join extends SqlPart {
 
@@ -9,6 +9,6 @@ public interface Join extends SqlPart {
 	
 	String getJoinType();
 	
-	CndPart getJoinCnd();
+	CndSection getJoinCnd();
 	
 }

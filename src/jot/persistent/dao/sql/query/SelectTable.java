@@ -1,5 +1,6 @@
 package jot.persistent.dao.sql.query;
 
+
 /**
  * 
  * 表

@@ -3,8 +3,12 @@ package jot.persistent.dao.sql.cnd.impl.part;
 import jot.persistent.dao.sql.cnd.CndField;
 import jot.persistent.dao.sql.cnd.CndOperation;
 import jot.persistent.dao.sql.cnd.CndPart;
+import jot.persistent.dao.sql.cnd.CndRelation;
 
-public class BaseCndPartImpl implements CndPart {
+public abstract class BaseCndPartImpl implements CndPart {
+
+	private CndRelation cndRelation;
+	
 
 	private CndOperation cndOperation;
 	private CndField cndLeft;
@@ -50,4 +54,15 @@ public class BaseCndPartImpl implements CndPart {
 	public void setNot(boolean not) {
 		this.not = not;
 	}
+
+	@Override
+	public CndRelation getCndRelation() {
+		return cndRelation;
+	}
+	
+	public void setCndRelation(CndRelation cndRelation) {
+		this.cndRelation = cndRelation;
+	}
+
+	
 }

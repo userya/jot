@@ -8,5 +8,11 @@ public class EqualCndPart extends BaseCndPartImpl {
 	public EqualCndPart() {
 		this.setCndOperation(new CndOperationImpl(CndOperationType.equals));
 	}
-	
+
+	@Override
+	public void appendSql(StringBuilder sql) {
+		// TODO Auto-generated method stub
+		
+	}
+
 }

@@ -17,47 +17,16 @@ import jot.persistent.dao.sql.query.SelectTable;
 
 public class SelectImpl implements Select {
 
-	@Override
-	public boolean isDistinct() {
-		// TODO Auto-generated method stub
-		return false;
-	}
+	private boolean distinct;
+	private List<SelectColumn> selectColumns;
+	private SelectPart mainSelectPart;
+	private List<Join> joins;
+	private Orders orders;
+	private Groups groups;
+	private Having having;
+	private String alias;
+	private Where where;
 
-	@Override
-	public List<SelectColumn> getSelectColumns() {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public SelectPart getMainSelectPart() {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public List<Join> getJoins() {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public Orders getOrders() {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public Groups getGroups() {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public Having getHaving() {
-		// TODO Auto-generated method stub
-		return null;
-	}
 
 	@Override
 	public void appendSql(StringBuilder sql) {
@@ -111,8 +80,6 @@ public class SelectImpl implements Select {
 		}
 	}
 
-	
-
 	/**
 	 * select a1,a2 from xx a join xx1 b on a.id = b.id where xx = ?
 	 * 
@@ -138,42 +105,88 @@ public class SelectImpl implements Select {
 			}
 		}
 	}
+	
+	@Override
+	public boolean isDistinct() {
+		return distinct;
+	}
 
 	@Override
-	public String getSql(int level) {
-		AliasGenerator aliasGenerator = new AliasGenerator(level);
-		AliasMap aliasMap = new AliasMapImpl(level);
-		SelectPart main = getMainSelectPart();
-		String mainAlias = aliasGenerator.getNextAlias();
-		aliasMap.registAlias(main, mainAlias);
-		List<Join> joins = getJoins();
-		if (joins != null) {
-			for (Join join : joins) {
-				SelectPart sp = join.getSelectPart();
-				String jAlias = aliasGenerator.getNextAlias();
-				aliasMap.registAlias(sp, jAlias);
-			}
-		}
-		StringBuilder sql = new StringBuilder();
-		appendSql(sql);
-		return sql.toString();
+	public List<SelectColumn> getSelectColumns() {
+		return selectColumns;
+	}
+
+	@Override
+	public SelectPart getMainSelectPart() {
+		return mainSelectPart;
+	}
+
+	@Override
+	public List<Join> getJoins() {
+		return joins;
+	}
+
+	@Override
+	public Orders getOrders() {
+		return orders;
+	}
+
+	@Override
+	public Groups getGroups() {
+		return groups;
+	}
+
+	@Override
+	public Having getHaving() {
+		return having;
 	}
 
 	@Override
 	public String getAlias() {
-		// TODO Auto-generated method stub
-		return null;
+		return alias;
 	}
 
 	@Override
 	public void setAlias(String alias) {
-		// TODO Auto-generated method stub
-
+		this.alias = alias;
 	}
 
 	@Override
 	public Where getWhere() {
-		return null;
+		return where;
+	}
+
+
+	public void setDistinct(boolean distinct) {
+		this.distinct = distinct;
+	}
+
+	public void setSelectColumns(List<SelectColumn> selectColumns) {
+		this.selectColumns = selectColumns;
+	}
+
+	public void setMainSelectPart(SelectPart mainSelectPart) {
+		this.mainSelectPart = mainSelectPart;
+	}
+
+	public void setJoins(List<Join> joins) {
+		this.joins = joins;
+	}
+
+	public void setOrders(Orders orders) {
+		this.orders = orders;
+	}
+
+	public void setGroups(Groups groups) {
+		this.groups = groups;
+	}
+
+	public void setHaving(Having having) {
+		this.having = having;
+	}
+
+	public void setWhere(Where where) {
+		this.where = where;
 	}
 
 }

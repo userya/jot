@@ -62,12 +62,7 @@ public interface Select extends SelectPart {
 	Having getHaving();
 	
 	
-	/**
-	 * 生成SQL
-	 * @return
-	 */
-	String getSql(int level);
-
+	
 	/**
 	 * 编译，顶层level = 0
 	 * @param level
