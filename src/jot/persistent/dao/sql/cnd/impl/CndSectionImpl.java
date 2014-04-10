@@ -16,7 +16,9 @@ public class CndSectionImpl implements CndSection {
 			for (int i = 0; i < cndParts.size(); i++) {
 				CndPart cp = cndParts.get(i);
 				if(i != 0) {
+					sql.append(" ");
 					sql.append(cp.getCndRelation().name());
+					sql.append(" ");
 				}
 				cp.appendSql(sql);
 			}

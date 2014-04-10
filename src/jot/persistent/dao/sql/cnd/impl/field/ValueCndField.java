@@ -17,7 +17,8 @@ public class ValueCndField implements CndField {
 
 	@Override
 	public void appendSql(SQL sql) {
-		
+		sql.append("?");
+		sql.addParameter(value);
 	}
 	
 }

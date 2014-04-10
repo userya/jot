@@ -1,5 +1,6 @@
 package jot.persistent.dao.sql.cnd.impl.part;
 
+import jot.persistent.dao.sql.SQL;
 import jot.persistent.dao.sql.cnd.CndField;
 import jot.persistent.dao.sql.cnd.CndOperation;
 import jot.persistent.dao.sql.cnd.CndPart;
@@ -8,7 +9,7 @@ import jot.persistent.dao.sql.cnd.CndRelation;
 public abstract class BaseCndPartImpl implements CndPart {
 
 	private CndRelation cndRelation;
-	
+
 	private CndOperation cndOperation;
 	private CndField cndLeft;
 	private CndField cndRight;
@@ -16,12 +17,7 @@ public abstract class BaseCndPartImpl implements CndPart {
 
 	@Override
 	public CndOperation getCndOperation() {
-		return cndOperation;  
-	}
-
-	@Override
-	public CndField getLeft() {
-		return cndLeft;
+		return cndOperation;
 	}
 
 	@Override
@@ -58,10 +54,21 @@ public abstract class BaseCndPartImpl implements CndPart {
 	public CndRelation getCndRelation() {
 		return cndRelation;
 	}
-	
+
 	public void setCndRelation(CndRelation cndRelation) {
 		this.cndRelation = cndRelation;
 	}
 
-	
+	@Override
+	public void appendSql(SQL sql) {
+		if (isNot()) {
+			sql.append("NOT (");
+		}
+		appendSqlPart(sql);
+		if (isNot()) {
+			sql.append(") ");
+		}
+	}
+
+	abstract protected void appendSqlPart(SQL sql);
 }

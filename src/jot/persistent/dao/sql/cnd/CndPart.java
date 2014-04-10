@@ -20,14 +20,14 @@ import jot.persistent.dao.sql.SqlPart;
 public interface CndPart extends SqlPart {
 	
 	/**
-	 * 与前面一个条件的关系
+	 * 与前面一个条件的关系,不参与到appendSql中去
 	 * @return
 	 */
 	CndRelation getCndRelation();
 	
 	CndOperation getCndOperation();
 	
-	CndField getLeft();
+	CndField getCndLeft();
 	
 	CndField getCndRight();
 	

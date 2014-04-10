@@ -5,8 +5,11 @@ import java.util.List;
 
 import jot.persistent.dao.sql.SQL;
 import jot.persistent.dao.sql.cnd.CndPart;
+import jot.persistent.dao.sql.cnd.CndRelation;
 import jot.persistent.dao.sql.cnd.CndSection;
 import jot.persistent.dao.sql.cnd.impl.CndSectionImpl;
+import jot.persistent.dao.sql.cnd.impl.field.ColumnCndField;
+import jot.persistent.dao.sql.cnd.impl.field.ValueCndField;
 import jot.persistent.dao.sql.cnd.impl.part.EqualCndPart;
 import jot.persistent.dao.sql.query.Join;
 import jot.persistent.dao.sql.query.SelectColumn;
@@ -172,22 +175,43 @@ public class SelectTest {
 		
 		top.setSelectColumns(topSelectColumns);
 		JoinImpl j = new JoinImpl();
-		j.setJoinType("full");
+		j.setJoinType("inner");
 		j.setSelectPart(sexSi);
-		
-		CndSectionImpl joinCnd = new CndSectionImpl();
-		List<CndPart> list = new ArrayList<>();
-		CndPart cp = new EqualCndPart();
-		list.add(cp);
-		joinCnd.setCndParts(list);
-		j.setJoinCnd(joinCnd);
-		
-		top.getJoins().add(j);
 		
 		SelectColumnImpl sexCode = new SelectColumnImpl();
 		sexCode.setColumn(code);
 		sexCode.setSelectPart(sexSi);
 		topSelectColumns.add(sexCode);
+		
+		CndSectionImpl joinCnd = new CndSectionImpl();
+		List<CndPart> list = new ArrayList<>();
+		EqualCndPart cp = new EqualCndPart();
+		ColumnCndField cndLeft = new ColumnCndField();
+		cndLeft.setCndColumn(tid);
+		cp.setCndLeft(cndLeft);
+		ColumnCndField cndRight = new ColumnCndField();
+		cndRight.setCndColumn(sexCode);
+		cp.setCndRight(cndRight);
+		EqualCndPart e = new EqualCndPart();
+		e.setCndLeft(cndRight);
+		ValueCndField v = new ValueCndField();
+		v.setValue("xxx");
+		
+		e.setCndRight(v);
+		e.setCndRelation(CndRelation.AND);
+		e.setNot(true);
+		
+		
+		list.add(cp);
+		
+		list.add(e);
+		
+		joinCnd.setCndParts(list);
+		j.setJoinCnd(joinCnd);
+		
+		top.getJoins().add(j);
+		
+		
 		
 		top.build(0);
 		SQL sql = new SQL();

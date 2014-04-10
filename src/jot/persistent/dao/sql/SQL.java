@@ -25,4 +25,19 @@ public class SQL {
 	public List<Object> getParameters() {
 		return parameters;
 	}
+
+	@Override
+	public String toString() {
+		StringBuilder sb = new StringBuilder();
+		sb.append(this.sql.toString()).append("\nparameters:[");
+		for (int i = 0; i < parameters.size(); i++) {
+			Object v = parameters.get(i);
+			sb.append(String.valueOf(v));
+			if (i != parameters.size() - 1) {
+				sb.append(",");
+			}
+		}
+		sb.append("]");
+		return sb.toString();
+	}
 }

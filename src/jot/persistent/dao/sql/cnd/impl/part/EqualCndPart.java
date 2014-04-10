@@ -11,8 +11,10 @@ public class EqualCndPart extends BaseCndPartImpl {
 	}
 
 	@Override
-	public void appendSql(SQL sql) {
-		sql.append("[TODO add cnd part]");
+	public void appendSqlPart(SQL sql) {
+		getCndLeft().appendSql(sql);
+		sql.append(" = ");
+		getCndRight().appendSql(sql);
 	}
 
 }
