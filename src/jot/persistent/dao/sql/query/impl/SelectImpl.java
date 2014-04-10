@@ -27,6 +27,7 @@ public class SelectImpl implements Select {
 	private Having having;
 	private String alias;
 	private Where where;
+	
 
 	@Override
 	public String getColumnAlias(Column column) {

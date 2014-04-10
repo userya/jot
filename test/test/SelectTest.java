@@ -8,10 +8,12 @@ import jot.persistent.dao.sql.cnd.CndPart;
 import jot.persistent.dao.sql.cnd.CndRelation;
 import jot.persistent.dao.sql.cnd.CndSection;
 import jot.persistent.dao.sql.cnd.impl.CndSectionImpl;
+import jot.persistent.dao.sql.cnd.impl.WhereImpl;
 import jot.persistent.dao.sql.cnd.impl.field.ColumnCndField;
 import jot.persistent.dao.sql.cnd.impl.field.ValueCndField;
 import jot.persistent.dao.sql.cnd.impl.part.EqualCndPart;
 import jot.persistent.dao.sql.query.Join;
+import jot.persistent.dao.sql.query.JoinType;
 import jot.persistent.dao.sql.query.SelectColumn;
 import jot.persistent.dao.sql.query.impl.JoinImpl;
 import jot.persistent.dao.sql.query.impl.SelectColumnImpl;
@@ -94,7 +96,7 @@ public class SelectTest {
 		si.setSelectColumns(selectColumns);
 		
 		JoinImpl j = new JoinImpl();
-		j.setJoinType("left");
+		j.setJoinType(JoinType.INNER_JOIN);
 		j.setSelectPart(sexSi);
 		
 		CndSectionImpl joinCnd = new CndSectionImpl();
@@ -175,7 +177,7 @@ public class SelectTest {
 		
 		top.setSelectColumns(topSelectColumns);
 		JoinImpl j = new JoinImpl();
-		j.setJoinType("inner");
+		j.setJoinType(JoinType.INNER_JOIN);
 		j.setSelectPart(sexSi);
 		
 		SelectColumnImpl sexCode = new SelectColumnImpl();
@@ -199,7 +201,7 @@ public class SelectTest {
 		
 		e.setCndRight(v);
 		e.setCndRelation(CndRelation.AND);
-		e.setNot(true);
+//		e.setNot(true);
 		
 		
 		list.add(cp);
@@ -210,8 +212,14 @@ public class SelectTest {
 		j.setJoinCnd(joinCnd);
 		
 		top.getJoins().add(j);
+		WhereImpl where = new WhereImpl();
 		
-		
+		CndSectionImpl s = new CndSectionImpl();
+		s.getCndParts().add(joinCnd);
+		joinCnd.setCndRelation(CndRelation.AND);
+		s.getCndParts().add(joinCnd);
+		where.setCndSection(s);
+		top.setWhere(where);
 		
 		top.build(0);
 		SQL sql = new SQL();

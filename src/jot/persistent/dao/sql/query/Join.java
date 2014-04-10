@@ -7,7 +7,7 @@ public interface Join extends SqlPart {
 
 	SelectPart getSelectPart();
 	
-	String getJoinType();
+	JoinType getJoinType();
 	
 	CndSection getJoinCnd();
 	
