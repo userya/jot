@@ -1,11 +1,7 @@
 package jot.persistent.dao.sql.cnd.impl;
 
-import java.util.List;
-
 import jot.persistent.dao.sql.cnd.CndColumn;
 import jot.persistent.dao.sql.function.Function;
-import jot.persistent.dao.sql.query.Select;
-import jot.persistent.dao.sql.query.SelectColumn;
 import jot.persistent.dao.sql.query.SelectPart;
 import jot.persistent.model.physical.Column;
 

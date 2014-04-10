@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import jot.persistent.dao.sql.AliasGenerator;
+import jot.persistent.dao.sql.SQL;
 import jot.persistent.dao.sql.cnd.Where;
 import jot.persistent.dao.sql.query.Groups;
 import jot.persistent.dao.sql.query.Having;
@@ -50,7 +51,7 @@ public class SelectImpl implements Select {
 	}
 
 	@Override
-	public void appendSql(StringBuilder sql) {
+	public void appendSql(SQL sql) {
 		sql.append("select ");
 		if (isDistinct()) {
 			sql.append("distinct ");

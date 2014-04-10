@@ -12,6 +12,6 @@ public interface SqlPart {
 	 * 生成SQL
 	 * @return
 	 */
-	void appendSql(StringBuilder sql);
+	void appendSql(SQL sql);
 	
 }

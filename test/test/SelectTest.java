@@ -3,6 +3,7 @@ package test;
 import java.util.ArrayList;
 import java.util.List;
 
+import jot.persistent.dao.sql.SQL;
 import jot.persistent.dao.sql.cnd.CndPart;
 import jot.persistent.dao.sql.cnd.CndSection;
 import jot.persistent.dao.sql.cnd.impl.CndSectionImpl;
@@ -104,7 +105,7 @@ public class SelectTest {
 		si.setJoins(joins);
 		
 		si.build(0);
-		StringBuilder sql = new StringBuilder();
+		SQL sql = new SQL();
 		si.appendSql(sql);
 		System.out.println(sql);
 	}
@@ -189,7 +190,7 @@ public class SelectTest {
 		topSelectColumns.add(sexCode);
 		
 		top.build(0);
-		StringBuilder sql = new StringBuilder();
+		SQL sql = new SQL();
 		top.appendSql(sql);
 		System.out.println(sql);
 	}

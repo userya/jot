@@ -1,5 +1,7 @@
 package jot.persistent.dao.sql.cnd;
 
-public interface CndField {
+import jot.persistent.dao.sql.SqlPart;
+
+public interface CndField extends SqlPart {
 
 }

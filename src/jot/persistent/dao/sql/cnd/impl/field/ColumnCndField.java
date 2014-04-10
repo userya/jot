@@ -1,5 +1,6 @@
 package jot.persistent.dao.sql.cnd.impl.field;
 
+import jot.persistent.dao.sql.SQL;
 import jot.persistent.dao.sql.cnd.CndColumn;
 import jot.persistent.dao.sql.cnd.CndField;
 
@@ -18,6 +19,11 @@ public class ColumnCndField implements CndField {
 
 	public void setCndColumn(CndColumn cndColumn) {
 		this.cndColumn = cndColumn;
+	}
+
+	@Override
+	public void appendSql(SQL sql) {
+		sql.append(this.getCndColumn().getColumnName());
 	}
 	
 }

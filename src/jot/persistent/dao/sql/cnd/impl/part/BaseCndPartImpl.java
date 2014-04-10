@@ -9,7 +9,6 @@ public abstract class BaseCndPartImpl implements CndPart {
 
 	private CndRelation cndRelation;
 	
-
 	private CndOperation cndOperation;
 	private CndField cndLeft;
 	private CndField cndRight;

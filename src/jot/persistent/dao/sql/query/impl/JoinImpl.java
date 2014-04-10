@@ -1,5 +1,6 @@
 package jot.persistent.dao.sql.query.impl;
 
+import jot.persistent.dao.sql.SQL;
 import jot.persistent.dao.sql.cnd.CndSection;
 import jot.persistent.dao.sql.query.Join;
 import jot.persistent.dao.sql.query.Select;
@@ -13,7 +14,7 @@ public class JoinImpl implements Join {
 	private CndSection joinCnd;
 
 	@Override
-	public void appendSql(StringBuilder sql) {
+	public void appendSql(SQL sql) {
 		sql.append(" ").append(joinType).append(" join ");
 		if(selectPart instanceof Select) {
 			sql.append("(");

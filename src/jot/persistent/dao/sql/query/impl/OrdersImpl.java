@@ -2,6 +2,7 @@ package jot.persistent.dao.sql.query.impl;
 
 import java.util.List;
 
+import jot.persistent.dao.sql.SQL;
 import jot.persistent.dao.sql.query.Order;
 import jot.persistent.dao.sql.query.Orders;
 
@@ -18,7 +19,7 @@ public class OrdersImpl implements Orders {
 	}
 
 	@Override
-	public void appendSql(StringBuilder sql) {
+	public void appendSql(SQL sql) {
 		if (orders != null && !orders.isEmpty()) {
 			sql.append(" order by ");
 			for (int i = 0; i < orders.size(); i++) {

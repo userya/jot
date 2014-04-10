@@ -1,5 +1,6 @@
 package jot.persistent.dao.sql.query.impl;
 
+import jot.persistent.dao.sql.SQL;
 import jot.persistent.dao.sql.query.SelectTable;
 import jot.persistent.model.physical.Column;
 import jot.persistent.model.physical.Table;
@@ -39,6 +40,11 @@ public class SelectTableImpl implements SelectTable {
 	public String getColumnName(Column column) {
 		String c = getAlias() + "." + column.getName();
 		return c;
+	}
+
+	@Override
+	public void appendSql(SQL sql) {
+		sql.append(table.getName());
 	}
 
 }
