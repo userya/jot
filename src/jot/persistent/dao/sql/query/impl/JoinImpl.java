@@ -16,7 +16,7 @@ public class JoinImpl implements Join {
 
 	@Override
 	public void appendSql(SQL sql) {
-		sql.append(" ").append(joinType).append(" join ");
+		sql.append(" ").append(joinType.getKeyWord()).append(" ");
 		if(selectPart instanceof Select) {
 			sql.append("(");
 			selectPart.appendSql(sql);

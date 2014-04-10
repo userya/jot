@@ -21,7 +21,7 @@ public class CndSectionImpl extends BaseCndPartImpl implements CndSection {
 				
 				if (i != 0) {
 					sql.append(" ");
-					sql.append(cp.getCndRelation().name());
+					sql.append(cp.getCndRelation().getKeyWord());
 					sql.append(" ");
 				}
 				if(isSection){
