@@ -38,33 +38,14 @@ public class CndColumnImpl implements CndColumn {
 	@Override
 	public String getColumnAlias() {
 		SelectPart sp = getSelectPart();
-		if(sp instanceof Select) {
-			Select s = (Select)sp;
-			List<SelectColumn> sc = s.getSelectColumns();
-			for (SelectColumn selectColumn : sc) {
-				if(selectColumn.getColumn().equals(this.getColumn())){
-					return sp.getAlias() + "_" + selectColumn.getColumnAlias();
-				}
-			}
-		}
-		String c = sp.getAlias() + "_" + getColumn().getName();
-		return c;
+		
+		return sp.getColumnAlias(column);
 	}
 
 	@Override
 	public String getColumnName() {
 		SelectPart sp = getSelectPart();
-		if(sp instanceof Select) {
-			Select s = (Select)sp;
-			List<SelectColumn> sc = s.getSelectColumns();
-			for (SelectColumn selectColumn : sc) {
-				if(selectColumn.getColumn().equals(this.getColumn())){
-					return sp.getAlias() + "." + selectColumn.getColumnAlias();
-				}
-			}
-		}
-		String c = sp.getAlias() + "." + getColumn().getName();
-		return c;
+		return sp.getColumnName(column);
 	}
 
 	public void setColumn(Column column) {

@@ -111,6 +111,21 @@ public class SelectTest {
 	
 	
 	public void testMult(){
+		
+		TableImpl sex = new TableImpl();
+		sex.setName("sex");
+		sex.setPrimaryColumnName("id");
+		ColumnImpl sexId = new ColumnImpl();
+		sexId.setName("id");
+		ColumnImpl code = new ColumnImpl();
+		code.setName("code");
+		List<Column> sexColumns = new ArrayList<>();
+		sexColumns.add(sexId);
+		sexColumns.add(code);
+		sex.setColumns(sexColumns);
+		SelectTableImpl sexSi = new SelectTableImpl();
+		sexSi.setTable(sex);
+		
 		//定义表，字段
 		TableImpl table = new TableImpl();
 		table.setName("person");
@@ -155,16 +170,36 @@ public class SelectTest {
 		topSelectColumns.add(tname);
 		
 		top.setSelectColumns(topSelectColumns);
+		JoinImpl j = new JoinImpl();
+		j.setJoinType("full");
+		j.setSelectPart(sexSi);
+		
+		CndSectionImpl joinCnd = new CndSectionImpl();
+		List<CndPart> list = new ArrayList<>();
+		CndPart cp = new EqualCndPart();
+		list.add(cp);
+		joinCnd.setCndParts(list);
+		j.setJoinCnd(joinCnd);
+		
+		top.getJoins().add(j);
+		
+		SelectColumnImpl sexCode = new SelectColumnImpl();
+		sexCode.setColumn(code);
+		sexCode.setSelectPart(sexSi);
+		topSelectColumns.add(sexCode);
+		
 		top.build(0);
 		StringBuilder sql = new StringBuilder();
 		top.appendSql(sql);
 		System.out.println(sql);
 	}
 	
+	
+	
 	public static void main(String[] args) {
 		SelectTest s = new SelectTest()	;
 		long start = System.currentTimeMillis();
-		s.testSingle();
+//		s.testSingle();
 		s.testMult();
 		long end = System.currentTimeMillis();
 		System.out.println(end -start);

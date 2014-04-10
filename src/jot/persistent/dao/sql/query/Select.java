@@ -25,6 +25,8 @@ public interface Select extends SelectPart {
 	 */
 	List<SelectColumn> getSelectColumns();
 
+	
+	
 	/**
 	 * 查询主体
 	 * @return

@@ -1,5 +1,6 @@
 package jot.persistent.dao.sql.query.impl;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import jot.persistent.dao.sql.AliasGenerator;
@@ -12,19 +13,41 @@ import jot.persistent.dao.sql.query.Select;
 import jot.persistent.dao.sql.query.SelectColumn;
 import jot.persistent.dao.sql.query.SelectPart;
 import jot.persistent.dao.sql.query.SelectTable;
+import jot.persistent.model.physical.Column;
 
 public class SelectImpl implements Select {
 
 	private boolean distinct;
-	private List<SelectColumn> selectColumns;
+	private List<SelectColumn> selectColumns = new ArrayList<>();
 	private SelectPart mainSelectPart;
-	private List<Join> joins;
+	private List<Join> joins  = new ArrayList<>();
 	private Orders orders;
 	private Groups groups;
 	private Having having;
 	private String alias;
 	private Where where;
 
+	@Override
+	public String getColumnAlias(Column column) {
+		List<SelectColumn> sc = getSelectColumns();
+		for (SelectColumn selectColumn : sc) {
+			if (selectColumn.getColumn().equals(column)) {
+				return getAlias() + "_" + selectColumn.getColumnAlias();
+			}
+		}
+		return null;
+	}
+
+	@Override
+	public String getColumnName(Column column) {
+		List<SelectColumn> sc = getSelectColumns();
+		for (SelectColumn selectColumn : sc) {
+			if (selectColumn.getColumn().equals(column)) {
+				return getAlias() + "." + selectColumn.getColumnAlias();
+			}
+		}
+		return null;
+	}
 
 	@Override
 	public void appendSql(StringBuilder sql) {
@@ -90,7 +113,7 @@ public class SelectImpl implements Select {
 		SelectPart main = getMainSelectPart();
 		String mainAlias = aliasGenerator.getNextAlias();
 		main.setAlias(mainAlias);
-		if(main instanceof Select) {
+		if (main instanceof Select) {
 			Select select = (Select) main;
 			select.build(++level);
 		}
@@ -107,7 +130,7 @@ public class SelectImpl implements Select {
 			}
 		}
 	}
-	
+
 	@Override
 	public boolean isDistinct() {
 		return distinct;
@@ -157,7 +180,6 @@ public class SelectImpl implements Select {
 	public Where getWhere() {
 		return where;
 	}
-
 
 	public void setDistinct(boolean distinct) {
 		this.distinct = distinct;
