@@ -12,24 +12,39 @@ public class CndSectionImpl extends BaseCndPartImpl implements CndSection {
 
 	private List<CndPart> cndParts = new ArrayList<>();
 
+	public void addCndPart(CndPart part){
+		if(part != null) {
+			cndParts.add(part);
+		}
+	}
+	
+	public boolean isEmpty() {
+		if (cndParts == null || cndParts.isEmpty()) {
+			return true;
+		}
+		return false;
+	}
+
 	@Override
 	public void appendSql(SQL sql) {
 		if (cndParts != null && !cndParts.isEmpty()) {
 			for (int i = 0; i < cndParts.size(); i++) {
 				CndPart cp = cndParts.get(i);
-				boolean isSection = cp instanceof CndSection;
-				
-				if (i != 0) {
-					sql.append(" ");
-					sql.append(cp.getCndRelation().getKeyWord());
-					sql.append(" ");
-				}
-				if(isSection){
-					sql.append("(");
-				}
-				cp.appendSql(sql);
-				if(isSection){
-					sql.append(")");
+				if (cp != null) {
+					boolean isSection = cp instanceof CndSection;
+
+					if (i != 0) {
+						sql.append(" ");
+						sql.append(cp.getCndRelation().getKeyWord());
+						sql.append(" ");
+					}
+					if (isSection) {
+						sql.append("(");
+					}
+					cp.appendSql(sql);
+					if (isSection) {
+						sql.append(")");
+					}
 				}
 			}
 		}

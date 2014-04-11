@@ -10,8 +10,10 @@ public class WhereImpl implements Where {
 
 	@Override
 	public void appendSql(SQL sql) {
-		sql.append(" where ");
-		cndSection.appendSql(sql);
+		if (cndSection != null && !cndSection.isEmpty()) {
+			sql.append(" where ");
+			cndSection.appendSql(sql);
+		}
 	}
 
 	public CndSection getCndSection() {

@@ -8,4 +8,7 @@ public interface CndSection extends SqlPart {
 
 	List<CndPart> getCndParts();
 
+	boolean isEmpty();
+	
+	void addCndPart(CndPart part);
 }
