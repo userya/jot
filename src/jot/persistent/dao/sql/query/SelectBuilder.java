@@ -4,6 +4,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 import jot.persistent.dao.sql.SQL;
+import jot.persistent.dao.sql.cnd.CndBuilder;
+import jot.persistent.dao.sql.cnd.CndFactory;
 import jot.persistent.dao.sql.cnd.CndPart;
 import jot.persistent.dao.sql.cnd.impl.WhereImpl;
 import jot.persistent.dao.sql.query.impl.SelectImpl;
@@ -42,7 +44,6 @@ public class SelectBuilder {
 
 	public static void main(String[] args) {
 		SelectBuilder sb = new SelectBuilder();
-		
 		TableImpl sex = new TableImpl();
 		sex.setName("sex");
 		sex.setPrimaryColumnName("id");
@@ -50,16 +51,17 @@ public class SelectBuilder {
 		sexId.setName("id");
 		ColumnImpl code = new ColumnImpl();
 		code.setName("code");
-		List<Column> sexColumns = new ArrayList<>();
-		sexColumns.add(sexId);
-		sexColumns.add(code);
-		sex.setColumns(sexColumns);
+		sex.addColumn(sexId).addColumn(code);
 		
 		SelectTable stable = SelectPartFactory.createSelectTable(sex);
 		sb.addColumn(SelectPartFactory.createSelectColumn(stable,sexId))
 		  .addColumn(SelectPartFactory.createSelectColumn(stable,code));
 		sb.setMainSelectPart(stable);
 		sb.addCnd(null);
+		
+		CndBuilder cb = new CndBuilder();
+		
+		
 		sb.instance.build(0);
 		SQL sql = new SQL();
 		sb.instance.appendSql(sql);

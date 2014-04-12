@@ -10,4 +10,5 @@ public interface Table {
 
 	List<Column> getColumns();
 
+	Table addColumn(Column column);
 }

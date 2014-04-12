@@ -218,6 +218,9 @@ public class SelectTest {
 		s.getCndParts().add(joinCnd);
 		joinCnd.setCndRelation(CndRelation.AND);
 		s.getCndParts().add(joinCnd);
+		
+		s.getCndParts().add(e);
+		
 		where.setCndSection(s);
 		top.setWhere(where);
 		
@@ -225,6 +228,9 @@ public class SelectTest {
 		SQL sql = new SQL();
 		top.appendSql(sql);
 		System.out.println(sql);
+		
+		
+		
 	}
 	
 	
