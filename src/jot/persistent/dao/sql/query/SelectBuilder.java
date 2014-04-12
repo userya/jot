@@ -1,15 +1,10 @@
 package jot.persistent.dao.sql.query;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import jot.persistent.dao.sql.SQL;
 import jot.persistent.dao.sql.cnd.CndBuilder;
-import jot.persistent.dao.sql.cnd.CndFactory;
 import jot.persistent.dao.sql.cnd.CndPart;
 import jot.persistent.dao.sql.cnd.impl.WhereImpl;
 import jot.persistent.dao.sql.query.impl.SelectImpl;
-import jot.persistent.model.physical.Column;
 import jot.persistent.model.physical.impl.ColumnImpl;
 import jot.persistent.model.physical.impl.TableImpl;
 

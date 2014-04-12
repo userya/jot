@@ -1,5 +1,6 @@
 package jot.persistent.model.impl;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import jot.persistent.model.Entity;
@@ -9,7 +10,7 @@ import jot.persistent.model.physical.Table;
 public class EntityImpl implements Entity {
 
 	private Table table;
-	private List<Relation> relations;
+	private List<Relation> relations = new ArrayList<>();
 
 	public Table getTable() {
 		return table;
