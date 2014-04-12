@@ -25,6 +25,8 @@ public interface CndPart extends SqlPart {
 	 */
 	CndRelation getCndRelation();
 	
+	void setCndRelation(CndRelation cndRelation);
+	
 	CndOperation getCndOperation();
 	
 	CndField getCndLeft();
