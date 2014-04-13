@@ -1,9 +1,9 @@
 package jot.persistent.dao.sql.query;
 
 import jot.persistent.dao.sql.SQL;
+import jot.persistent.dao.sql.cnd.CndBuilder;
 import jot.persistent.dao.sql.cnd.CndFactory;
-import jot.persistent.dao.sql.cnd.CndPart;
-import jot.persistent.dao.sql.cnd.CndRelation;
+import jot.persistent.dao.sql.cnd.CndSection;
 import jot.persistent.dao.sql.cnd.impl.WhereImpl;
 import jot.persistent.dao.sql.query.impl.SelectImpl;
 import jot.persistent.model.physical.impl.ColumnImpl;
@@ -22,27 +22,23 @@ public class SelectBuilder {
 		instance.setMainSelectPart(sp);
 		return this;
 	}
+	
+	public SelectBuilder setCndSection(CndSection section){
+		if (instance.getWhere() == null) {
+			WhereImpl where = SelectPartFactory.createWhere(section);
+			instance.setWhere(where);
+		}else {
+			instance.getWhere().setCndSection(section);
+		}
+		return this;
+	}
 
 	public SelectBuilder addJoin(Join join) {
 		instance.getJoins().add(join);
 		return this;
 	}
 
-	public SelectBuilder and(CndPart cnd) {
-		addCndPart(cnd, CndRelation.AND);
-		return this;
-	}
-
-	public SelectBuilder or(CndPart cnd) {
-		addCndPart(cnd, CndRelation.OR);
-		return this;
-	}
-
-	protected void addCndPart(CndPart cnd, CndRelation rel) {
-		initWhere();
-		cnd.setCndRelation(rel);
-		instance.getWhere().getCndSection().addCndPart(cnd);
-	}
+	
 
 	protected void initWhere() {
 		if (instance.getWhere() == null) {
@@ -52,7 +48,7 @@ public class SelectBuilder {
 	}
 
 	public static void main(String[] args) {
-		SelectBuilder sb = new SelectBuilder();
+		
 		TableImpl sex = new TableImpl();
 		sex.setName("sex");
 		sex.setPrimaryColumnName("id");
@@ -66,12 +62,24 @@ public class SelectBuilder {
 		/**
 		 * start
 		 */
+		SelectBuilder sb = new SelectBuilder();
 		SelectTable stable = SelectPartFactory.createSelectTable(sex);
 		sb.addColumn(SelectPartFactory.createSelectColumn(stable, sexId)).addColumn(SelectPartFactory.createSelectColumn(stable, code));
 		sb.setMainSelectPart(stable);
 
-		sb.and(CndFactory.eq(stable, sexId, "xx"));
-		sb.or(CndFactory.eq(stable, code, "xx"));
+		CndBuilder cb1 = CndBuilder.create();
+		cb1.and(CndFactory.eq(stable, sexId, "xx1"));
+		cb1.and(CndFactory.eq(stable, code, "xxa1"));
+		
+		CndBuilder cb2 = CndBuilder.create();
+		cb2.and(CndFactory.eq(stable, sexId, "xx"));
+		cb2.and(CndFactory.eq(stable, code, "xxa3"));
+		
+		CndBuilder cb3 = CndBuilder.create();
+		cb3.and(cb1);
+		cb3.or(cb2);
+		
+		sb.setCndSection(cb3);
 
 		sb.instance.build(0);
 		SQL sql = new SQL();

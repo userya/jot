@@ -6,4 +6,6 @@ public interface Where extends SqlPart {
 
 	CndSection getCndSection();
 	
+	void setCndSection(CndSection cndSection);
+	
 }

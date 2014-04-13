@@ -4,6 +4,7 @@ import java.util.List;
 
 import jot.persistent.dao.sql.SQL;
 import jot.persistent.dao.sql.cnd.impl.CndSectionImpl;
+import jot.persistent.dao.sql.cnd.impl.part.BaseCndPartImpl;
 import jot.persistent.dao.sql.cnd.impl.part.EqualCndPart;
 
 /**
@@ -11,17 +12,33 @@ import jot.persistent.dao.sql.cnd.impl.part.EqualCndPart;
  * @author user
  *
  */
-public class CndBuilder implements CndSection {
+public class CndBuilder extends BaseCndPartImpl implements CndSection {
 
 	private CndSectionImpl section = new CndSectionImpl();
 
+	public static CndBuilder create(){
+		return new CndBuilder();
+	}
+	
 	public CndBuilder addEqualCndPart(EqualCndPart part){
 		section.addCndPart(part);
 		return this;
 	}
 	
-	
-	
+	public CndBuilder and(CndPart cnd) {
+		addCndPart(cnd, CndRelation.AND);
+		return this;
+	}
+
+	public CndBuilder or(CndPart cnd) {
+		addCndPart(cnd, CndRelation.OR);
+		return this;
+	}
+
+	protected void addCndPart(CndPart cnd, CndRelation rel) {
+		cnd.setCndRelation(rel);
+		section.addCndPart(cnd);
+	}
 	
 	@Override
 	public void appendSql(SQL sql) {
@@ -44,33 +61,8 @@ public class CndBuilder implements CndSection {
 	}
 
 	@Override
-	public CndRelation getCndRelation() {
-		return null;
-	}
-
-	@Override
-	public void setCndRelation(CndRelation cndRelation) {
-		
-	}
-
-	@Override
-	public CndOperation getCndOperation() {
-		return null;
-	}
-
-	@Override
-	public CndField getCndLeft() {
-		return null;
-	}
-
-	@Override
-	public CndField getCndRight() {
-		return null;
-	}
-
-	@Override
-	public boolean isNot() {
-		return false;
+	protected void appendSqlPart(SQL sql) {
+		//DO Nothing
 	}
 
 }
