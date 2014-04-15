@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module package="" name="">
+	<actions>
+		<action name="login" class="xxx.LoginController" method="login">
+		</action>
+	</actions>
+	<services>
+
+	</services>
+</module>
+
+<module package="" namespace="">
+	<actions>
+		<action name="" class="">
+			<validator>
+			</validator>
+		</action>
+	</actions>
+	<services>
+		<service></service>
+	</services>
+</module>
+
+
+<package name="" extends="" namespace="" abstract="">
+	<interceptor></interceptor>
+	<exception-mapping></exception-mapping>
+</package>
+
+<menu id="" name="" path="">
+	<menu id="" name="" path=""></menu>
+</menu>
