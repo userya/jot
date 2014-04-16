@@ -4,4 +4,6 @@ public interface ViewResolver {
 
 	void render(Object result);
 	
+	
+	
 }

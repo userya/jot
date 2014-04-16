@@ -3,6 +3,10 @@ package jot.web.context;
 import java.util.HashMap;
 import java.util.Map;
 
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import jot.web.support.HttpStatusCode;
 import jot.web.support.Package;
 import jot.web.support.ViewResolver;
 
@@ -24,19 +28,33 @@ public class PackageCenter {
 		return packageMap.containsKey(name);
 	}
 
-	public void invoke(String uri) {
-		int index = uri.indexOf(".");
+	/**
+	 * String aaa = "/a/b/c/dd";
+	 * System.out.println(aaa.substring(0,aaa.lastIndexOf("/")));
+	 * System.out.println(aaa.substring(aaa.lastIndexOf("/")+1));
+	 * 
+	 * @param request
+	 * @param response
+	 */
+	public void invoke(HttpServletRequest request, HttpServletResponse response) {
+		ActionContext context = new ActionContext();
+		context.setRequest(request);
+		context.setResponse(response);
+		String uri = request.getRequestURI();
+		int index = uri.lastIndexOf("/");
 		if (index > -1) {
 			String packageNamespace = uri.substring(0, index);
 			if (packageMap.containsKey(packageNamespace)) {
 				Package pkg = packageMap.get(packageNamespace);
-				Object result = pkg.invokeAction(uri);
+				String actionUri = uri.substring(index + 1);
+				Object result = pkg.invokeAction(actionUri, context);
 				viewResolver.render(result);
 			} else {
-				//404
+				// 404\
+				viewResolver.render(HttpStatusCode.Code404);
 			}
 		}
-		//首页
+		// 首页
 	}
 
 }

@@ -7,6 +7,7 @@ import java.util.Map;
 
 import jot.web.conf.JPackage;
 import jot.web.conf.JPackages;
+import jot.web.context.ActionContext;
 import jot.web.context.PackageCenter;
 import jot.web.support.ActionInvoke;
 import jot.web.support.ExceptionHandler;
@@ -100,7 +101,7 @@ public class PackageImpl implements Package {
 	}
 
 	@Override
-	public Object invokeAction(String uri) {
+	public Object invokeAction(String uri,ActionContext context) {
 		boolean c = this.actionInvokeMap.containsKey(uri);
 		if (c) {
 			try {
@@ -133,7 +134,7 @@ public class PackageImpl implements Package {
 			}
 		} else {
 			if (this.hasSuperPackage()) {
-				return superPackage.invokeAction(uri);
+				return superPackage.invokeAction(uri, context);
 			}
 		}
 		return null;

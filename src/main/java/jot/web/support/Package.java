@@ -1,6 +1,7 @@
 package jot.web.support;
 
 import jot.web.conf.JPackage;
+import jot.web.context.ActionContext;
 
 public interface Package{
 
@@ -8,6 +9,6 @@ public interface Package{
 
 	boolean contain(String uri);
 
-	Object invokeAction(String uri);
+	Object invokeAction(String uri, ActionContext context);
 	
 }
