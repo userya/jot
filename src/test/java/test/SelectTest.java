@@ -22,8 +22,9 @@ import jot.persistent.dao.sql.query.impl.SelectTableImpl;
 import jot.persistent.model.physical.Column;
 import jot.persistent.model.physical.impl.ColumnImpl;
 import jot.persistent.model.physical.impl.TableImpl;
+import junit.framework.TestCase;
 
-public class SelectTest {
+public class SelectTest  extends TestCase{
 
 	public void testSingle(){
 
@@ -235,7 +236,7 @@ public class SelectTest {
 	
 	
 	
-	public static void main(String[] args) {
+	public void testSelect() {
 		SelectTest s = new SelectTest()	;
 		long start = System.currentTimeMillis();
 //		s.testSingle();
