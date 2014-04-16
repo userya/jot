@@ -3,8 +3,6 @@ package jot.web.conf;
 import java.util.Map;
 
 import jot.monitor.Monitor;
-import jot.web.support.ExceptionHandler;
-import jot.web.support.Interceptor;
 
 public interface JPackage extends Monitor {
 
@@ -20,11 +18,9 @@ public interface JPackage extends Monitor {
 
 	Map<String, JService> getServices();
 
-	Map<String, Interceptor> getInterceptorMap();
+	Map<String, String> getInterceptorMap();
 
-	Map<String, ExceptionHandler> getExceptionHandlerMap();
+	Map<String, String> getExceptionHandlerMap();
 
-	boolean isMatchNamespace(String uri);
-
-
+	
 }
