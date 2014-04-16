@@ -21,7 +21,7 @@ public class UnknownExceptionHandler implements ExceptionHandler {
 
 	@Override
 	public Exception getException() {
-		return null;
+		return exception;
 	}
 
 	@Override
