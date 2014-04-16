@@ -48,10 +48,10 @@ public class PackageCenter {
 				Package pkg = packageMap.get(packageNamespace);
 				String actionUri = uri.substring(index + 1);
 				Object result = pkg.invokeAction(actionUri, context);
-				viewResolver.render(result);
+				viewResolver.render(result, context);
 			} else {
-				// 404\
-				viewResolver.render(HttpStatusCode.Code404);
+				// 404
+				viewResolver.render(HttpStatusCode.Code404, context);
 			}
 		}
 		// 首页
