@@ -14,6 +14,4 @@ public interface Monitor {
 
 	boolean contains(File file);
 	
-	ClassLoader getClassLoader();
-	
 }

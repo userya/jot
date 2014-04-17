@@ -6,7 +6,7 @@ import java.util.List;
 import java.util.Map;
 
 import jot.web.conf.JPackage;
-import jot.web.conf.JPackages;
+import jot.web.conf.JApp;
 import jot.web.context.ActionContext;
 import jot.web.context.PackageCenter;
 import jot.web.support.ActionInvoke;
@@ -17,7 +17,7 @@ import jot.web.support.Service;
 
 public class PackageImpl implements Package {
 
-	private JPackages jPackages;
+	private JApp jPackages;
 
 	private JPackage jPackage;
 
@@ -36,11 +36,11 @@ public class PackageImpl implements Package {
 
 	private Map<String, Class<ExceptionHandler>> exceptionHandlerMap = new HashMap<>();
 
-	public PackageImpl(JPackages jPackages, String pkgName,
+	public PackageImpl(JApp jPackages, String pkgName,
 			PackageCenter packageCenter) {
 		this.jPackages = jPackages;
 		this.packageCenter = packageCenter;
-		this.jPackage = jPackages.getJPackage(pkgName);
+//		this.jPackage = jPackages.getJPackage(pkgName);
 		packageCenter.put(pkgName, this);
 		init();
 	}

@@ -1,5 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="jot" nsURI="http://jot/1.0" nsPrefix="jot">
-  <eClassifiers xsi:type="ecore:EClass" name="EClass0"/>
+  <eClassifiers xsi:type="ecore:EClass" name="AppResource">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="path"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="App">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="EReference0" eType="#//packageInclude"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="packageInclude"/>
+  <eClassifiers xsi:type="ecore:EClass" name="System">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="EReference0" eType="#//AppResource"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Package"/>
+  <eClassifiers xsi:type="ecore:EDataType" name="EDataType0"/>
+  <eSubpackages name="jot"/>
 </ecore:EPackage>
