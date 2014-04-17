@@ -1,4 +1,0 @@
-/**
- * service
- */
-package jot.service;

@@ -1,4 +1,0 @@
-/**
- * web
- */
-package jot.web;
