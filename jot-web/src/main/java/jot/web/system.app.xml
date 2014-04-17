@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jot-web>
+	<include>jot/web/login.module.xml</include>
+	<include>jot/web/login.module.xml</include>
+	<include>jot/web/login.module.xml</include>
+	<include>jot/web/login.module.xml</include>
+	<include>jot/web/login.module.xml</include>
+</jot-web>
