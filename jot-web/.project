@@ -5,6 +5,7 @@
   <projects>
     <project>jot-persistent</project>
     <project>jot-base</project>
+    <project>jot-model</project>
   </projects>
   <buildSpec>
     <buildCommand>
