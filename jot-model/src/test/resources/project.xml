@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<projects:Projects xmlns:xmi="http://www.omg.org/XMI" xmlns:projects="http://www.jot.org/projects/1.0">
+  <project name="test" resource="testresource"/>
+  <project name="test2" resource="testresource21111"/>
+  <project name="" resource=""/>
+</projects:Projects>

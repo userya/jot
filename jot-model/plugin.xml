@@ -9,8 +9,8 @@
    <extension point="org.eclipse.emf.ecore.generated_package">
       <!-- @generated project -->
       <package
-            uri="http://www.jot.org/project/1.0"
-            class="jot.model.project.ProjectPackage"
+            uri="http://www.jot.org/projects/1.0"
+            class="jot.model.projects.ProjectPackage"
             genModel="model/project.genmodel"/>
    </extension>
 

@@ -1,9 +1,9 @@
 /**
  */
-package jot.model.project.impl;
+package jot.model.projects.impl;
 
-import jot.model.project.ProjectPackage;
-import jot.model.project.ProjectResource;
+import jot.model.projects.ProjectPackage;
+import jot.model.projects.ProjectResource;
 
 import org.eclipse.emf.common.notify.Notification;
 
@@ -19,8 +19,8 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link jot.model.project.impl.ProjectResourceImpl#getName <em>Name</em>}</li>
- *   <li>{@link jot.model.project.impl.ProjectResourceImpl#getResource <em>Resource</em>}</li>
+ *   <li>{@link jot.model.projects.impl.ProjectResourceImpl#getName <em>Name</em>}</li>
+ *   <li>{@link jot.model.projects.impl.ProjectResourceImpl#getResource <em>Resource</em>}</li>
  * </ul>
  * </p>
  *

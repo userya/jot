@@ -1,6 +1,6 @@
 /**
  */
-package jot.model.project;
+package jot.model.projects;
 
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
@@ -19,7 +19,7 @@ import org.eclipse.emf.ecore.EReference;
  *   <li>and each data type</li>
  * </ul>
  * <!-- end-user-doc -->
- * @see jot.model.project.ProjectFactory
+ * @see jot.model.projects.ProjectFactory
  * @model kind="package"
  * @generated
  */
@@ -30,7 +30,7 @@ public interface ProjectPackage extends EPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	String eNAME = "project"; //$NON-NLS-1$
+	String eNAME = "projects"; //$NON-NLS-1$
 
 	/**
 	 * The package namespace URI.
@@ -38,7 +38,7 @@ public interface ProjectPackage extends EPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	String eNS_URI = "http://www.jot.org/project/1.0"; //$NON-NLS-1$
+	String eNS_URI = "http://www.jot.org/projects/1.0"; //$NON-NLS-1$
 
 	/**
 	 * The package namespace name.
@@ -46,7 +46,7 @@ public interface ProjectPackage extends EPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	String eNS_PREFIX = "project"; //$NON-NLS-1$
+	String eNS_PREFIX = "projects"; //$NON-NLS-1$
 
 	/**
 	 * The singleton instance of the package.
@@ -54,26 +54,26 @@ public interface ProjectPackage extends EPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	ProjectPackage eINSTANCE = jot.model.project.impl.ProjectPackageImpl.init();
+	ProjectPackage eINSTANCE = jot.model.projects.impl.ProjectPackageImpl.init();
 
 	/**
-	 * The meta object id for the '{@link jot.model.project.impl.ProjectsImpl <em>Projects</em>}' class.
+	 * The meta object id for the '{@link jot.model.projects.impl.ProjectsImpl <em>Projects</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see jot.model.project.impl.ProjectsImpl
-	 * @see jot.model.project.impl.ProjectPackageImpl#getProjects()
+	 * @see jot.model.projects.impl.ProjectsImpl
+	 * @see jot.model.projects.impl.ProjectPackageImpl#getProjects()
 	 * @generated
 	 */
 	int PROJECTS = 0;
 
 	/**
-	 * The feature id for the '<em><b>Resources</b></em>' reference.
+	 * The feature id for the '<em><b>Project</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PROJECTS__RESOURCES = 0;
+	int PROJECTS__PROJECT = 0;
 
 	/**
 	 * The number of structural features of the '<em>Projects</em>' class.
@@ -94,11 +94,11 @@ public interface ProjectPackage extends EPackage {
 	int PROJECTS_OPERATION_COUNT = 0;
 
 	/**
-	 * The meta object id for the '{@link jot.model.project.impl.ProjectResourceImpl <em>Resource</em>}' class.
+	 * The meta object id for the '{@link jot.model.projects.impl.ProjectResourceImpl <em>Resource</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see jot.model.project.impl.ProjectResourceImpl
-	 * @see jot.model.project.impl.ProjectPackageImpl#getProjectResource()
+	 * @see jot.model.projects.impl.ProjectResourceImpl
+	 * @see jot.model.projects.impl.ProjectPackageImpl#getProjectResource()
 	 * @generated
 	 */
 	int PROJECT_RESOURCE = 1;
@@ -141,53 +141,53 @@ public interface ProjectPackage extends EPackage {
 
 
 	/**
-	 * Returns the meta object for class '{@link jot.model.project.Projects <em>Projects</em>}'.
+	 * Returns the meta object for class '{@link jot.model.projects.Projects <em>Projects</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for class '<em>Projects</em>'.
-	 * @see jot.model.project.Projects
+	 * @see jot.model.projects.Projects
 	 * @generated
 	 */
 	EClass getProjects();
 
 	/**
-	 * Returns the meta object for the reference '{@link jot.model.project.Projects#getResources <em>Resources</em>}'.
+	 * Returns the meta object for the containment reference list '{@link jot.model.projects.Projects#getProject <em>Project</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Resources</em>'.
-	 * @see jot.model.project.Projects#getResources()
+	 * @return the meta object for the containment reference list '<em>Project</em>'.
+	 * @see jot.model.projects.Projects#getProject()
 	 * @see #getProjects()
 	 * @generated
 	 */
-	EReference getProjects_Resources();
+	EReference getProjects_Project();
 
 	/**
-	 * Returns the meta object for class '{@link jot.model.project.ProjectResource <em>Resource</em>}'.
+	 * Returns the meta object for class '{@link jot.model.projects.ProjectResource <em>Resource</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for class '<em>Resource</em>'.
-	 * @see jot.model.project.ProjectResource
+	 * @see jot.model.projects.ProjectResource
 	 * @generated
 	 */
 	EClass getProjectResource();
 
 	/**
-	 * Returns the meta object for the attribute '{@link jot.model.project.ProjectResource#getName <em>Name</em>}'.
+	 * Returns the meta object for the attribute '{@link jot.model.projects.ProjectResource#getName <em>Name</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the attribute '<em>Name</em>'.
-	 * @see jot.model.project.ProjectResource#getName()
+	 * @see jot.model.projects.ProjectResource#getName()
 	 * @see #getProjectResource()
 	 * @generated
 	 */
 	EAttribute getProjectResource_Name();
 
 	/**
-	 * Returns the meta object for the attribute '{@link jot.model.project.ProjectResource#getResource <em>Resource</em>}'.
+	 * Returns the meta object for the attribute '{@link jot.model.projects.ProjectResource#getResource <em>Resource</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the attribute '<em>Resource</em>'.
-	 * @see jot.model.project.ProjectResource#getResource()
+	 * @see jot.model.projects.ProjectResource#getResource()
 	 * @see #getProjectResource()
 	 * @generated
 	 */
@@ -217,29 +217,29 @@ public interface ProjectPackage extends EPackage {
 	 */
 	interface Literals {
 		/**
-		 * The meta object literal for the '{@link jot.model.project.impl.ProjectsImpl <em>Projects</em>}' class.
+		 * The meta object literal for the '{@link jot.model.projects.impl.ProjectsImpl <em>Projects</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see jot.model.project.impl.ProjectsImpl
-		 * @see jot.model.project.impl.ProjectPackageImpl#getProjects()
+		 * @see jot.model.projects.impl.ProjectsImpl
+		 * @see jot.model.projects.impl.ProjectPackageImpl#getProjects()
 		 * @generated
 		 */
 		EClass PROJECTS = eINSTANCE.getProjects();
 
 		/**
-		 * The meta object literal for the '<em><b>Resources</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>Project</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference PROJECTS__RESOURCES = eINSTANCE.getProjects_Resources();
+		EReference PROJECTS__PROJECT = eINSTANCE.getProjects_Project();
 
 		/**
-		 * The meta object literal for the '{@link jot.model.project.impl.ProjectResourceImpl <em>Resource</em>}' class.
+		 * The meta object literal for the '{@link jot.model.projects.impl.ProjectResourceImpl <em>Resource</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see jot.model.project.impl.ProjectResourceImpl
-		 * @see jot.model.project.impl.ProjectPackageImpl#getProjectResource()
+		 * @see jot.model.projects.impl.ProjectResourceImpl
+		 * @see jot.model.projects.impl.ProjectPackageImpl#getProjectResource()
 		 * @generated
 		 */
 		EClass PROJECT_RESOURCE = eINSTANCE.getProjectResource();

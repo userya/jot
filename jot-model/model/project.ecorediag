@@ -42,18 +42,17 @@
   </children>
   <styles xmi:type="notation:DiagramStyle" xmi:id="_chYyMca-EeOzUsv-hLN0RQ"/>
   <element xmi:type="ecore:EPackage" href="project.ecore#/"/>
-  <edges xmi:type="notation:Edge" xmi:id="_t--N8Ma_EeOzUsv-hLN0RQ" type="3002" source="_l-eiQMa_EeOzUsv-hLN0RQ" target="_mQBlQMa_EeOzUsv-hLN0RQ">
-    <children xmi:type="notation:Node" xmi:id="_t--1AMa_EeOzUsv-hLN0RQ" type="4011">
-      <layoutConstraint xmi:type="notation:Location" xmi:id="_t--1Aca_EeOzUsv-hLN0RQ" x="-107" y="-3"/>
+  <edges xmi:type="notation:Edge" xmi:id="_PZLEIMbREeOzUsv-hLN0RQ" type="3002" source="_l-eiQMa_EeOzUsv-hLN0RQ" target="_mQBlQMa_EeOzUsv-hLN0RQ">
+    <children xmi:type="notation:Node" xmi:id="_PZLrMMbREeOzUsv-hLN0RQ" type="4011">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_PZLrMcbREeOzUsv-hLN0RQ" x="-10" y="-10"/>
     </children>
-    <children xmi:type="notation:Node" xmi:id="_t--1Asa_EeOzUsv-hLN0RQ" type="4012">
-      <layoutConstraint xmi:type="notation:Location" xmi:id="_t--1A8a_EeOzUsv-hLN0RQ" x="-100" y="16"/>
+    <children xmi:type="notation:Node" xmi:id="_PZLrMsbREeOzUsv-hLN0RQ" type="4012">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_PZLrM8bREeOzUsv-hLN0RQ" x="10" y="10"/>
     </children>
-    <styles xmi:type="notation:ConnectorStyle" xmi:id="_t--N8ca_EeOzUsv-hLN0RQ" lineColor="4210752"/>
-    <styles xmi:type="notation:FontStyle" xmi:id="_t--N8sa_EeOzUsv-hLN0RQ" fontColor="4210752" fontName="微软雅黑" fontHeight="10"/>
-    <element xmi:type="ecore:EReference" href="project.ecore#//Projects/resources"/>
-    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_t--N88a_EeOzUsv-hLN0RQ" points="[31, 1, -302, -15]$[334, -9, 1, -25]"/>
-    <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_t_DtgMa_EeOzUsv-hLN0RQ" id="(0.7615384615384615,0.3380281690140845)"/>
-    <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_t_Dtgca_EeOzUsv-hLN0RQ" id="(0.1652892561983471,0.35135135135135137)"/>
+    <styles xmi:type="notation:ConnectorStyle" xmi:id="_PZLEIcbREeOzUsv-hLN0RQ" lineColor="4210752"/>
+    <styles xmi:type="notation:FontStyle" xmi:id="_PZLEIsbREeOzUsv-hLN0RQ" fontColor="4210752" fontName="微软雅黑" fontHeight="10"/>
+    <element xmi:type="ecore:EReference" href="project.ecore#//Projects/project"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_PZLEI8bREeOzUsv-hLN0RQ" points="[64, 2, -310, -9]$[375, -20, 1, -31]"/>
+    <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_PZOHcMbREeOzUsv-hLN0RQ" id="(0.2,0.43243243243243246)"/>
   </edges>
 </notation:Diagram>

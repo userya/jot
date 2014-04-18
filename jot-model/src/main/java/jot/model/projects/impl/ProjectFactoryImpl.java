@@ -1,8 +1,8 @@
 /**
  */
-package jot.model.project.impl;
+package jot.model.projects.impl;
 
-import jot.model.project.*;
+import jot.model.projects.*;
 
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;

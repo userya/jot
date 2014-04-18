@@ -1,11 +1,11 @@
 /**
  */
-package jot.model.project.impl;
+package jot.model.projects.impl;
 
-import jot.model.project.ProjectFactory;
-import jot.model.project.ProjectPackage;
-import jot.model.project.ProjectResource;
-import jot.model.project.Projects;
+import jot.model.projects.ProjectFactory;
+import jot.model.projects.ProjectPackage;
+import jot.model.projects.ProjectResource;
+import jot.model.projects.Projects;
 
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
@@ -46,7 +46,7 @@ public class ProjectPackageImpl extends EPackageImpl implements ProjectPackage {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see org.eclipse.emf.ecore.EPackage.Registry
-	 * @see jot.model.project.ProjectPackage#eNS_URI
+	 * @see jot.model.projects.ProjectPackage#eNS_URI
 	 * @see #init()
 	 * @generated
 	 */
@@ -110,7 +110,7 @@ public class ProjectPackageImpl extends EPackageImpl implements ProjectPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getProjects_Resources() {
+	public EReference getProjects_Project() {
 		return (EReference)projectsEClass.getEStructuralFeatures().get(0);
 	}
 
@@ -170,7 +170,7 @@ public class ProjectPackageImpl extends EPackageImpl implements ProjectPackage {
 
 		// Create classes and their features
 		projectsEClass = createEClass(PROJECTS);
-		createEReference(projectsEClass, PROJECTS__RESOURCES);
+		createEReference(projectsEClass, PROJECTS__PROJECT);
 
 		projectResourceEClass = createEClass(PROJECT_RESOURCE);
 		createEAttribute(projectResourceEClass, PROJECT_RESOURCE__NAME);
@@ -208,7 +208,7 @@ public class ProjectPackageImpl extends EPackageImpl implements ProjectPackage {
 
 		// Initialize classes, features, and operations; add parameters
 		initEClass(projectsEClass, Projects.class, "Projects", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$
-		initEReference(getProjects_Resources(), this.getProjectResource(), null, "resources", null, 0, 1, Projects.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED); //$NON-NLS-1$
+		initEReference(getProjects_Project(), this.getProjectResource(), null, "project", null, 0, -1, Projects.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED); //$NON-NLS-1$
 
 		initEClass(projectResourceEClass, ProjectResource.class, "ProjectResource", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$
 		initEAttribute(getProjectResource_Name(), ecorePackage.getEString(), "name", null, 0, 1, ProjectResource.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED); //$NON-NLS-1$

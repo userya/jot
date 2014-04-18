@@ -1,8 +1,8 @@
 /**
  */
-package jot.model.project.util;
+package jot.model.projects.util;
 
-import jot.model.project.*;
+import jot.model.projects.*;
 
 import org.eclipse.emf.common.notify.Adapter;
 import org.eclipse.emf.common.notify.Notifier;
@@ -16,7 +16,7 @@ import org.eclipse.emf.ecore.EObject;
  * The <b>Adapter Factory</b> for the model.
  * It provides an adapter <code>createXXX</code> method for each class of the model.
  * <!-- end-user-doc -->
- * @see jot.model.project.ProjectPackage
+ * @see jot.model.projects.ProjectPackage
  * @generated
  */
 public class ProjectAdapterFactory extends AdapterFactoryImpl {
@@ -96,13 +96,13 @@ public class ProjectAdapterFactory extends AdapterFactoryImpl {
 
 
 	/**
-	 * Creates a new adapter for an object of class '{@link jot.model.project.Projects <em>Projects</em>}'.
+	 * Creates a new adapter for an object of class '{@link jot.model.projects.Projects <em>Projects</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see jot.model.project.Projects
+	 * @see jot.model.projects.Projects
 	 * @generated
 	 */
 	public Adapter createProjectsAdapter() {
@@ -110,13 +110,13 @@ public class ProjectAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link jot.model.project.ProjectResource <em>Resource</em>}'.
+	 * Creates a new adapter for an object of class '{@link jot.model.projects.ProjectResource <em>Resource</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see jot.model.project.ProjectResource
+	 * @see jot.model.projects.ProjectResource
 	 * @generated
 	 */
 	public Adapter createProjectResourceAdapter() {

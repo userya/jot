@@ -1,8 +1,8 @@
 /**
  */
-package jot.model.project.util;
+package jot.model.projects.util;
 
-import jot.model.project.*;
+import jot.model.projects.*;
 
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
@@ -19,7 +19,7 @@ import org.eclipse.emf.ecore.util.Switch;
  * until a non-null result is returned,
  * which is the result of the switch.
  * <!-- end-user-doc -->
- * @see jot.model.project.ProjectPackage
+ * @see jot.model.projects.ProjectPackage
  * @generated
  */
 public class ProjectSwitch<T> extends Switch<T> {

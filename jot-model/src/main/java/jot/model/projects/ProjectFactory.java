@@ -1,6 +1,6 @@
 /**
  */
-package jot.model.project;
+package jot.model.projects;
 
 import org.eclipse.emf.ecore.EFactory;
 
@@ -9,7 +9,7 @@ import org.eclipse.emf.ecore.EFactory;
  * The <b>Factory</b> for the model.
  * It provides a create method for each non-abstract class of the model.
  * <!-- end-user-doc -->
- * @see jot.model.project.ProjectPackage
+ * @see jot.model.projects.ProjectPackage
  * @generated
  */
 public interface ProjectFactory extends EFactory {
@@ -19,7 +19,7 @@ public interface ProjectFactory extends EFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	ProjectFactory eINSTANCE = jot.model.project.impl.ProjectFactoryImpl.init();
+	ProjectFactory eINSTANCE = jot.model.projects.impl.ProjectFactoryImpl.init();
 
 	/**
 	 * Returns a new object of class '<em>Projects</em>'.

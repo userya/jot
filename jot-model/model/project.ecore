@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="project" nsURI="http://www.jot.org/project/1.0" nsPrefix="project">
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="projects" nsURI="http://www.jot.org/projects/1.0" nsPrefix="projects">
   <eClassifiers xsi:type="ecore:EClass" name="Projects">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="resources" eType="#//ProjectResource"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="project" upperBound="-1"
+        eType="#//ProjectResource" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ProjectResource">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
