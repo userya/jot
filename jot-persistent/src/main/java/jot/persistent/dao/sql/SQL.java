@@ -7,7 +7,7 @@ public class SQL {
 
 	private StringBuilder sql = new StringBuilder();
 
-	private List<Object> parameters = new ArrayList<>();
+	private List<Object> parameters = new ArrayList<Object>();
 
 	public StringBuilder append(String s) {
 		sql.append(s);

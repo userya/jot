@@ -9,7 +9,7 @@ import jot.persistent.dao.sql.query.Groups;
 
 public class GroupsImpl implements Groups {
 
-	private List<Group> groups = new ArrayList<>();
+	private List<Group> groups = new ArrayList<Group>();
 
 	public List<Group> getGroups() {
 		return groups;

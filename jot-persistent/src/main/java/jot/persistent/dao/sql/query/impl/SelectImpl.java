@@ -19,9 +19,9 @@ import jot.persistent.model.physical.Column;
 public class SelectImpl implements Select {
 
 	private boolean distinct;
-	private List<SelectColumn> selectColumns = new ArrayList<>();
+	private List<SelectColumn> selectColumns = new ArrayList<SelectColumn>();
 	private SelectPart mainSelectPart;
-	private List<Join> joins  = new ArrayList<>();
+	private List<Join> joins  = new ArrayList<Join>();
 	private Orders orders;
 	private Groups groups;
 	private Having having;

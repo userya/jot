@@ -18,7 +18,7 @@ public class AppReloadMonitor implements Monitor {
 	
 	private URL rootURL;
 
-	private List<Monitor> monitors = new ArrayList<>();
+	private List<Monitor> monitors = new ArrayList<Monitor>();
 
 	private FileAlterationMonitor fileMonitor;
 

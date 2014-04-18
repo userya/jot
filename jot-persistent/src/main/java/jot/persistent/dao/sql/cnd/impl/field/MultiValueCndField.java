@@ -8,7 +8,7 @@ import jot.persistent.dao.sql.cnd.CndField;
 
 public class MultiValueCndField implements CndField {
 
-	private List<Object> values = new ArrayList<>();
+	private List<Object> values = new ArrayList<Object>();
 
 	public List<Object> getValues() {
 		return values;

@@ -3,7 +3,7 @@ package jot.loader;
 import java.net.URL;
 import java.net.URLClassLoader;
 
-import org.springframework.util.ClassUtils;
+import jot.utils.ClassUtils;
 
 public class JotClassLoader extends URLClassLoader {
 

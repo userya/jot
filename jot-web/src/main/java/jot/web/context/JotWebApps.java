@@ -9,8 +9,7 @@ import java.util.Properties;
 
 import jot.exception.BaseException;
 import jot.monitor.AppReloadMonitor;
-
-import org.springframework.util.ResourceUtils;
+import jot.utils.ResourceUtils;
 
 public class JotWebApps {
 
@@ -18,9 +17,9 @@ public class JotWebApps {
 
 	private Properties props;
 
-	private Map<String, AppReloadMonitor> monitorMap = new HashMap<>();
+	private Map<String, AppReloadMonitor> monitorMap = new HashMap<String, AppReloadMonitor>();
 
-	private Map<String, PackageCenter> packageCenterMap = new HashMap<>();
+	private Map<String, PackageCenter> packageCenterMap = new HashMap<String, PackageCenter>();
 
 	public JotWebApps() {
 		init();

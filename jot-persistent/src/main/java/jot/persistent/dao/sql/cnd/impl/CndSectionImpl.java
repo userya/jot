@@ -10,7 +10,7 @@ import jot.persistent.dao.sql.cnd.impl.part.BaseCndPartImpl;
 
 public class CndSectionImpl extends BaseCndPartImpl implements CndSection {
 
-	private List<CndPart> cndParts = new ArrayList<>();
+	private List<CndPart> cndParts = new ArrayList<CndPart>();
 
 	public void addCndPart(CndPart part){
 		if(part != null) {

@@ -10,7 +10,7 @@ import jot.persistent.model.physical.Table;
 public class EntityImpl implements Entity {
 
 	private Table table;
-	private List<Relation> relations = new ArrayList<>();
+	private List<Relation> relations = new ArrayList<Relation>();
 
 	public Table getTable() {
 		return table;

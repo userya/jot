@@ -10,7 +10,7 @@ public class TableImpl implements Table {
 
 	private String name;
 	private String primaryColumnName;
-	private List<Column> columns = new ArrayList<>();
+	private List<Column> columns = new ArrayList<Column>();
 
 	public Table addColumn(Column column) {
 		if (column != null) {

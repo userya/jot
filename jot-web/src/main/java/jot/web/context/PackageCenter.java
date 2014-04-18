@@ -12,7 +12,7 @@ import jot.web.support.ViewResolver;
 
 public class PackageCenter {
 
-	private Map<String, Package> packageMap = new HashMap<>();
+	private Map<String, Package> packageMap = new HashMap<String, Package>();
 
 	private ViewResolver viewResolver;
 

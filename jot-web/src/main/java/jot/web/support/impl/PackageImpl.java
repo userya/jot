@@ -28,13 +28,13 @@ public class PackageImpl implements Package {
 	/**
 	 * key = uri value = invoke
 	 */
-	private Map<String, ActionInvoke> actionInvokeMap = new HashMap<>();
+	private Map<String, ActionInvoke> actionInvokeMap = new HashMap<String, ActionInvoke>();
 
-	private Map<String, Service> serviceMap = new HashMap<>();
+	private Map<String, Service> serviceMap = new HashMap<String, Service>();
 
-	private List<Interceptor> interceptors = new ArrayList<>();
+	private List<Interceptor> interceptors = new ArrayList<Interceptor>();
 
-	private Map<String, Class<ExceptionHandler>> exceptionHandlerMap = new HashMap<>();
+	private Map<String, Class<ExceptionHandler>> exceptionHandlerMap = new HashMap<String, Class<ExceptionHandler>>();
 
 	public PackageImpl(JApp jPackages, String pkgName,
 			PackageCenter packageCenter) {
