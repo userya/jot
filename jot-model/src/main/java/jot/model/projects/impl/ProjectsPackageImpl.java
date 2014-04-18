@@ -2,10 +2,10 @@
  */
 package jot.model.projects.impl;
 
-import jot.model.projects.ProjectFactory;
-import jot.model.projects.ProjectPackage;
-import jot.model.projects.ProjectResource;
+import jot.model.projects.Project;
 import jot.model.projects.Projects;
+import jot.model.projects.ProjectsFactory;
+import jot.model.projects.ProjectsPackage;
 
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
@@ -20,7 +20,7 @@ import org.eclipse.emf.ecore.impl.EPackageImpl;
  * <!-- end-user-doc -->
  * @generated
  */
-public class ProjectPackageImpl extends EPackageImpl implements ProjectPackage {
+public class ProjectsPackageImpl extends EPackageImpl implements ProjectsPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -33,7 +33,7 @@ public class ProjectPackageImpl extends EPackageImpl implements ProjectPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass projectResourceEClass = null;
+	private EClass projectEClass = null;
 
 	/**
 	 * Creates an instance of the model <b>Package</b>, registered with
@@ -46,12 +46,12 @@ public class ProjectPackageImpl extends EPackageImpl implements ProjectPackage {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see org.eclipse.emf.ecore.EPackage.Registry
-	 * @see jot.model.projects.ProjectPackage#eNS_URI
+	 * @see jot.model.projects.ProjectsPackage#eNS_URI
 	 * @see #init()
 	 * @generated
 	 */
-	private ProjectPackageImpl() {
-		super(eNS_URI, ProjectFactory.eINSTANCE);
+	private ProjectsPackageImpl() {
+		super(eNS_URI, ProjectsFactory.eINSTANCE);
 	}
 
 	/**
@@ -64,7 +64,7 @@ public class ProjectPackageImpl extends EPackageImpl implements ProjectPackage {
 	/**
 	 * Creates, registers, and initializes the <b>Package</b> for this model, and for any others upon which it depends.
 	 * 
-	 * <p>This method is used to initialize {@link ProjectPackage#eINSTANCE} when that field is accessed.
+	 * <p>This method is used to initialize {@link ProjectsPackage#eINSTANCE} when that field is accessed.
 	 * Clients should not invoke it directly. Instead, they should simply access that field to obtain the package.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -73,27 +73,27 @@ public class ProjectPackageImpl extends EPackageImpl implements ProjectPackage {
 	 * @see #initializePackageContents()
 	 * @generated
 	 */
-	public static ProjectPackage init() {
-		if (isInited) return (ProjectPackage)EPackage.Registry.INSTANCE.getEPackage(ProjectPackage.eNS_URI);
+	public static ProjectsPackage init() {
+		if (isInited) return (ProjectsPackage)EPackage.Registry.INSTANCE.getEPackage(ProjectsPackage.eNS_URI);
 
 		// Obtain or create and register package
-		ProjectPackageImpl theProjectPackage = (ProjectPackageImpl)(EPackage.Registry.INSTANCE.get(eNS_URI) instanceof ProjectPackageImpl ? EPackage.Registry.INSTANCE.get(eNS_URI) : new ProjectPackageImpl());
+		ProjectsPackageImpl theProjectsPackage = (ProjectsPackageImpl)(EPackage.Registry.INSTANCE.get(eNS_URI) instanceof ProjectsPackageImpl ? EPackage.Registry.INSTANCE.get(eNS_URI) : new ProjectsPackageImpl());
 
 		isInited = true;
 
 		// Create package meta-data objects
-		theProjectPackage.createPackageContents();
+		theProjectsPackage.createPackageContents();
 
 		// Initialize created meta-data
-		theProjectPackage.initializePackageContents();
+		theProjectsPackage.initializePackageContents();
 
 		// Mark meta-data to indicate it can't be changed
-		theProjectPackage.freeze();
+		theProjectsPackage.freeze();
 
   
 		// Update the registry and return the package
-		EPackage.Registry.INSTANCE.put(ProjectPackage.eNS_URI, theProjectPackage);
-		return theProjectPackage;
+		EPackage.Registry.INSTANCE.put(ProjectsPackage.eNS_URI, theProjectsPackage);
+		return theProjectsPackage;
 	}
 
 	/**
@@ -119,8 +119,8 @@ public class ProjectPackageImpl extends EPackageImpl implements ProjectPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getProjectResource() {
-		return projectResourceEClass;
+	public EClass getProject() {
+		return projectEClass;
 	}
 
 	/**
@@ -128,8 +128,8 @@ public class ProjectPackageImpl extends EPackageImpl implements ProjectPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getProjectResource_Name() {
-		return (EAttribute)projectResourceEClass.getEStructuralFeatures().get(0);
+	public EAttribute getProject_Name() {
+		return (EAttribute)projectEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -137,8 +137,8 @@ public class ProjectPackageImpl extends EPackageImpl implements ProjectPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getProjectResource_Resource() {
-		return (EAttribute)projectResourceEClass.getEStructuralFeatures().get(1);
+	public EAttribute getProject_Resource() {
+		return (EAttribute)projectEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -146,8 +146,8 @@ public class ProjectPackageImpl extends EPackageImpl implements ProjectPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public ProjectFactory getProjectFactory() {
-		return (ProjectFactory)getEFactoryInstance();
+	public ProjectsFactory getProjectsFactory() {
+		return (ProjectsFactory)getEFactoryInstance();
 	}
 
 	/**
@@ -172,9 +172,9 @@ public class ProjectPackageImpl extends EPackageImpl implements ProjectPackage {
 		projectsEClass = createEClass(PROJECTS);
 		createEReference(projectsEClass, PROJECTS__PROJECT);
 
-		projectResourceEClass = createEClass(PROJECT_RESOURCE);
-		createEAttribute(projectResourceEClass, PROJECT_RESOURCE__NAME);
-		createEAttribute(projectResourceEClass, PROJECT_RESOURCE__RESOURCE);
+		projectEClass = createEClass(PROJECT);
+		createEAttribute(projectEClass, PROJECT__NAME);
+		createEAttribute(projectEClass, PROJECT__RESOURCE);
 	}
 
 	/**
@@ -206,16 +206,16 @@ public class ProjectPackageImpl extends EPackageImpl implements ProjectPackage {
 
 		// Add supertypes to classes
 
-		// Initialize classes, features, and operations; add parameters
-		initEClass(projectsEClass, Projects.class, "Projects", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$
-		initEReference(getProjects_Project(), this.getProjectResource(), null, "project", null, 0, -1, Projects.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED); //$NON-NLS-1$
+		// Initialize classes and features; add operations and parameters
+		initEClass(projectsEClass, Projects.class, "Projects", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getProjects_Project(), this.getProject(), null, "project", null, 0, -1, Projects.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		initEClass(projectResourceEClass, ProjectResource.class, "ProjectResource", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$
-		initEAttribute(getProjectResource_Name(), ecorePackage.getEString(), "name", null, 0, 1, ProjectResource.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED); //$NON-NLS-1$
-		initEAttribute(getProjectResource_Resource(), ecorePackage.getEString(), "resource", null, 0, 1, ProjectResource.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED); //$NON-NLS-1$
+		initEClass(projectEClass, Project.class, "Project", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getProject_Name(), ecorePackage.getEString(), "name", null, 0, 1, Project.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getProject_Resource(), ecorePackage.getEString(), "resource", null, 0, 1, Project.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		// Create resource
 		createResource(eNS_URI);
 	}
 
-} //ProjectPackageImpl
+} //ProjectsPackageImpl

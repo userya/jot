@@ -1,12 +1,11 @@
 /**
  */
-package jot.model.projects.impl;
+package jot.model.project.impl;
 
 import java.util.Collection;
 
-import jot.model.projects.Project;
-import jot.model.projects.Projects;
-import jot.model.projects.ProjectsPackage;
+import jot.model.project.Project;
+import jot.model.project.ProjectPackage;
 
 import org.eclipse.emf.common.notify.NotificationChain;
 
@@ -22,34 +21,34 @@ import org.eclipse.emf.ecore.util.InternalEList;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Projects</b></em>'.
+ * An implementation of the model object '<em><b>Project</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link jot.model.projects.impl.ProjectsImpl#getProject <em>Project</em>}</li>
+ *   <li>{@link jot.model.project.impl.ProjectImpl#getPackage <em>Package</em>}</li>
  * </ul>
  * </p>
  *
  * @generated
  */
-public class ProjectsImpl extends EObjectImpl implements Projects {
+public class ProjectImpl extends EObjectImpl implements Project {
 	/**
-	 * The cached value of the '{@link #getProject() <em>Project</em>}' containment reference list.
+	 * The cached value of the '{@link #getPackage() <em>Package</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getProject()
+	 * @see #getPackage()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<Project> project;
+	protected EList<jot.model.project.Package> package_;
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected ProjectsImpl() {
+	protected ProjectImpl() {
 		super();
 	}
 
@@ -60,7 +59,7 @@ public class ProjectsImpl extends EObjectImpl implements Projects {
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return ProjectsPackage.Literals.PROJECTS;
+		return ProjectPackage.Literals.PROJECT;
 	}
 
 	/**
@@ -68,11 +67,11 @@ public class ProjectsImpl extends EObjectImpl implements Projects {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<Project> getProject() {
-		if (project == null) {
-			project = new EObjectContainmentEList<Project>(Project.class, this, ProjectsPackage.PROJECTS__PROJECT);
+	public EList<jot.model.project.Package> getPackage() {
+		if (package_ == null) {
+			package_ = new EObjectContainmentEList<jot.model.project.Package>(jot.model.project.Package.class, this, ProjectPackage.PROJECT__PACKAGE);
 		}
-		return project;
+		return package_;
 	}
 
 	/**
@@ -83,8 +82,8 @@ public class ProjectsImpl extends EObjectImpl implements Projects {
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case ProjectsPackage.PROJECTS__PROJECT:
-				return ((InternalEList<?>)getProject()).basicRemove(otherEnd, msgs);
+			case ProjectPackage.PROJECT__PACKAGE:
+				return ((InternalEList<?>)getPackage()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -97,8 +96,8 @@ public class ProjectsImpl extends EObjectImpl implements Projects {
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case ProjectsPackage.PROJECTS__PROJECT:
-				return getProject();
+			case ProjectPackage.PROJECT__PACKAGE:
+				return getPackage();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -112,9 +111,9 @@ public class ProjectsImpl extends EObjectImpl implements Projects {
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case ProjectsPackage.PROJECTS__PROJECT:
-				getProject().clear();
-				getProject().addAll((Collection<? extends Project>)newValue);
+			case ProjectPackage.PROJECT__PACKAGE:
+				getPackage().clear();
+				getPackage().addAll((Collection<? extends jot.model.project.Package>)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -128,8 +127,8 @@ public class ProjectsImpl extends EObjectImpl implements Projects {
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case ProjectsPackage.PROJECTS__PROJECT:
-				getProject().clear();
+			case ProjectPackage.PROJECT__PACKAGE:
+				getPackage().clear();
 				return;
 		}
 		super.eUnset(featureID);
@@ -143,10 +142,10 @@ public class ProjectsImpl extends EObjectImpl implements Projects {
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case ProjectsPackage.PROJECTS__PROJECT:
-				return project != null && !project.isEmpty();
+			case ProjectPackage.PROJECT__PACKAGE:
+				return package_ != null && !package_.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}
 
-} //ProjectsImpl
+} //ProjectImpl

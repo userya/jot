@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<xsd:schema xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:projects="http://www.jot.org/projects/1.0" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ecore:nsPrefix="projects" ecore:package="jot.model.projects" targetNamespace="http://www.jot.org/projects/1.0">
+<xsd:schema xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:project="http://www.jot.org/project/1.0" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ecore:nsPrefix="project" ecore:package="jot.model.project" targetNamespace="http://www.jot.org/project/1.0">
   <xsd:import namespace="http://www.eclipse.org/emf/2002/Ecore" schemaLocation="platform:/plugin/org.eclipse.emf.ecore/model/Ecore.xsd"/>
-  <xsd:element ecore:ignore="true" name="Projects" type="projects:Projects"/>
-  <xsd:element ecore:ignore="true" name="ProjectResource" type="projects:ProjectResource"/>
-  <xsd:complexType name="Projects">
+  <xsd:element ecore:ignore="true" name="Project" type="project:Project"/>
+  <xsd:element ecore:ignore="true" name="Package" type="project:Package"/>
+  <xsd:complexType name="Project">
     <xsd:sequence>
-      <xsd:element ecore:resolveProxies="true" maxOccurs="unbounded" minOccurs="0" name="project" type="projects:ProjectResource"/>
+      <xsd:element ecore:resolveProxies="true" maxOccurs="unbounded" minOccurs="0" name="package" type="project:Package"/>
     </xsd:sequence>
   </xsd:complexType>
-  <xsd:complexType name="ProjectResource">
+  <xsd:complexType name="Package">
     <xsd:attribute ecore:id="true" name="name" type="ecore:EString"/>
     <xsd:attribute name="resource" type="ecore:EString"/>
   </xsd:complexType>

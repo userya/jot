@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<xsd:schema xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:package="http://www.jot.org/package/1.0" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ecore:nsPrefix="package" ecore:package="jot.model.package_" targetNamespace="http://www.jot.org/package/1.0">
+  <xsd:import namespace="http://www.eclipse.org/emf/2002/Ecore" schemaLocation="platform:/plugin/org.eclipse.emf.ecore/model/Ecore.xsd"/>
+  <xsd:element ecore:ignore="true" name="Package" type="package:Package"/>
+  <xsd:element ecore:ignore="true" name="Interceptor" type="package:Interceptor"/>
+  <xsd:element ecore:ignore="true" name="ExceptionMapping" type="package:ExceptionMapping"/>
+  <xsd:element ecore:ignore="true" name="Action" type="package:Action"/>
+  <xsd:element ecore:ignore="true" name="Service" type="package:Service"/>
+  <xsd:element ecore:ignore="true" name="BaseElement" type="package:BaseElement"/>
+  <xsd:complexType name="Package">
+    <xsd:sequence>
+      <xsd:element ecore:resolveProxies="true" maxOccurs="unbounded" minOccurs="0" name="interceptors" type="package:Interceptor"/>
+      <xsd:element ecore:resolveProxies="true" maxOccurs="unbounded" minOccurs="0" name="exceptionMapping" type="package:ExceptionMapping"/>
+      <xsd:element ecore:resolveProxies="true" maxOccurs="unbounded" minOccurs="0" name="actions" type="package:Action"/>
+      <xsd:element ecore:resolveProxies="true" maxOccurs="unbounded" minOccurs="0" name="services" type="package:Service"/>
+    </xsd:sequence>
+    <xsd:attribute name="name" type="ecore:EString"/>
+    <xsd:attribute name="extends" type="ecore:EString"/>
+    <xsd:attribute name="namespace" type="ecore:EString"/>
+    <xsd:attribute ecore:unsettable="false" name="abstract" type="ecore:EBoolean"/>
+  </xsd:complexType>
+  <xsd:complexType name="Interceptor">
+    <xsd:complexContent>
+      <xsd:extension base="package:BaseElement"/>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="ExceptionMapping">
+    <xsd:complexContent>
+      <xsd:extension base="package:BaseElement"/>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="Action">
+    <xsd:complexContent>
+      <xsd:extension base="package:BaseElement"/>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="Service">
+    <xsd:complexContent>
+      <xsd:extension base="package:BaseElement"/>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType abstract="true" name="BaseElement">
+    <xsd:attribute name="name" type="ecore:EString"/>
+    <xsd:attribute name="class" type="ecore:EString"/>
+  </xsd:complexType>
+</xsd:schema>

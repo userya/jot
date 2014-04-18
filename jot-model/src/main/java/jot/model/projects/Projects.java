@@ -18,14 +18,14 @@ import org.eclipse.emf.ecore.EObject;
  * </ul>
  * </p>
  *
- * @see jot.model.projects.ProjectPackage#getProjects()
+ * @see jot.model.projects.ProjectsPackage#getProjects()
  * @model
  * @generated
  */
 public interface Projects extends EObject {
 	/**
 	 * Returns the value of the '<em><b>Project</b></em>' containment reference list.
-	 * The list contents are of type {@link jot.model.projects.ProjectResource}.
+	 * The list contents are of type {@link jot.model.projects.Project}.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Project</em>' containment reference list isn't clear,
@@ -33,10 +33,10 @@ public interface Projects extends EObject {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Project</em>' containment reference list.
-	 * @see jot.model.projects.ProjectPackage#getProjects_Project()
+	 * @see jot.model.projects.ProjectsPackage#getProjects_Project()
 	 * @model containment="true"
 	 * @generated
 	 */
-	EList<ProjectResource> getProject();
+	EList<Project> getProject();
 
 } // Projects

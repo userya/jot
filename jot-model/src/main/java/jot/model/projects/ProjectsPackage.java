@@ -14,23 +14,22 @@ import org.eclipse.emf.ecore.EReference;
  * <ul>
  *   <li>each class,</li>
  *   <li>each feature of each class,</li>
- *   <li>each operation of each class,</li>
  *   <li>each enum,</li>
  *   <li>and each data type</li>
  * </ul>
  * <!-- end-user-doc -->
- * @see jot.model.projects.ProjectFactory
+ * @see jot.model.projects.ProjectsFactory
  * @model kind="package"
  * @generated
  */
-public interface ProjectPackage extends EPackage {
+public interface ProjectsPackage extends EPackage {
 	/**
 	 * The package name.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	String eNAME = "projects"; //$NON-NLS-1$
+	String eNAME = "projects";
 
 	/**
 	 * The package namespace URI.
@@ -38,7 +37,7 @@ public interface ProjectPackage extends EPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	String eNS_URI = "http://www.jot.org/projects/1.0"; //$NON-NLS-1$
+	String eNS_URI = "http://www.jot.org/projects/1.0";
 
 	/**
 	 * The package namespace name.
@@ -46,7 +45,7 @@ public interface ProjectPackage extends EPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	String eNS_PREFIX = "projects"; //$NON-NLS-1$
+	String eNS_PREFIX = "projects";
 
 	/**
 	 * The singleton instance of the package.
@@ -54,14 +53,14 @@ public interface ProjectPackage extends EPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	ProjectPackage eINSTANCE = jot.model.projects.impl.ProjectPackageImpl.init();
+	ProjectsPackage eINSTANCE = jot.model.projects.impl.ProjectsPackageImpl.init();
 
 	/**
 	 * The meta object id for the '{@link jot.model.projects.impl.ProjectsImpl <em>Projects</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see jot.model.projects.impl.ProjectsImpl
-	 * @see jot.model.projects.impl.ProjectPackageImpl#getProjects()
+	 * @see jot.model.projects.impl.ProjectsPackageImpl#getProjects()
 	 * @generated
 	 */
 	int PROJECTS = 0;
@@ -85,23 +84,14 @@ public interface ProjectPackage extends EPackage {
 	int PROJECTS_FEATURE_COUNT = 1;
 
 	/**
-	 * The number of operations of the '<em>Projects</em>' class.
+	 * The meta object id for the '{@link jot.model.projects.impl.ProjectImpl <em>Project</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PROJECTS_OPERATION_COUNT = 0;
-
-	/**
-	 * The meta object id for the '{@link jot.model.projects.impl.ProjectResourceImpl <em>Resource</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see jot.model.projects.impl.ProjectResourceImpl
-	 * @see jot.model.projects.impl.ProjectPackageImpl#getProjectResource()
+	 * @see jot.model.projects.impl.ProjectImpl
+	 * @see jot.model.projects.impl.ProjectsPackageImpl#getProject()
 	 * @generated
 	 */
-	int PROJECT_RESOURCE = 1;
+	int PROJECT = 1;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -110,7 +100,7 @@ public interface ProjectPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PROJECT_RESOURCE__NAME = 0;
+	int PROJECT__NAME = 0;
 
 	/**
 	 * The feature id for the '<em><b>Resource</b></em>' attribute.
@@ -119,25 +109,16 @@ public interface ProjectPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PROJECT_RESOURCE__RESOURCE = 1;
+	int PROJECT__RESOURCE = 1;
 
 	/**
-	 * The number of structural features of the '<em>Resource</em>' class.
+	 * The number of structural features of the '<em>Project</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PROJECT_RESOURCE_FEATURE_COUNT = 2;
-
-	/**
-	 * The number of operations of the '<em>Resource</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PROJECT_RESOURCE_OPERATION_COUNT = 0;
+	int PROJECT_FEATURE_COUNT = 2;
 
 
 	/**
@@ -162,36 +143,36 @@ public interface ProjectPackage extends EPackage {
 	EReference getProjects_Project();
 
 	/**
-	 * Returns the meta object for class '{@link jot.model.projects.ProjectResource <em>Resource</em>}'.
+	 * Returns the meta object for class '{@link jot.model.projects.Project <em>Project</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Resource</em>'.
-	 * @see jot.model.projects.ProjectResource
+	 * @return the meta object for class '<em>Project</em>'.
+	 * @see jot.model.projects.Project
 	 * @generated
 	 */
-	EClass getProjectResource();
+	EClass getProject();
 
 	/**
-	 * Returns the meta object for the attribute '{@link jot.model.projects.ProjectResource#getName <em>Name</em>}'.
+	 * Returns the meta object for the attribute '{@link jot.model.projects.Project#getName <em>Name</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the attribute '<em>Name</em>'.
-	 * @see jot.model.projects.ProjectResource#getName()
-	 * @see #getProjectResource()
+	 * @see jot.model.projects.Project#getName()
+	 * @see #getProject()
 	 * @generated
 	 */
-	EAttribute getProjectResource_Name();
+	EAttribute getProject_Name();
 
 	/**
-	 * Returns the meta object for the attribute '{@link jot.model.projects.ProjectResource#getResource <em>Resource</em>}'.
+	 * Returns the meta object for the attribute '{@link jot.model.projects.Project#getResource <em>Resource</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the attribute '<em>Resource</em>'.
-	 * @see jot.model.projects.ProjectResource#getResource()
-	 * @see #getProjectResource()
+	 * @see jot.model.projects.Project#getResource()
+	 * @see #getProject()
 	 * @generated
 	 */
-	EAttribute getProjectResource_Resource();
+	EAttribute getProject_Resource();
 
 	/**
 	 * Returns the factory that creates the instances of the model.
@@ -200,7 +181,7 @@ public interface ProjectPackage extends EPackage {
 	 * @return the factory that creates the instances of the model.
 	 * @generated
 	 */
-	ProjectFactory getProjectFactory();
+	ProjectsFactory getProjectsFactory();
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -208,7 +189,6 @@ public interface ProjectPackage extends EPackage {
 	 * <ul>
 	 *   <li>each class,</li>
 	 *   <li>each feature of each class,</li>
-	 *   <li>each operation of each class,</li>
 	 *   <li>each enum,</li>
 	 *   <li>and each data type</li>
 	 * </ul>
@@ -221,7 +201,7 @@ public interface ProjectPackage extends EPackage {
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @see jot.model.projects.impl.ProjectsImpl
-		 * @see jot.model.projects.impl.ProjectPackageImpl#getProjects()
+		 * @see jot.model.projects.impl.ProjectsPackageImpl#getProjects()
 		 * @generated
 		 */
 		EClass PROJECTS = eINSTANCE.getProjects();
@@ -235,14 +215,14 @@ public interface ProjectPackage extends EPackage {
 		EReference PROJECTS__PROJECT = eINSTANCE.getProjects_Project();
 
 		/**
-		 * The meta object literal for the '{@link jot.model.projects.impl.ProjectResourceImpl <em>Resource</em>}' class.
+		 * The meta object literal for the '{@link jot.model.projects.impl.ProjectImpl <em>Project</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see jot.model.projects.impl.ProjectResourceImpl
-		 * @see jot.model.projects.impl.ProjectPackageImpl#getProjectResource()
+		 * @see jot.model.projects.impl.ProjectImpl
+		 * @see jot.model.projects.impl.ProjectsPackageImpl#getProject()
 		 * @generated
 		 */
-		EClass PROJECT_RESOURCE = eINSTANCE.getProjectResource();
+		EClass PROJECT = eINSTANCE.getProject();
 
 		/**
 		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
@@ -250,7 +230,7 @@ public interface ProjectPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute PROJECT_RESOURCE__NAME = eINSTANCE.getProjectResource_Name();
+		EAttribute PROJECT__NAME = eINSTANCE.getProject_Name();
 
 		/**
 		 * The meta object literal for the '<em><b>Resource</b></em>' attribute feature.
@@ -258,8 +238,8 @@ public interface ProjectPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute PROJECT_RESOURCE__RESOURCE = eINSTANCE.getProjectResource_Resource();
+		EAttribute PROJECT__RESOURCE = eINSTANCE.getProject_Resource();
 
 	}
 
-} //ProjectPackage
+} //ProjectsPackage

@@ -19,17 +19,17 @@ import org.eclipse.emf.ecore.util.Switch;
  * until a non-null result is returned,
  * which is the result of the switch.
  * <!-- end-user-doc -->
- * @see jot.model.projects.ProjectPackage
+ * @see jot.model.projects.ProjectsPackage
  * @generated
  */
-public class ProjectSwitch<T> extends Switch<T> {
+public class ProjectsSwitch<T> extends Switch<T> {
 	/**
 	 * The cached model package
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected static ProjectPackage modelPackage;
+	protected static ProjectsPackage modelPackage;
 
 	/**
 	 * Creates an instance of the switch.
@@ -37,9 +37,9 @@ public class ProjectSwitch<T> extends Switch<T> {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public ProjectSwitch() {
+	public ProjectsSwitch() {
 		if (modelPackage == null) {
-			modelPackage = ProjectPackage.eINSTANCE;
+			modelPackage = ProjectsPackage.eINSTANCE;
 		}
 	}
 
@@ -66,15 +66,15 @@ public class ProjectSwitch<T> extends Switch<T> {
 	@Override
 	protected T doSwitch(int classifierID, EObject theEObject) {
 		switch (classifierID) {
-			case ProjectPackage.PROJECTS: {
+			case ProjectsPackage.PROJECTS: {
 				Projects projects = (Projects)theEObject;
 				T result = caseProjects(projects);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case ProjectPackage.PROJECT_RESOURCE: {
-				ProjectResource projectResource = (ProjectResource)theEObject;
-				T result = caseProjectResource(projectResource);
+			case ProjectsPackage.PROJECT: {
+				Project project = (Project)theEObject;
+				T result = caseProject(project);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -98,17 +98,17 @@ public class ProjectSwitch<T> extends Switch<T> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Resource</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>Project</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Resource</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>Project</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseProjectResource(ProjectResource object) {
+	public T caseProject(Project object) {
 		return null;
 	}
 
@@ -128,4 +128,4 @@ public class ProjectSwitch<T> extends Switch<T> {
 		return null;
 	}
 
-} //ProjectSwitch
+} //ProjectsSwitch

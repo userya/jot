@@ -18,24 +18,24 @@ import org.eclipse.emf.ecore.plugin.EcorePlugin;
  * <!-- end-user-doc -->
  * @generated
  */
-public class ProjectFactoryImpl extends EFactoryImpl implements ProjectFactory {
+public class ProjectsFactoryImpl extends EFactoryImpl implements ProjectsFactory {
 	/**
 	 * Creates the default factory implementation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static ProjectFactory init() {
+	public static ProjectsFactory init() {
 		try {
-			ProjectFactory theProjectFactory = (ProjectFactory)EPackage.Registry.INSTANCE.getEFactory(ProjectPackage.eNS_URI);
-			if (theProjectFactory != null) {
-				return theProjectFactory;
+			ProjectsFactory theProjectsFactory = (ProjectsFactory)EPackage.Registry.INSTANCE.getEFactory("http://www.jot.org/projects/1.0"); 
+			if (theProjectsFactory != null) {
+				return theProjectsFactory;
 			}
 		}
 		catch (Exception exception) {
 			EcorePlugin.INSTANCE.log(exception);
 		}
-		return new ProjectFactoryImpl();
+		return new ProjectsFactoryImpl();
 	}
 
 	/**
@@ -44,7 +44,7 @@ public class ProjectFactoryImpl extends EFactoryImpl implements ProjectFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public ProjectFactoryImpl() {
+	public ProjectsFactoryImpl() {
 		super();
 	}
 
@@ -56,10 +56,10 @@ public class ProjectFactoryImpl extends EFactoryImpl implements ProjectFactory {
 	@Override
 	public EObject create(EClass eClass) {
 		switch (eClass.getClassifierID()) {
-			case ProjectPackage.PROJECTS: return createProjects();
-			case ProjectPackage.PROJECT_RESOURCE: return createProjectResource();
+			case ProjectsPackage.PROJECTS: return createProjects();
+			case ProjectsPackage.PROJECT: return createProject();
 			default:
-				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier"); //$NON-NLS-1$ //$NON-NLS-2$
+				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
 	}
 
@@ -78,9 +78,9 @@ public class ProjectFactoryImpl extends EFactoryImpl implements ProjectFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public ProjectResource createProjectResource() {
-		ProjectResourceImpl projectResource = new ProjectResourceImpl();
-		return projectResource;
+	public Project createProject() {
+		ProjectImpl project = new ProjectImpl();
+		return project;
 	}
 
 	/**
@@ -88,8 +88,8 @@ public class ProjectFactoryImpl extends EFactoryImpl implements ProjectFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public ProjectPackage getProjectPackage() {
-		return (ProjectPackage)getEPackage();
+	public ProjectsPackage getProjectsPackage() {
+		return (ProjectsPackage)getEPackage();
 	}
 
 	/**
@@ -99,8 +99,8 @@ public class ProjectFactoryImpl extends EFactoryImpl implements ProjectFactory {
 	 * @generated
 	 */
 	@Deprecated
-	public static ProjectPackage getPackage() {
-		return ProjectPackage.eINSTANCE;
+	public static ProjectsPackage getPackage() {
+		return ProjectsPackage.eINSTANCE;
 	}
 
-} //ProjectFactoryImpl
+} //ProjectsFactoryImpl

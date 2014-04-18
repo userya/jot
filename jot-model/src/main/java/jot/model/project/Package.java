@@ -1,27 +1,27 @@
 /**
  */
-package jot.model.projects;
+package jot.model.project;
 
 import org.eclipse.emf.ecore.EObject;
 
 /**
  * <!-- begin-user-doc -->
- * A representation of the model object '<em><b>Resource</b></em>'.
+ * A representation of the model object '<em><b>Package</b></em>'.
  * <!-- end-user-doc -->
  *
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link jot.model.projects.ProjectResource#getName <em>Name</em>}</li>
- *   <li>{@link jot.model.projects.ProjectResource#getResource <em>Resource</em>}</li>
+ *   <li>{@link jot.model.project.Package#getName <em>Name</em>}</li>
+ *   <li>{@link jot.model.project.Package#getResource <em>Resource</em>}</li>
  * </ul>
  * </p>
  *
- * @see jot.model.projects.ProjectPackage#getProjectResource()
+ * @see jot.model.project.ProjectPackage#getPackage()
  * @model
  * @generated
  */
-public interface ProjectResource extends EObject {
+public interface Package extends EObject {
 	/**
 	 * Returns the value of the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
@@ -32,14 +32,14 @@ public interface ProjectResource extends EObject {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Name</em>' attribute.
 	 * @see #setName(String)
-	 * @see jot.model.projects.ProjectPackage#getProjectResource_Name()
+	 * @see jot.model.project.ProjectPackage#getPackage_Name()
 	 * @model id="true"
 	 * @generated
 	 */
 	String getName();
 
 	/**
-	 * Sets the value of the '{@link jot.model.projects.ProjectResource#getName <em>Name</em>}' attribute.
+	 * Sets the value of the '{@link jot.model.project.Package#getName <em>Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Name</em>' attribute.
@@ -58,14 +58,14 @@ public interface ProjectResource extends EObject {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Resource</em>' attribute.
 	 * @see #setResource(String)
-	 * @see jot.model.projects.ProjectPackage#getProjectResource_Resource()
+	 * @see jot.model.project.ProjectPackage#getPackage_Resource()
 	 * @model
 	 * @generated
 	 */
 	String getResource();
 
 	/**
-	 * Sets the value of the '{@link jot.model.projects.ProjectResource#getResource <em>Resource</em>}' attribute.
+	 * Sets the value of the '{@link jot.model.project.Package#getResource <em>Resource</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Resource</em>' attribute.
@@ -74,4 +74,4 @@ public interface ProjectResource extends EObject {
 	 */
 	void setResource(String value);
 
-} // ProjectResource
+} // Package

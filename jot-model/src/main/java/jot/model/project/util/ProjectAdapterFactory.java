@@ -1,8 +1,9 @@
 /**
  */
-package jot.model.projects.util;
+package jot.model.project.util;
 
-import jot.model.projects.*;
+import jot.model.project.Project;
+import jot.model.project.ProjectPackage;
 
 import org.eclipse.emf.common.notify.Adapter;
 import org.eclipse.emf.common.notify.Notifier;
@@ -16,7 +17,7 @@ import org.eclipse.emf.ecore.EObject;
  * The <b>Adapter Factory</b> for the model.
  * It provides an adapter <code>createXXX</code> method for each class of the model.
  * <!-- end-user-doc -->
- * @see jot.model.projects.ProjectPackage
+ * @see jot.model.project.ProjectPackage
  * @generated
  */
 public class ProjectAdapterFactory extends AdapterFactoryImpl {
@@ -68,12 +69,12 @@ public class ProjectAdapterFactory extends AdapterFactoryImpl {
 	protected ProjectSwitch<Adapter> modelSwitch =
 		new ProjectSwitch<Adapter>() {
 			@Override
-			public Adapter caseProjects(Projects object) {
-				return createProjectsAdapter();
+			public Adapter caseProject(Project object) {
+				return createProjectAdapter();
 			}
 			@Override
-			public Adapter caseProjectResource(ProjectResource object) {
-				return createProjectResourceAdapter();
+			public Adapter casePackage(jot.model.project.Package object) {
+				return createPackageAdapter();
 			}
 			@Override
 			public Adapter defaultCase(EObject object) {
@@ -96,30 +97,30 @@ public class ProjectAdapterFactory extends AdapterFactoryImpl {
 
 
 	/**
-	 * Creates a new adapter for an object of class '{@link jot.model.projects.Projects <em>Projects</em>}'.
+	 * Creates a new adapter for an object of class '{@link jot.model.project.Project <em>Project</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see jot.model.projects.Projects
+	 * @see jot.model.project.Project
 	 * @generated
 	 */
-	public Adapter createProjectsAdapter() {
+	public Adapter createProjectAdapter() {
 		return null;
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link jot.model.projects.ProjectResource <em>Resource</em>}'.
+	 * Creates a new adapter for an object of class '{@link jot.model.project.Package <em>Package</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see jot.model.projects.ProjectResource
+	 * @see jot.model.project.Package
 	 * @generated
 	 */
-	public Adapter createProjectResourceAdapter() {
+	public Adapter createPackageAdapter() {
 		return null;
 	}
 

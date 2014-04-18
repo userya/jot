@@ -2,9 +2,9 @@ package jot;
 
 import java.util.Map;
 
-import jot.model.projects.ProjectResource;
+import jot.model.projects.Project;
 import jot.model.projects.Projects;
-import junit.framework.TestCase;
+import jot.model.projects.ProjectsFactory;
 
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.ResourceSet;
@@ -12,7 +12,7 @@ import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
 import org.eclipse.emf.ecore.xmi.XMIResource;
 import org.eclipse.emf.ecore.xmi.impl.XMIResourceFactoryImpl;
 
-public class ModelReaderTest extends TestCase{
+public class ModelReaderTest {
 
 	public void testReader() {
 		/*
@@ -51,29 +51,30 @@ public class ModelReaderTest extends TestCase{
 		fixFlowConfig = (FixFlowConfig) resource.getContents().get(0);
 		*/
 	}
-	
-	public void testCreate() throws Exception{
+	public static void main(String[] args) throws Exception{
 		Resource.Factory.Registry reg = Resource.Factory.Registry.INSTANCE;
 		Map<String, Object> m = reg.getExtensionToFactoryMap();
 		m.put("xml", new XMIResourceFactoryImpl());
 		// EMF保存project.xml
 		ResourceSet resourceSet = new ResourceSetImpl();
-		XMIResource resource = (XMIResource) resourceSet.createResource(org.eclipse.emf.common.util.URI.createFileURI("d:/aa.xml"));
+		XMIResource resource = (XMIResource) resourceSet.createResource(org.eclipse.emf.common.util.URI.createFileURI("e:/aa.xml"));
 		resource.setEncoding("UTF-8");
 		// EMF创建project对象
+		Projects sp = ProjectsFactory.eINSTANCE.createProjects();
 		
-		Projects ps = jot.model.projects.ProjectFactory.eINSTANCE.createProjects();
-		ProjectResource pr = jot.model.projects.ProjectFactory.eINSTANCE.createProjectResource();
-		pr.setName("test");
-		pr.setResource("testresource");
-		ps.getProject().add(pr);
+		Project p1 = ProjectsFactory.eINSTANCE.createProject();
+		p1.setName("system");
+		p1.setResource("resource1");
+		sp.getProject().add(p1);
 		
-		ProjectResource pr2 = jot.model.projects.ProjectFactory.eINSTANCE.createProjectResource();
-		pr2.setName("test2");
-		pr2.setResource("testresource21111");
-		ps.getProject().add(pr2);
 		
-		resource.getContents().add(ps);
-		resource.save(null);
+		Project p = ProjectsFactory.eINSTANCE.createProject();
+		p.setName("system2");
+		p.setResource("resource2");
+		sp.getProject().add(p);
+		
+		resource.getContents().add(sp);
+		resource.save(null);	
 	}
+	
 }

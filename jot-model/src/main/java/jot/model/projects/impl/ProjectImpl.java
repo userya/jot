@@ -2,31 +2,31 @@
  */
 package jot.model.projects.impl;
 
-import jot.model.projects.ProjectPackage;
-import jot.model.projects.ProjectResource;
+import jot.model.projects.Project;
+import jot.model.projects.ProjectsPackage;
 
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EClass;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
+import org.eclipse.emf.ecore.impl.EObjectImpl;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Resource</b></em>'.
+ * An implementation of the model object '<em><b>Project</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link jot.model.projects.impl.ProjectResourceImpl#getName <em>Name</em>}</li>
- *   <li>{@link jot.model.projects.impl.ProjectResourceImpl#getResource <em>Resource</em>}</li>
+ *   <li>{@link jot.model.projects.impl.ProjectImpl#getName <em>Name</em>}</li>
+ *   <li>{@link jot.model.projects.impl.ProjectImpl#getResource <em>Resource</em>}</li>
  * </ul>
  * </p>
  *
  * @generated
  */
-public class ProjectResourceImpl extends MinimalEObjectImpl.Container implements ProjectResource {
+public class ProjectImpl extends EObjectImpl implements Project {
 	/**
 	 * The default value of the '{@link #getName() <em>Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -72,7 +72,7 @@ public class ProjectResourceImpl extends MinimalEObjectImpl.Container implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected ProjectResourceImpl() {
+	protected ProjectImpl() {
 		super();
 	}
 
@@ -83,7 +83,7 @@ public class ProjectResourceImpl extends MinimalEObjectImpl.Container implements
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return ProjectPackage.Literals.PROJECT_RESOURCE;
+		return ProjectsPackage.Literals.PROJECT;
 	}
 
 	/**
@@ -104,7 +104,7 @@ public class ProjectResourceImpl extends MinimalEObjectImpl.Container implements
 		String oldName = name;
 		name = newName;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ProjectPackage.PROJECT_RESOURCE__NAME, oldName, name));
+			eNotify(new ENotificationImpl(this, Notification.SET, ProjectsPackage.PROJECT__NAME, oldName, name));
 	}
 
 	/**
@@ -125,7 +125,7 @@ public class ProjectResourceImpl extends MinimalEObjectImpl.Container implements
 		String oldResource = resource;
 		resource = newResource;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ProjectPackage.PROJECT_RESOURCE__RESOURCE, oldResource, resource));
+			eNotify(new ENotificationImpl(this, Notification.SET, ProjectsPackage.PROJECT__RESOURCE, oldResource, resource));
 	}
 
 	/**
@@ -136,9 +136,9 @@ public class ProjectResourceImpl extends MinimalEObjectImpl.Container implements
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case ProjectPackage.PROJECT_RESOURCE__NAME:
+			case ProjectsPackage.PROJECT__NAME:
 				return getName();
-			case ProjectPackage.PROJECT_RESOURCE__RESOURCE:
+			case ProjectsPackage.PROJECT__RESOURCE:
 				return getResource();
 		}
 		return super.eGet(featureID, resolve, coreType);
@@ -152,10 +152,10 @@ public class ProjectResourceImpl extends MinimalEObjectImpl.Container implements
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case ProjectPackage.PROJECT_RESOURCE__NAME:
+			case ProjectsPackage.PROJECT__NAME:
 				setName((String)newValue);
 				return;
-			case ProjectPackage.PROJECT_RESOURCE__RESOURCE:
+			case ProjectsPackage.PROJECT__RESOURCE:
 				setResource((String)newValue);
 				return;
 		}
@@ -170,10 +170,10 @@ public class ProjectResourceImpl extends MinimalEObjectImpl.Container implements
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case ProjectPackage.PROJECT_RESOURCE__NAME:
+			case ProjectsPackage.PROJECT__NAME:
 				setName(NAME_EDEFAULT);
 				return;
-			case ProjectPackage.PROJECT_RESOURCE__RESOURCE:
+			case ProjectsPackage.PROJECT__RESOURCE:
 				setResource(RESOURCE_EDEFAULT);
 				return;
 		}
@@ -188,9 +188,9 @@ public class ProjectResourceImpl extends MinimalEObjectImpl.Container implements
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case ProjectPackage.PROJECT_RESOURCE__NAME:
+			case ProjectsPackage.PROJECT__NAME:
 				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
-			case ProjectPackage.PROJECT_RESOURCE__RESOURCE:
+			case ProjectsPackage.PROJECT__RESOURCE:
 				return RESOURCE_EDEFAULT == null ? resource != null : !RESOURCE_EDEFAULT.equals(resource);
 		}
 		return super.eIsSet(featureID);
@@ -206,12 +206,12 @@ public class ProjectResourceImpl extends MinimalEObjectImpl.Container implements
 		if (eIsProxy()) return super.toString();
 
 		StringBuffer result = new StringBuffer(super.toString());
-		result.append(" (name: "); //$NON-NLS-1$
+		result.append(" (name: ");
 		result.append(name);
-		result.append(", resource: "); //$NON-NLS-1$
+		result.append(", resource: ");
 		result.append(resource);
 		result.append(')');
 		return result.toString();
 	}
 
-} //ProjectResourceImpl
+} //ProjectImpl
