@@ -27,7 +27,7 @@ public class ProjectsFactoryImpl extends EFactoryImpl implements ProjectsFactory
 	 */
 	public static ProjectsFactory init() {
 		try {
-			ProjectsFactory theProjectsFactory = (ProjectsFactory)EPackage.Registry.INSTANCE.getEFactory("http://www.jot.org/projects/1.0"); 
+			ProjectsFactory theProjectsFactory = (ProjectsFactory)EPackage.Registry.INSTANCE.getEFactory(ProjectsPackage.eNS_URI);
 			if (theProjectsFactory != null) {
 				return theProjectsFactory;
 			}

@@ -27,6 +27,10 @@
         <element xmi:type="ecore:EAttribute" href="projects.ecore#//Project/resource"/>
         <layoutConstraint xmi:type="notation:Location" xmi:id="_H5nQkcb4EeOc8pZc_GDDxg"/>
       </children>
+      <children xmi:type="notation:Node" xmi:id="_HxGuAMdqEeOlPbIV_0rvAA" type="2001">
+        <element xmi:type="ecore:EAttribute" href="projects.ecore#//Project/namespace"/>
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_HxGuAcdqEeOlPbIV_0rvAA"/>
+      </children>
       <styles xmi:type="notation:DrawerStyle" xmi:id="_DDCjMsb4EeOc8pZc_GDDxg"/>
       <styles xmi:type="notation:SortingStyle" xmi:id="_DDCjM8b4EeOc8pZc_GDDxg"/>
       <styles xmi:type="notation:FilteringStyle" xmi:id="_DDCjNMb4EeOc8pZc_GDDxg"/>

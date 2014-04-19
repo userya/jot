@@ -146,6 +146,15 @@ public class ProjectsPackageImpl extends EPackageImpl implements ProjectsPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EAttribute getProject_Namespace() {
+		return (EAttribute)projectEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public ProjectsFactory getProjectsFactory() {
 		return (ProjectsFactory)getEFactoryInstance();
 	}
@@ -175,6 +184,7 @@ public class ProjectsPackageImpl extends EPackageImpl implements ProjectsPackage
 		projectEClass = createEClass(PROJECT);
 		createEAttribute(projectEClass, PROJECT__NAME);
 		createEAttribute(projectEClass, PROJECT__RESOURCE);
+		createEAttribute(projectEClass, PROJECT__NAMESPACE);
 	}
 
 	/**
@@ -211,8 +221,9 @@ public class ProjectsPackageImpl extends EPackageImpl implements ProjectsPackage
 		initEReference(getProjects_Project(), this.getProject(), null, "project", null, 0, -1, Projects.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(projectEClass, Project.class, "Project", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getProject_Name(), ecorePackage.getEString(), "name", null, 0, 1, Project.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getProject_Resource(), ecorePackage.getEString(), "resource", null, 0, 1, Project.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getProject_Name(), ecorePackage.getEString(), "name", null, 1, 1, Project.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getProject_Resource(), ecorePackage.getEString(), "resource", null, 1, 1, Project.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getProject_Namespace(), ecorePackage.getEString(), "namespace", null, 1, 1, Project.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		// Create resource
 		createResource(eNS_URI);

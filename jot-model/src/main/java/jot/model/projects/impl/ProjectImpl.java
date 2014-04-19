@@ -21,6 +21,7 @@ import org.eclipse.emf.ecore.impl.EObjectImpl;
  * <ul>
  *   <li>{@link jot.model.projects.impl.ProjectImpl#getName <em>Name</em>}</li>
  *   <li>{@link jot.model.projects.impl.ProjectImpl#getResource <em>Resource</em>}</li>
+ *   <li>{@link jot.model.projects.impl.ProjectImpl#getNamespace <em>Namespace</em>}</li>
  * </ul>
  * </p>
  *
@@ -66,6 +67,26 @@ public class ProjectImpl extends EObjectImpl implements Project {
 	 * @ordered
 	 */
 	protected String resource = RESOURCE_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #getNamespace() <em>Namespace</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getNamespace()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String NAMESPACE_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getNamespace() <em>Namespace</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getNamespace()
+	 * @generated
+	 * @ordered
+	 */
+	protected String namespace = NAMESPACE_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -133,6 +154,27 @@ public class ProjectImpl extends EObjectImpl implements Project {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public String getNamespace() {
+		return namespace;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setNamespace(String newNamespace) {
+		String oldNamespace = namespace;
+		namespace = newNamespace;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ProjectsPackage.PROJECT__NAMESPACE, oldNamespace, namespace));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
@@ -140,6 +182,8 @@ public class ProjectImpl extends EObjectImpl implements Project {
 				return getName();
 			case ProjectsPackage.PROJECT__RESOURCE:
 				return getResource();
+			case ProjectsPackage.PROJECT__NAMESPACE:
+				return getNamespace();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -157,6 +201,9 @@ public class ProjectImpl extends EObjectImpl implements Project {
 				return;
 			case ProjectsPackage.PROJECT__RESOURCE:
 				setResource((String)newValue);
+				return;
+			case ProjectsPackage.PROJECT__NAMESPACE:
+				setNamespace((String)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -176,6 +223,9 @@ public class ProjectImpl extends EObjectImpl implements Project {
 			case ProjectsPackage.PROJECT__RESOURCE:
 				setResource(RESOURCE_EDEFAULT);
 				return;
+			case ProjectsPackage.PROJECT__NAMESPACE:
+				setNamespace(NAMESPACE_EDEFAULT);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -192,6 +242,8 @@ public class ProjectImpl extends EObjectImpl implements Project {
 				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
 			case ProjectsPackage.PROJECT__RESOURCE:
 				return RESOURCE_EDEFAULT == null ? resource != null : !RESOURCE_EDEFAULT.equals(resource);
+			case ProjectsPackage.PROJECT__NAMESPACE:
+				return NAMESPACE_EDEFAULT == null ? namespace != null : !NAMESPACE_EDEFAULT.equals(namespace);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -210,6 +262,8 @@ public class ProjectImpl extends EObjectImpl implements Project {
 		result.append(name);
 		result.append(", resource: ");
 		result.append(resource);
+		result.append(", namespace: ");
+		result.append(namespace);
 		result.append(')');
 		return result.toString();
 	}

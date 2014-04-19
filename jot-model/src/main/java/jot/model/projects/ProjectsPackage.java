@@ -112,13 +112,22 @@ public interface ProjectsPackage extends EPackage {
 	int PROJECT__RESOURCE = 1;
 
 	/**
+	 * The feature id for the '<em><b>Namespace</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PROJECT__NAMESPACE = 2;
+
+	/**
 	 * The number of structural features of the '<em>Project</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PROJECT_FEATURE_COUNT = 2;
+	int PROJECT_FEATURE_COUNT = 3;
 
 
 	/**
@@ -173,6 +182,17 @@ public interface ProjectsPackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getProject_Resource();
+
+	/**
+	 * Returns the meta object for the attribute '{@link jot.model.projects.Project#getNamespace <em>Namespace</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Namespace</em>'.
+	 * @see jot.model.projects.Project#getNamespace()
+	 * @see #getProject()
+	 * @generated
+	 */
+	EAttribute getProject_Namespace();
 
 	/**
 	 * Returns the factory that creates the instances of the model.
@@ -239,6 +259,14 @@ public interface ProjectsPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute PROJECT__RESOURCE = eINSTANCE.getProject_Resource();
+
+		/**
+		 * The meta object literal for the '<em><b>Namespace</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute PROJECT__NAMESPACE = eINSTANCE.getProject_Namespace();
 
 	}
 

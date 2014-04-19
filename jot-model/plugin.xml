@@ -14,4 +14,12 @@
             genModel="model/project.genmodel"/>
    </extension>
 
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated projects -->
+      <package
+            uri="http://www.jot.org/projects/1.0"
+            class="jot.model.projects.ProjectsPackage"
+            genModel="model/projects.genmodel"/>
+   </extension>
+
 </plugin>

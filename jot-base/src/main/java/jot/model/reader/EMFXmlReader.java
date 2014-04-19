@@ -1,10 +1,8 @@
 package jot.model.reader;
 
-import java.io.FileNotFoundException;
 import java.net.URL;
 
 import jot.exception.BaseException;
-import jot.utils.ResourceUtils;
 
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EPackage;
@@ -15,16 +13,10 @@ import org.eclipse.emf.ecore.xmi.impl.XMIResourceFactoryImpl;
 
 public class EMFXmlReader {
 
-	public static <T> T reader(String path, Class<T> clazz, EPackage pkg) {
+	public static <T> T reader(URL path, Class<T> clazz, EPackage pkg) {
 		ResourceSet resourceSet = new ResourceSetImpl();
 		resourceSet.getResourceFactoryRegistry().getExtensionToFactoryMap().put("xml", new XMIResourceFactoryImpl());
-		URL url;
-		try {
-			url = ResourceUtils.getURL(path);
-		} catch (FileNotFoundException e1) {
-			throw new BaseException("can not found xml by path[" + path + "]", e1);
-		}
-		String filePath = url.toString();
+		String filePath = path.toString();
 		Resource resource = null;
 		try {
 			resource = resourceSet.createResource(URI.createURI(filePath));
