@@ -47,9 +47,10 @@ public class ProjectsEngine {
 		} catch (MalformedURLException e) {
 			throw new BaseException(e);
 		}
+		reloadProjects();
 	}
 
-	public void reloadProject() {
+	public void reloadProjects() {
 		projectMap.clear();
 		if (projects == null || projects.getProject() == null || projects.getProject().isEmpty()) {
 			return;
@@ -94,6 +95,10 @@ public class ProjectsEngine {
 		if (fileMonitor != null) {
 			try {
 				fileMonitor.stop();
+				for (ProjectEngine pe : this.projectMap.values()) {
+					pe.stopMonitor();
+				}
+
 			} catch (Exception e) {
 				throw new BaseException(e);
 			}

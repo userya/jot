@@ -20,6 +20,13 @@ public class PackageEngine {
 
 	public PackageEngine(Package packageResource) {
 		this.packageResource = packageResource;
+		loadResource();
+	}
+	
+	public void loadResource(){
+		URL url = parent.getProjectClassLoader().getResource(packageResource.getResource());
+		pkgFile = new File(url.getFile());
+		pkg = pkgLoader.load(url);
 	}
 
 	public void reload() {
@@ -27,6 +34,8 @@ public class PackageEngine {
 		String f = url.getFile();
 		pkgFile = new File(f);
 		pkg = pkgLoader.load(url);
+		String extendsPkg = pkg.getExtends();
+		
 	}
 
 	public String getNamespace() {
@@ -35,7 +44,6 @@ public class PackageEngine {
 
 	public void setParent(ProjectEngine parent) {
 		this.parent = parent;
-		reload();
 	}
 
 }

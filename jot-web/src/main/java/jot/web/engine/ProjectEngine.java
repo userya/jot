@@ -16,12 +16,17 @@ import jot.utils.ClassUtils;
 import jot.web.engine.conf.ProjectLoader;
 
 import org.apache.commons.io.FilenameUtils;
+import org.apache.commons.io.monitor.FileAlterationListenerAdaptor;
+import org.apache.commons.io.monitor.FileAlterationMonitor;
+import org.apache.commons.io.monitor.FileAlterationObserver;
 
 public class ProjectEngine {
 
 	private ProjectLoader projectLoader = new ProjectLoader();
 
 	private Project projectResource;
+
+	private FileAlterationMonitor fileMonitor;
 
 	private jot.model.project.Project project;
 
@@ -32,6 +37,8 @@ public class ProjectEngine {
 	private JotClassLoader classLoader;
 
 	private Map<String, PackageEngine> pkgEngineMap = new HashMap<String, PackageEngine>();
+
+	private Map<String, PackageEngine> pkgEngineKeyWithNameMap = new HashMap<String, PackageEngine>();
 
 	public ProjectEngine(Project projectResource) {
 		this.projectResource = projectResource;
@@ -66,10 +73,13 @@ public class ProjectEngine {
 			throw new BaseException(e);
 		}
 
+		reloadProject();
+		startMonitor();
 	}
 
 	public void reloadProject() {
 		pkgEngineMap.clear();
+		pkgEngineKeyWithNameMap.clear();
 		if (project == null || project.getPackage() == null) {
 			return;
 		}
@@ -77,6 +87,48 @@ public class ProjectEngine {
 			PackageEngine pkgEngine = new PackageEngine(pkg);
 			pkgEngine.setParent(this);
 			pkgEngineMap.put(pkgEngine.getNamespace(), pkgEngine);
+
+		}
+		for (PackageEngine engine : pkgEngineMap.values()) {
+			engine.reload();
+		}
+	}
+
+	public void startMonitor() {
+		if (fileMonitor != null) {
+			try {
+				fileMonitor.stop();
+			} catch (Exception e) {
+				e.printStackTrace();
+				throw new BaseException(e);
+			}
+		}
+		fileMonitor = new FileAlterationMonitor(2000);
+		FileAlterationObserver observer = new FileAlterationObserver(projectFile.getParentFile());
+		fileMonitor.addObserver(observer);
+		observer.addListener(new FileAlterationListenerAdaptor() {
+			@Override
+			public void onFileChange(File file) {
+				if (projectFile.equals(file)) {
+					reload();
+				}
+			}
+		});
+		try {
+			fileMonitor.start();
+		} catch (Exception e) {
+			e.printStackTrace();
+			throw new BaseException(e);
+		}
+	}
+
+	public void stopMonitor() {
+		if (fileMonitor != null) {
+			try {
+				fileMonitor.stop();
+			} catch (Exception e) {
+				throw new BaseException(e);
+			}
 		}
 	}
 
@@ -88,8 +140,8 @@ public class ProjectEngine {
 		return new JotClassLoader(projectClassPath);
 	}
 
-	public void invoke(HttpServletRequest request, HttpServletResponse response){
-		
+	public void invoke(HttpServletRequest request, HttpServletResponse response) {
+
 	}
-	
+
 }
