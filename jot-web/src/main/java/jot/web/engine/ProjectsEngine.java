@@ -6,6 +6,9 @@ import java.net.MalformedURLException;
 import java.util.HashMap;
 import java.util.Map;
 
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
 import org.apache.commons.io.monitor.FileAlterationListenerAdaptor;
 import org.apache.commons.io.monitor.FileAlterationMonitor;
 import org.apache.commons.io.monitor.FileAlterationObserver;
@@ -93,6 +96,17 @@ public class ProjectsEngine {
 				fileMonitor.stop();
 			} catch (Exception e) {
 				throw new BaseException(e);
+			}
+		}
+	}
+
+	public void invoke(HttpServletRequest request, HttpServletResponse response) {
+		String uri = request.getRequestURI();
+		int firstIndex = uri.indexOf("/");
+		if (firstIndex > -1) {
+			String p = uri.substring(0, firstIndex);
+			if (this.projectMap.containsKey(p)) {
+				projectMap.get(p).invoke(request, response);
 			}
 		}
 	}

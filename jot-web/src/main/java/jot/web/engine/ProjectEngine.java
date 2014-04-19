@@ -6,6 +6,9 @@ import java.net.URL;
 import java.util.HashMap;
 import java.util.Map;
 
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
 import jot.exception.BaseException;
 import jot.loader.JotClassLoader;
 import jot.model.projects.Project;
@@ -85,4 +88,8 @@ public class ProjectEngine {
 		return new JotClassLoader(projectClassPath);
 	}
 
+	public void invoke(HttpServletRequest request, HttpServletResponse response){
+		
+	}
+	
 }
