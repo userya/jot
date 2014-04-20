@@ -2,7 +2,7 @@ package jot.web.support;
 
 public interface Interceptor {
 
-	void before();
+	boolean before();
 
 	void after();
 

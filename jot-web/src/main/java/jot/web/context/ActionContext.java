@@ -8,6 +8,12 @@ public class ActionContext {
 	private HttpServletRequest request;
 	private HttpServletResponse response;
 
+	public ActionContext(HttpServletRequest request, HttpServletResponse response) {
+		super();
+		this.request = request;
+		this.response = response;
+	}
+
 	public HttpServletRequest getRequest() {
 		return request;
 	}

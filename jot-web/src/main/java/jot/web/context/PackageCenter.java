@@ -37,7 +37,7 @@ public class PackageCenter {
 	 * @param response
 	 */
 	public void invoke(HttpServletRequest request, HttpServletResponse response) {
-		ActionContext context = new ActionContext();
+		ActionContext context = new ActionContext(request, response);
 		context.setRequest(request);
 		context.setResponse(response);
 		String uri = request.getRequestURI();

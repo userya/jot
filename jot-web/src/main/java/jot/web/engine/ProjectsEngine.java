@@ -17,6 +17,7 @@ import jot.exception.BaseException;
 import jot.model.projects.Project;
 import jot.model.projects.Projects;
 import jot.utils.ResourceUtils;
+import jot.web.context.ActionContext;
 import jot.web.engine.conf.ProjectsLoader;
 
 public class ProjectsEngine {
@@ -98,7 +99,6 @@ public class ProjectsEngine {
 				for (ProjectEngine pe : this.projectMap.values()) {
 					pe.stopMonitor();
 				}
-
 			} catch (Exception e) {
 				throw new BaseException(e);
 			}
@@ -111,7 +111,8 @@ public class ProjectsEngine {
 		if (firstIndex > -1) {
 			String p = uri.substring(0, firstIndex);
 			if (this.projectMap.containsKey(p)) {
-				projectMap.get(p).invoke(request, response);
+				String last = uri.substring(firstIndex);
+				projectMap.get(p).invoke(last, new ActionContext(request, response));
 			}
 		}
 	}
