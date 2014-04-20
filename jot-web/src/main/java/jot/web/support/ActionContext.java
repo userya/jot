@@ -1,4 +1,4 @@
-package jot.web.context;
+package jot.web.support;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;

@@ -286,13 +286,22 @@ public interface PackagePackage extends EPackage {
 	int ACTION__CLASS = BASE_ELEMENT__CLASS;
 
 	/**
+	 * The feature id for the '<em><b>Method</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ACTION__METHOD = BASE_ELEMENT_FEATURE_COUNT + 0;
+
+	/**
 	 * The number of structural features of the '<em>Action</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ACTION_FEATURE_COUNT = BASE_ELEMENT_FEATURE_COUNT + 0;
+	int ACTION_FEATURE_COUNT = BASE_ELEMENT_FEATURE_COUNT + 1;
 
 	/**
 	 * The meta object id for the '{@link jot.model.package_.impl.ServiceImpl <em>Service</em>}' class.
@@ -461,6 +470,17 @@ public interface PackagePackage extends EPackage {
 	EClass getAction();
 
 	/**
+	 * Returns the meta object for the attribute '{@link jot.model.package_.Action#getMethod <em>Method</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Method</em>'.
+	 * @see jot.model.package_.Action#getMethod()
+	 * @see #getAction()
+	 * @generated
+	 */
+	EAttribute getAction_Method();
+
+	/**
 	 * Returns the meta object for class '{@link jot.model.package_.Service <em>Service</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -627,6 +647,14 @@ public interface PackagePackage extends EPackage {
 		 * @generated
 		 */
 		EClass ACTION = eINSTANCE.getAction();
+
+		/**
+		 * The meta object literal for the '<em><b>Method</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute ACTION__METHOD = eINSTANCE.getAction_Method();
 
 		/**
 		 * The meta object literal for the '{@link jot.model.package_.impl.ServiceImpl <em>Service</em>}' class.

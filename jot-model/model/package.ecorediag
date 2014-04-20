@@ -67,6 +67,10 @@
   <children xmi:type="notation:Node" xmi:id="_gJNWMMb6EeOc8pZc_GDDxg" type="1001">
     <children xmi:type="notation:Node" xmi:id="_gJNWM8b6EeOc8pZc_GDDxg" type="4001"/>
     <children xmi:type="notation:Node" xmi:id="_gJNWNMb6EeOc8pZc_GDDxg" type="5001">
+      <children xmi:type="notation:Node" xmi:id="_B52MIMjdEeOwNLeI0gCkkA" type="2001">
+        <element xmi:type="ecore:EAttribute" href="package.ecore#//Action/method"/>
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_B52MIcjdEeOwNLeI0gCkkA"/>
+      </children>
       <styles xmi:type="notation:DrawerStyle" xmi:id="_gJNWNcb6EeOc8pZc_GDDxg"/>
       <styles xmi:type="notation:SortingStyle" xmi:id="_gJNWNsb6EeOc8pZc_GDDxg"/>
       <styles xmi:type="notation:FilteringStyle" xmi:id="_gJNWN8b6EeOc8pZc_GDDxg"/>

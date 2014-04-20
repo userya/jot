@@ -240,6 +240,15 @@ public class PackagePackageImpl extends EPackageImpl implements PackagePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EAttribute getAction_Method() {
+		return (EAttribute)actionEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getService() {
 		return serviceEClass;
 	}
@@ -314,6 +323,7 @@ public class PackagePackageImpl extends EPackageImpl implements PackagePackage {
 		exceptionMappingEClass = createEClass(EXCEPTION_MAPPING);
 
 		actionEClass = createEClass(ACTION);
+		createEAttribute(actionEClass, ACTION__METHOD);
 
 		serviceEClass = createEClass(SERVICE);
 
@@ -371,6 +381,7 @@ public class PackagePackageImpl extends EPackageImpl implements PackagePackage {
 		initEClass(exceptionMappingEClass, ExceptionMapping.class, "ExceptionMapping", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		initEClass(actionEClass, Action.class, "Action", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getAction_Method(), ecorePackage.getEString(), "method", null, 0, 1, Action.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(serviceEClass, Service.class, "Service", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 

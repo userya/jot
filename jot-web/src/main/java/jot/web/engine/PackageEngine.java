@@ -15,11 +15,13 @@ import jot.model.package_.ExceptionMapping;
 import jot.model.package_.Interceptor;
 import jot.model.package_.Service;
 import jot.model.project.Package;
-import jot.web.context.ActionContext;
 import jot.web.engine.conf.PackageLoader;
+import jot.web.support.ActionContext;
+import jot.web.support.ActionInvoke;
 import jot.web.support.ExceptionHandler;
 import jot.web.support.HttpStatusCode;
 import jot.web.support.Inject;
+import jot.web.support.impl.ActionInvokeImpl;
 import jot.web.support.impl.UnknownExceptionHandler;
 
 import org.eclipse.emf.common.util.EList;
@@ -41,7 +43,7 @@ public class PackageEngine {
 	private Map<String, jot.web.support.Interceptor> interceptors = new LinkedHashMap<String, jot.web.support.Interceptor>();
 	private Map<String, Class<ExceptionHandler>> exceptionMappings = new LinkedHashMap<String, Class<ExceptionHandler>>();
 
-	private Map<String, jot.web.support.Action> actions = new HashMap<String, jot.web.support.Action>();
+	private Map<String, jot.web.support.ActionInvoke> actions = new HashMap<String, jot.web.support.ActionInvoke>();
 	private Map<String, jot.web.support.Service> services = new HashMap<String, jot.web.support.Service>();
 
 	public PackageEngine(Package packageResource) {
@@ -144,7 +146,8 @@ public class PackageEngine {
 				Object obj = newInstance(mp.getClass_());
 				if (obj instanceof jot.web.support.Action) {
 					jot.web.support.Action ha = (jot.web.support.Action) obj;
-					actions.put(mp.getName(), ha);
+					ActionInvoke invoke = new ActionInvokeImpl(ha, mp.getMethod());
+					actions.put(mp.getName(), invoke);
 				} else {
 					throw new BaseException("ExceptionMapping type error, must be implement [jot.web.support.Action]");
 				}
@@ -171,7 +174,7 @@ public class PackageEngine {
 	}
 
 	public void injectActionService() {
-		for (jot.web.support.Action action : this.actions.values()) {
+		for (jot.web.support.ActionInvoke action : this.actions.values()) {
 			action.getClass().getAnnotation(Inject.class);
 			// TODO injection
 
@@ -197,8 +200,8 @@ public class PackageEngine {
 
 	public Object invoke(String actionPath, ActionContext context) {
 		if (this.actions.containsKey(actionPath)) {
-			jot.web.support.Action action = actions.get(actionPath);
-			return invoke(action);
+			jot.web.support.ActionInvoke action = actions.get(actionPath);
+			return invoke(action, context);
 		} else {
 			// not found try parent action
 			String extend = this.pkg.getExtends();
@@ -212,7 +215,7 @@ public class PackageEngine {
 		}
 	}
 
-	protected Object invoke(jot.web.support.Action action) {
+	protected Object invoke(jot.web.support.ActionInvoke action, ActionContext context) {
 		Object result = null;
 		try {
 			for (jot.web.support.Interceptor inter : this.interceptors.values()) {
@@ -222,7 +225,7 @@ public class PackageEngine {
 				}
 			}
 			
-			result = invokeAction(action);
+			result = action.invokeAction(context);
 			
 			for (jot.web.support.Interceptor inter : this.interceptors.values()) {
 				inter.after();
@@ -233,10 +236,7 @@ public class PackageEngine {
 		return result;
 	}
 	
-	protected Object invokeAction(jot.web.support.Action action){
-		
-		return null;
-	}
+	
 
 	protected Object getUnknownExceptionHandler(Exception e) {
 		UnknownExceptionHandler ue = new UnknownExceptionHandler();

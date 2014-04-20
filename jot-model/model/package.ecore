@@ -17,7 +17,9 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Interceptor" eSuperTypes="#//BaseElement"/>
   <eClassifiers xsi:type="ecore:EClass" name="ExceptionMapping" eSuperTypes="#//BaseElement"/>
-  <eClassifiers xsi:type="ecore:EClass" name="Action" eSuperTypes="#//BaseElement"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Action" eSuperTypes="#//BaseElement">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="method" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Service" eSuperTypes="#//BaseElement"/>
   <eClassifiers xsi:type="ecore:EClass" name="BaseElement" abstract="true">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
