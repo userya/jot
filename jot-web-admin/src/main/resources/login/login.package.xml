@@ -1,4 +1,4 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<package:Package xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:package="http://www.jot.org/package/1.0" name="test">
+<package:Package xmlns:package="http://www.jot.org/package/1.0" name="test" >
   <actions/>
 </package:Package>
