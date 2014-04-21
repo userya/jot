@@ -7,15 +7,19 @@
   <xsd:element ecore:ignore="true" name="Action" type="package:Action"/>
   <xsd:element ecore:ignore="true" name="Service" type="package:Service"/>
   <xsd:element ecore:ignore="true" name="BaseElement" type="package:BaseElement"/>
+  <xsd:element ecore:ignore="true" name="Interceptors" type="package:Interceptors"/>
+  <xsd:element ecore:ignore="true" name="ExceptionMappings" type="package:ExceptionMappings"/>
+  <xsd:element ecore:ignore="true" name="Services" type="package:Services"/>
+  <xsd:element ecore:ignore="true" name="Actions" type="package:Actions"/>
   <xsd:complexType name="Package">
     <xsd:sequence>
-      <xsd:element ecore:resolveProxies="true" maxOccurs="unbounded" minOccurs="0" name="interceptors" type="package:Interceptor"/>
-      <xsd:element ecore:resolveProxies="true" maxOccurs="unbounded" minOccurs="0" name="exceptionMapping" type="package:ExceptionMapping"/>
-      <xsd:element ecore:resolveProxies="true" maxOccurs="unbounded" minOccurs="0" name="actions" type="package:Action"/>
-      <xsd:element ecore:resolveProxies="true" maxOccurs="unbounded" minOccurs="0" name="services" type="package:Service"/>
+      <xsd:element ecore:resolveProxies="true" minOccurs="0" name="interceptors" type="package:Interceptors"/>
+      <xsd:element ecore:resolveProxies="true" minOccurs="0" name="exceptionMappings" type="package:ExceptionMappings"/>
+      <xsd:element ecore:resolveProxies="true" minOccurs="0" name="services" type="package:Services"/>
+      <xsd:element ecore:resolveProxies="true" minOccurs="0" name="actions" type="package:Actions"/>
     </xsd:sequence>
-    <xsd:attribute name="name" type="ecore:EString"/>
     <xsd:attribute name="extends" type="ecore:EString"/>
+    <xsd:attribute name="name" type="ecore:EString"/>
     <xsd:attribute name="namespace" type="ecore:EString"/>
     <xsd:attribute ecore:unsettable="false" name="abstract" type="ecore:EBoolean"/>
   </xsd:complexType>
@@ -31,7 +35,9 @@
   </xsd:complexType>
   <xsd:complexType name="Action">
     <xsd:complexContent>
-      <xsd:extension base="package:BaseElement"/>
+      <xsd:extension base="package:BaseElement">
+        <xsd:attribute name="method" type="ecore:EString"/>
+      </xsd:extension>
     </xsd:complexContent>
   </xsd:complexType>
   <xsd:complexType name="Service">
@@ -42,5 +48,25 @@
   <xsd:complexType abstract="true" name="BaseElement">
     <xsd:attribute name="name" type="ecore:EString"/>
     <xsd:attribute name="class" type="ecore:EString"/>
+  </xsd:complexType>
+  <xsd:complexType name="Interceptors">
+    <xsd:sequence>
+      <xsd:element ecore:resolveProxies="true" maxOccurs="unbounded" minOccurs="0" name="interceptor" type="package:Interceptor"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="ExceptionMappings">
+    <xsd:sequence>
+      <xsd:element ecore:resolveProxies="true" maxOccurs="unbounded" minOccurs="0" name="exceptionMapping" type="package:ExceptionMapping"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="Services">
+    <xsd:sequence>
+      <xsd:element ecore:resolveProxies="true" maxOccurs="unbounded" minOccurs="0" name="service" type="package:Service"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="Actions">
+    <xsd:sequence>
+      <xsd:element ecore:resolveProxies="true" maxOccurs="unbounded" minOccurs="0" name="action" type="package:Action"/>
+    </xsd:sequence>
   </xsd:complexType>
 </xsd:schema>

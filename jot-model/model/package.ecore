@@ -2,18 +2,18 @@
 <ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="package" nsURI="http://www.jot.org/package/1.0" nsPrefix="package">
   <eClassifiers xsi:type="ecore:EClass" name="Package">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="extends" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="namespace" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="abstract" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="interceptors" upperBound="-1"
-        eType="#//Interceptor" containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="exceptionMapping" upperBound="-1"
-        eType="#//ExceptionMapping" containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="actions" upperBound="-1"
-        eType="#//Action" containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="services" upperBound="-1"
-        eType="#//Service" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="interceptors" eType="#//Interceptors"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="exceptionMappings" eType="#//ExceptionMappings"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="services" eType="#//Services"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="actions" eType="#//Actions"
+        containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Interceptor" eSuperTypes="#//BaseElement"/>
   <eClassifiers xsi:type="ecore:EClass" name="ExceptionMapping" eSuperTypes="#//BaseElement"/>
@@ -24,5 +24,21 @@
   <eClassifiers xsi:type="ecore:EClass" name="BaseElement" abstract="true">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="class" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Interceptors">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="interceptor" upperBound="-1"
+        eType="#//Interceptor" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ExceptionMappings">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="exceptionMapping" upperBound="-1"
+        eType="#//ExceptionMapping" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Services">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="service" upperBound="-1"
+        eType="#//Service" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Actions">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="action" upperBound="-1"
+        eType="#//Action" containment="true"/>
   </eClassifiers>
 </ecore:EPackage>

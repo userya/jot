@@ -14,14 +14,14 @@ import org.eclipse.emf.ecore.EObject;
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link jot.model.package_.Package#getName <em>Name</em>}</li>
  *   <li>{@link jot.model.package_.Package#getExtends <em>Extends</em>}</li>
+ *   <li>{@link jot.model.package_.Package#getName <em>Name</em>}</li>
  *   <li>{@link jot.model.package_.Package#getNamespace <em>Namespace</em>}</li>
  *   <li>{@link jot.model.package_.Package#isAbstract <em>Abstract</em>}</li>
  *   <li>{@link jot.model.package_.Package#getInterceptors <em>Interceptors</em>}</li>
- *   <li>{@link jot.model.package_.Package#getExceptionMapping <em>Exception Mapping</em>}</li>
- *   <li>{@link jot.model.package_.Package#getActions <em>Actions</em>}</li>
+ *   <li>{@link jot.model.package_.Package#getExceptionMappings <em>Exception Mappings</em>}</li>
  *   <li>{@link jot.model.package_.Package#getServices <em>Services</em>}</li>
+ *   <li>{@link jot.model.package_.Package#getActions <em>Actions</em>}</li>
  * </ul>
  * </p>
  *
@@ -135,67 +135,107 @@ public interface Package extends EObject {
 	void setAbstract(boolean value);
 
 	/**
-	 * Returns the value of the '<em><b>Interceptors</b></em>' containment reference list.
-	 * The list contents are of type {@link jot.model.package_.Interceptor}.
+	 * Returns the value of the '<em><b>Interceptors</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Interceptors</em>' containment reference list isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Interceptors</em>' containment reference list.
+	 * @return the value of the '<em>Interceptors</em>' containment reference.
+	 * @see #setInterceptors(Interceptors)
 	 * @see jot.model.package_.PackagePackage#getPackage_Interceptors()
 	 * @model containment="true"
 	 * @generated
 	 */
-	EList<Interceptor> getInterceptors();
+	Interceptors getInterceptors();
 
 	/**
-	 * Returns the value of the '<em><b>Exception Mapping</b></em>' containment reference list.
-	 * The list contents are of type {@link jot.model.package_.ExceptionMapping}.
+	 * Sets the value of the '{@link jot.model.package_.Package#getInterceptors <em>Interceptors</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Interceptors</em>' containment reference.
+	 * @see #getInterceptors()
+	 * @generated
+	 */
+	void setInterceptors(Interceptors value);
+
+	/**
+	 * Returns the value of the '<em><b>Exception Mappings</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Exception Mapping</em>' containment reference list isn't clear,
+	 * If the meaning of the '<em>Exception Mappings</em>' reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Exception Mapping</em>' containment reference list.
-	 * @see jot.model.package_.PackagePackage#getPackage_ExceptionMapping()
+	 * @return the value of the '<em>Exception Mappings</em>' containment reference.
+	 * @see #setExceptionMappings(ExceptionMappings)
+	 * @see jot.model.package_.PackagePackage#getPackage_ExceptionMappings()
 	 * @model containment="true"
 	 * @generated
 	 */
-	EList<ExceptionMapping> getExceptionMapping();
+	ExceptionMappings getExceptionMappings();
 
 	/**
-	 * Returns the value of the '<em><b>Actions</b></em>' containment reference list.
-	 * The list contents are of type {@link jot.model.package_.Action}.
+	 * Sets the value of the '{@link jot.model.package_.Package#getExceptionMappings <em>Exception Mappings</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Exception Mappings</em>' containment reference.
+	 * @see #getExceptionMappings()
+	 * @generated
+	 */
+	void setExceptionMappings(ExceptionMappings value);
+
+	/**
+	 * Returns the value of the '<em><b>Actions</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Actions</em>' containment reference list isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Actions</em>' containment reference list.
+	 * @return the value of the '<em>Actions</em>' containment reference.
+	 * @see #setActions(Actions)
 	 * @see jot.model.package_.PackagePackage#getPackage_Actions()
 	 * @model containment="true"
 	 * @generated
 	 */
-	EList<Action> getActions();
+	Actions getActions();
 
 	/**
-	 * Returns the value of the '<em><b>Services</b></em>' containment reference list.
-	 * The list contents are of type {@link jot.model.package_.Service}.
+	 * Sets the value of the '{@link jot.model.package_.Package#getActions <em>Actions</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Actions</em>' containment reference.
+	 * @see #getActions()
+	 * @generated
+	 */
+	void setActions(Actions value);
+
+	/**
+	 * Returns the value of the '<em><b>Services</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Services</em>' containment reference list isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Services</em>' containment reference list.
+	 * @return the value of the '<em>Services</em>' containment reference.
+	 * @see #setServices(Services)
 	 * @see jot.model.package_.PackagePackage#getPackage_Services()
 	 * @model containment="true"
 	 * @generated
 	 */
-	EList<Service> getServices();
+	Services getServices();
+
+	/**
+	 * Sets the value of the '{@link jot.model.package_.Package#getServices <em>Services</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Services</em>' containment reference.
+	 * @see #getServices()
+	 * @generated
+	 */
+	void setServices(Services value);
 
 } // Package

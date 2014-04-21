@@ -2,12 +2,16 @@
  */
 package jot.model.package_.impl;
 
+import jot.model.package_.Actions;
+import jot.model.package_.ExceptionMappings;
+import jot.model.package_.Interceptors;
 import java.util.Collection;
 
 import jot.model.package_.Action;
 import jot.model.package_.ExceptionMapping;
 import jot.model.package_.Interceptor;
 import jot.model.package_.PackagePackage;
+import jot.model.package_.Services;
 import jot.model.package_.Service;
 
 import org.eclipse.emf.common.notify.Notification;
@@ -31,40 +35,20 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link jot.model.package_.impl.PackageImpl#getName <em>Name</em>}</li>
  *   <li>{@link jot.model.package_.impl.PackageImpl#getExtends <em>Extends</em>}</li>
+ *   <li>{@link jot.model.package_.impl.PackageImpl#getName <em>Name</em>}</li>
  *   <li>{@link jot.model.package_.impl.PackageImpl#getNamespace <em>Namespace</em>}</li>
  *   <li>{@link jot.model.package_.impl.PackageImpl#isAbstract <em>Abstract</em>}</li>
  *   <li>{@link jot.model.package_.impl.PackageImpl#getInterceptors <em>Interceptors</em>}</li>
- *   <li>{@link jot.model.package_.impl.PackageImpl#getExceptionMapping <em>Exception Mapping</em>}</li>
- *   <li>{@link jot.model.package_.impl.PackageImpl#getActions <em>Actions</em>}</li>
+ *   <li>{@link jot.model.package_.impl.PackageImpl#getExceptionMappings <em>Exception Mappings</em>}</li>
  *   <li>{@link jot.model.package_.impl.PackageImpl#getServices <em>Services</em>}</li>
+ *   <li>{@link jot.model.package_.impl.PackageImpl#getActions <em>Actions</em>}</li>
  * </ul>
  * </p>
  *
  * @generated
  */
 public class PackageImpl extends EObjectImpl implements jot.model.package_.Package {
-	/**
-	 * The default value of the '{@link #getName() <em>Name</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getName()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String NAME_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getName()
-	 * @generated
-	 * @ordered
-	 */
-	protected String name = NAME_EDEFAULT;
-
 	/**
 	 * The default value of the '{@link #getExtends() <em>Extends</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -84,6 +68,26 @@ public class PackageImpl extends EObjectImpl implements jot.model.package_.Packa
 	 * @ordered
 	 */
 	protected String extends_ = EXTENDS_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #getName() <em>Name</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getName()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String NAME_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getName()
+	 * @generated
+	 * @ordered
+	 */
+	protected String name = NAME_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getNamespace() <em>Namespace</em>}' attribute.
@@ -126,44 +130,44 @@ public class PackageImpl extends EObjectImpl implements jot.model.package_.Packa
 	protected boolean abstract_ = ABSTRACT_EDEFAULT;
 
 	/**
-	 * The cached value of the '{@link #getInterceptors() <em>Interceptors</em>}' containment reference list.
+	 * The cached value of the '{@link #getInterceptors() <em>Interceptors</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getInterceptors()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<Interceptor> interceptors;
+	protected Interceptors interceptors;
 
 	/**
-	 * The cached value of the '{@link #getExceptionMapping() <em>Exception Mapping</em>}' containment reference list.
+	 * The cached value of the '{@link #getExceptionMappings() <em>Exception Mappings</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getExceptionMapping()
+	 * @see #getExceptionMappings()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<ExceptionMapping> exceptionMapping;
+	protected ExceptionMappings exceptionMappings;
 
 	/**
-	 * The cached value of the '{@link #getActions() <em>Actions</em>}' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getActions()
-	 * @generated
-	 * @ordered
-	 */
-	protected EList<Action> actions;
-
-	/**
-	 * The cached value of the '{@link #getServices() <em>Services</em>}' containment reference list.
+	 * The cached value of the '{@link #getServices() <em>Services</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getServices()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<Service> services;
+	protected Services services;
+
+	/**
+	 * The cached value of the '{@link #getActions() <em>Actions</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getActions()
+	 * @generated
+	 * @ordered
+	 */
+	protected Actions actions;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -273,10 +277,7 @@ public class PackageImpl extends EObjectImpl implements jot.model.package_.Packa
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<Interceptor> getInterceptors() {
-		if (interceptors == null) {
-			interceptors = new EObjectContainmentEList<Interceptor>(Interceptor.class, this, PackagePackage.PACKAGE__INTERCEPTORS);
-		}
+	public Interceptors getInterceptors() {
 		return interceptors;
 	}
 
@@ -285,11 +286,14 @@ public class PackageImpl extends EObjectImpl implements jot.model.package_.Packa
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<ExceptionMapping> getExceptionMapping() {
-		if (exceptionMapping == null) {
-			exceptionMapping = new EObjectContainmentEList<ExceptionMapping>(ExceptionMapping.class, this, PackagePackage.PACKAGE__EXCEPTION_MAPPING);
+	public NotificationChain basicSetInterceptors(Interceptors newInterceptors, NotificationChain msgs) {
+		Interceptors oldInterceptors = interceptors;
+		interceptors = newInterceptors;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, PackagePackage.PACKAGE__INTERCEPTORS, oldInterceptors, newInterceptors);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
 		}
-		return exceptionMapping;
+		return msgs;
 	}
 
 	/**
@@ -297,10 +301,69 @@ public class PackageImpl extends EObjectImpl implements jot.model.package_.Packa
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<Action> getActions() {
-		if (actions == null) {
-			actions = new EObjectContainmentEList<Action>(Action.class, this, PackagePackage.PACKAGE__ACTIONS);
+	public void setInterceptors(Interceptors newInterceptors) {
+		if (newInterceptors != interceptors) {
+			NotificationChain msgs = null;
+			if (interceptors != null)
+				msgs = ((InternalEObject)interceptors).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - PackagePackage.PACKAGE__INTERCEPTORS, null, msgs);
+			if (newInterceptors != null)
+				msgs = ((InternalEObject)newInterceptors).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - PackagePackage.PACKAGE__INTERCEPTORS, null, msgs);
+			msgs = basicSetInterceptors(newInterceptors, msgs);
+			if (msgs != null) msgs.dispatch();
 		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, PackagePackage.PACKAGE__INTERCEPTORS, newInterceptors, newInterceptors));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public ExceptionMappings getExceptionMappings() {
+		return exceptionMappings;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationChain basicSetExceptionMappings(ExceptionMappings newExceptionMappings, NotificationChain msgs) {
+		ExceptionMappings oldExceptionMappings = exceptionMappings;
+		exceptionMappings = newExceptionMappings;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, PackagePackage.PACKAGE__EXCEPTION_MAPPINGS, oldExceptionMappings, newExceptionMappings);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setExceptionMappings(ExceptionMappings newExceptionMappings) {
+		if (newExceptionMappings != exceptionMappings) {
+			NotificationChain msgs = null;
+			if (exceptionMappings != null)
+				msgs = ((InternalEObject)exceptionMappings).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - PackagePackage.PACKAGE__EXCEPTION_MAPPINGS, null, msgs);
+			if (newExceptionMappings != null)
+				msgs = ((InternalEObject)newExceptionMappings).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - PackagePackage.PACKAGE__EXCEPTION_MAPPINGS, null, msgs);
+			msgs = basicSetExceptionMappings(newExceptionMappings, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, PackagePackage.PACKAGE__EXCEPTION_MAPPINGS, newExceptionMappings, newExceptionMappings));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Actions getActions() {
 		return actions;
 	}
 
@@ -309,11 +372,33 @@ public class PackageImpl extends EObjectImpl implements jot.model.package_.Packa
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<Service> getServices() {
-		if (services == null) {
-			services = new EObjectContainmentEList<Service>(Service.class, this, PackagePackage.PACKAGE__SERVICES);
+	public NotificationChain basicSetActions(Actions newActions, NotificationChain msgs) {
+		Actions oldActions = actions;
+		actions = newActions;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, PackagePackage.PACKAGE__ACTIONS, oldActions, newActions);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
 		}
-		return services;
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setActions(Actions newActions) {
+		if (newActions != actions) {
+			NotificationChain msgs = null;
+			if (actions != null)
+				msgs = ((InternalEObject)actions).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - PackagePackage.PACKAGE__ACTIONS, null, msgs);
+			if (newActions != null)
+				msgs = ((InternalEObject)newActions).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - PackagePackage.PACKAGE__ACTIONS, null, msgs);
+			msgs = basicSetActions(newActions, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, PackagePackage.PACKAGE__ACTIONS, newActions, newActions));
 	}
 
 	/**
@@ -325,15 +410,58 @@ public class PackageImpl extends EObjectImpl implements jot.model.package_.Packa
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
 			case PackagePackage.PACKAGE__INTERCEPTORS:
-				return ((InternalEList<?>)getInterceptors()).basicRemove(otherEnd, msgs);
-			case PackagePackage.PACKAGE__EXCEPTION_MAPPING:
-				return ((InternalEList<?>)getExceptionMapping()).basicRemove(otherEnd, msgs);
-			case PackagePackage.PACKAGE__ACTIONS:
-				return ((InternalEList<?>)getActions()).basicRemove(otherEnd, msgs);
+				return basicSetInterceptors(null, msgs);
+			case PackagePackage.PACKAGE__EXCEPTION_MAPPINGS:
+				return basicSetExceptionMappings(null, msgs);
 			case PackagePackage.PACKAGE__SERVICES:
-				return ((InternalEList<?>)getServices()).basicRemove(otherEnd, msgs);
+				return basicSetServices(null, msgs);
+			case PackagePackage.PACKAGE__ACTIONS:
+				return basicSetActions(null, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Services getServices() {
+		return services;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationChain basicSetServices(Services newServices, NotificationChain msgs) {
+		Services oldServices = services;
+		services = newServices;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, PackagePackage.PACKAGE__SERVICES, oldServices, newServices);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setServices(Services newServices) {
+		if (newServices != services) {
+			NotificationChain msgs = null;
+			if (services != null)
+				msgs = ((InternalEObject)services).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - PackagePackage.PACKAGE__SERVICES, null, msgs);
+			if (newServices != null)
+				msgs = ((InternalEObject)newServices).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - PackagePackage.PACKAGE__SERVICES, null, msgs);
+			msgs = basicSetServices(newServices, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, PackagePackage.PACKAGE__SERVICES, newServices, newServices));
 	}
 
 	/**
@@ -344,22 +472,22 @@ public class PackageImpl extends EObjectImpl implements jot.model.package_.Packa
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case PackagePackage.PACKAGE__NAME:
-				return getName();
 			case PackagePackage.PACKAGE__EXTENDS:
 				return getExtends();
+			case PackagePackage.PACKAGE__NAME:
+				return getName();
 			case PackagePackage.PACKAGE__NAMESPACE:
 				return getNamespace();
 			case PackagePackage.PACKAGE__ABSTRACT:
 				return isAbstract();
 			case PackagePackage.PACKAGE__INTERCEPTORS:
 				return getInterceptors();
-			case PackagePackage.PACKAGE__EXCEPTION_MAPPING:
-				return getExceptionMapping();
-			case PackagePackage.PACKAGE__ACTIONS:
-				return getActions();
+			case PackagePackage.PACKAGE__EXCEPTION_MAPPINGS:
+				return getExceptionMappings();
 			case PackagePackage.PACKAGE__SERVICES:
 				return getServices();
+			case PackagePackage.PACKAGE__ACTIONS:
+				return getActions();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -373,11 +501,11 @@ public class PackageImpl extends EObjectImpl implements jot.model.package_.Packa
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case PackagePackage.PACKAGE__NAME:
-				setName((String)newValue);
-				return;
 			case PackagePackage.PACKAGE__EXTENDS:
 				setExtends((String)newValue);
+				return;
+			case PackagePackage.PACKAGE__NAME:
+				setName((String)newValue);
 				return;
 			case PackagePackage.PACKAGE__NAMESPACE:
 				setNamespace((String)newValue);
@@ -386,20 +514,16 @@ public class PackageImpl extends EObjectImpl implements jot.model.package_.Packa
 				setAbstract((Boolean)newValue);
 				return;
 			case PackagePackage.PACKAGE__INTERCEPTORS:
-				getInterceptors().clear();
-				getInterceptors().addAll((Collection<? extends Interceptor>)newValue);
+				setInterceptors((Interceptors)newValue);
 				return;
-			case PackagePackage.PACKAGE__EXCEPTION_MAPPING:
-				getExceptionMapping().clear();
-				getExceptionMapping().addAll((Collection<? extends ExceptionMapping>)newValue);
-				return;
-			case PackagePackage.PACKAGE__ACTIONS:
-				getActions().clear();
-				getActions().addAll((Collection<? extends Action>)newValue);
+			case PackagePackage.PACKAGE__EXCEPTION_MAPPINGS:
+				setExceptionMappings((ExceptionMappings)newValue);
 				return;
 			case PackagePackage.PACKAGE__SERVICES:
-				getServices().clear();
-				getServices().addAll((Collection<? extends Service>)newValue);
+				setServices((Services)newValue);
+				return;
+			case PackagePackage.PACKAGE__ACTIONS:
+				setActions((Actions)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -413,11 +537,11 @@ public class PackageImpl extends EObjectImpl implements jot.model.package_.Packa
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case PackagePackage.PACKAGE__NAME:
-				setName(NAME_EDEFAULT);
-				return;
 			case PackagePackage.PACKAGE__EXTENDS:
 				setExtends(EXTENDS_EDEFAULT);
+				return;
+			case PackagePackage.PACKAGE__NAME:
+				setName(NAME_EDEFAULT);
 				return;
 			case PackagePackage.PACKAGE__NAMESPACE:
 				setNamespace(NAMESPACE_EDEFAULT);
@@ -426,16 +550,16 @@ public class PackageImpl extends EObjectImpl implements jot.model.package_.Packa
 				setAbstract(ABSTRACT_EDEFAULT);
 				return;
 			case PackagePackage.PACKAGE__INTERCEPTORS:
-				getInterceptors().clear();
+				setInterceptors((Interceptors)null);
 				return;
-			case PackagePackage.PACKAGE__EXCEPTION_MAPPING:
-				getExceptionMapping().clear();
-				return;
-			case PackagePackage.PACKAGE__ACTIONS:
-				getActions().clear();
+			case PackagePackage.PACKAGE__EXCEPTION_MAPPINGS:
+				setExceptionMappings((ExceptionMappings)null);
 				return;
 			case PackagePackage.PACKAGE__SERVICES:
-				getServices().clear();
+				setServices((Services)null);
+				return;
+			case PackagePackage.PACKAGE__ACTIONS:
+				setActions((Actions)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -449,22 +573,22 @@ public class PackageImpl extends EObjectImpl implements jot.model.package_.Packa
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case PackagePackage.PACKAGE__NAME:
-				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
 			case PackagePackage.PACKAGE__EXTENDS:
 				return EXTENDS_EDEFAULT == null ? extends_ != null : !EXTENDS_EDEFAULT.equals(extends_);
+			case PackagePackage.PACKAGE__NAME:
+				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
 			case PackagePackage.PACKAGE__NAMESPACE:
 				return NAMESPACE_EDEFAULT == null ? namespace != null : !NAMESPACE_EDEFAULT.equals(namespace);
 			case PackagePackage.PACKAGE__ABSTRACT:
 				return abstract_ != ABSTRACT_EDEFAULT;
 			case PackagePackage.PACKAGE__INTERCEPTORS:
-				return interceptors != null && !interceptors.isEmpty();
-			case PackagePackage.PACKAGE__EXCEPTION_MAPPING:
-				return exceptionMapping != null && !exceptionMapping.isEmpty();
-			case PackagePackage.PACKAGE__ACTIONS:
-				return actions != null && !actions.isEmpty();
+				return interceptors != null;
+			case PackagePackage.PACKAGE__EXCEPTION_MAPPINGS:
+				return exceptionMappings != null;
 			case PackagePackage.PACKAGE__SERVICES:
-				return services != null && !services.isEmpty();
+				return services != null;
+			case PackagePackage.PACKAGE__ACTIONS:
+				return actions != null;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -479,10 +603,10 @@ public class PackageImpl extends EObjectImpl implements jot.model.package_.Packa
 		if (eIsProxy()) return super.toString();
 
 		StringBuffer result = new StringBuffer(super.toString());
-		result.append(" (name: ");
-		result.append(name);
-		result.append(", extends: ");
+		result.append(" (extends: ");
 		result.append(extends_);
+		result.append(", name: ");
+		result.append(name);
 		result.append(", namespace: ");
 		result.append(namespace);
 		result.append(", abstract: ");

@@ -6,6 +6,7 @@ import java.io.IOException;
 import org.apache.commons.io.FileUtils;
 
 import jot.model.package_.Action;
+import jot.model.package_.Actions;
 import jot.model.package_.PackageFactory;
 import jot.model.project.Package;
 import jot.model.project.ProjectFactory;
@@ -48,7 +49,18 @@ public class ModelGenTest extends TestCase {
 		jot.model.package_.Package p = PackageFactory.eINSTANCE.createPackage();
 		p.setName("test");
 		Action ac = PackageFactory.eINSTANCE.createAction();
-		p.getActions().add(ac);
+		
+		Actions acs = PackageFactory.eINSTANCE.createActions();
+		p.setActions(acs);
+		
+		ac.setName("aa");
+		ac.setMethod("aa");
+		p.getActions().getAction().add(ac);
+		
+		Action ac1 = PackageFactory.eINSTANCE.createAction();
+		ac1.setName("aa1");
+		ac1.setMethod("aa1");
+		p.getActions().getAction().add(ac1);
 		
 		File file = File.createTempFile("tmp", ".xml");
 		EMFXmlWriter.writer(p, file.getPath());

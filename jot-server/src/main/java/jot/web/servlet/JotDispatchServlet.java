@@ -28,7 +28,8 @@ public class JotDispatchServlet extends HttpServlet {
 	}
 
 	protected void invoke(HttpServletRequest req, HttpServletResponse resp) {
-		System.out.println("aaa");
+		String uri = req.getRequestURI();
+		System.out.println(uri);
 	}
 
 	@Override

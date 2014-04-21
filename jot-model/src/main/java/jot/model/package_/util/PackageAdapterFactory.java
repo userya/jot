@@ -3,12 +3,16 @@
 package jot.model.package_.util;
 
 import jot.model.package_.Action;
+import jot.model.package_.Actions;
 import jot.model.package_.BaseElement;
 import jot.model.package_.ExceptionMapping;
+import jot.model.package_.ExceptionMappings;
 import jot.model.package_.Interceptor;
+import jot.model.package_.Interceptors;
 import jot.model.package_.PackagePackage;
 import jot.model.package_.Service;
 
+import jot.model.package_.Services;
 import org.eclipse.emf.common.notify.Adapter;
 import org.eclipse.emf.common.notify.Notifier;
 
@@ -95,6 +99,22 @@ public class PackageAdapterFactory extends AdapterFactoryImpl {
 			@Override
 			public Adapter caseBaseElement(BaseElement object) {
 				return createBaseElementAdapter();
+			}
+			@Override
+			public Adapter caseInterceptors(Interceptors object) {
+				return createInterceptorsAdapter();
+			}
+			@Override
+			public Adapter caseExceptionMappings(ExceptionMappings object) {
+				return createExceptionMappingsAdapter();
+			}
+			@Override
+			public Adapter caseServices(Services object) {
+				return createServicesAdapter();
+			}
+			@Override
+			public Adapter caseActions(Actions object) {
+				return createActionsAdapter();
 			}
 			@Override
 			public Adapter defaultCase(EObject object) {
@@ -197,6 +217,62 @@ public class PackageAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createBaseElementAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link jot.model.package_.Interceptors <em>Interceptors</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see jot.model.package_.Interceptors
+	 * @generated
+	 */
+	public Adapter createInterceptorsAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link jot.model.package_.ExceptionMappings <em>Exception Mappings</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see jot.model.package_.ExceptionMappings
+	 * @generated
+	 */
+	public Adapter createExceptionMappingsAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link jot.model.package_.Services <em>Services</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see jot.model.package_.Services
+	 * @generated
+	 */
+	public Adapter createServicesAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link jot.model.package_.Actions <em>Actions</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see jot.model.package_.Actions
+	 * @generated
+	 */
+	public Adapter createActionsAdapter() {
 		return null;
 	}
 

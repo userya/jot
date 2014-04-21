@@ -3,12 +3,16 @@
 package jot.model.package_.util;
 
 import jot.model.package_.Action;
+import jot.model.package_.Actions;
 import jot.model.package_.BaseElement;
 import jot.model.package_.ExceptionMapping;
+import jot.model.package_.ExceptionMappings;
 import jot.model.package_.Interceptor;
+import jot.model.package_.Interceptors;
 import jot.model.package_.PackagePackage;
 import jot.model.package_.Service;
 
+import jot.model.package_.Services;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
 
@@ -111,6 +115,30 @@ public class PackageSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
+			case PackagePackage.INTERCEPTORS: {
+				Interceptors interceptors = (Interceptors)theEObject;
+				T result = caseInterceptors(interceptors);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case PackagePackage.EXCEPTION_MAPPINGS: {
+				ExceptionMappings exceptionMappings = (ExceptionMappings)theEObject;
+				T result = caseExceptionMappings(exceptionMappings);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case PackagePackage.SERVICES: {
+				Services services = (Services)theEObject;
+				T result = caseServices(services);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case PackagePackage.ACTIONS: {
+				Actions actions = (Actions)theEObject;
+				T result = caseActions(actions);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
 			default: return defaultCase(theEObject);
 		}
 	}
@@ -202,6 +230,66 @@ public class PackageSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseBaseElement(BaseElement object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Interceptors</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Interceptors</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseInterceptors(Interceptors object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Exception Mappings</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Exception Mappings</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseExceptionMappings(ExceptionMappings object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Services</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Services</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseServices(Services object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Actions</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Actions</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseActions(Actions object) {
 		return null;
 	}
 

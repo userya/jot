@@ -3,13 +3,17 @@
 package jot.model.package_.impl;
 
 import jot.model.package_.Action;
+import jot.model.package_.Actions;
 import jot.model.package_.BaseElement;
 import jot.model.package_.ExceptionMapping;
+import jot.model.package_.ExceptionMappings;
 import jot.model.package_.Interceptor;
+import jot.model.package_.Interceptors;
 import jot.model.package_.PackageFactory;
 import jot.model.package_.PackagePackage;
 import jot.model.package_.Service;
 
+import jot.model.package_.Services;
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EPackage;
@@ -65,6 +69,34 @@ public class PackagePackageImpl extends EPackageImpl implements PackagePackage {
 	 * @generated
 	 */
 	private EClass baseElementEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass interceptorsEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass exceptionMappingsEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass servicesEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass actionsEClass = null;
 
 	/**
 	 * Creates an instance of the model <b>Package</b>, registered with
@@ -142,7 +174,7 @@ public class PackagePackageImpl extends EPackageImpl implements PackagePackage {
 	 * @generated
 	 */
 	public EAttribute getPackage_Name() {
-		return (EAttribute)packageEClass.getEStructuralFeatures().get(0);
+		return (EAttribute)packageEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -151,7 +183,7 @@ public class PackagePackageImpl extends EPackageImpl implements PackagePackage {
 	 * @generated
 	 */
 	public EAttribute getPackage_Extends() {
-		return (EAttribute)packageEClass.getEStructuralFeatures().get(1);
+		return (EAttribute)packageEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -186,7 +218,7 @@ public class PackagePackageImpl extends EPackageImpl implements PackagePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getPackage_ExceptionMapping() {
+	public EReference getPackage_ExceptionMappings() {
 		return (EReference)packageEClass.getEStructuralFeatures().get(5);
 	}
 
@@ -196,7 +228,7 @@ public class PackagePackageImpl extends EPackageImpl implements PackagePackage {
 	 * @generated
 	 */
 	public EReference getPackage_Actions() {
-		return (EReference)packageEClass.getEStructuralFeatures().get(6);
+		return (EReference)packageEClass.getEStructuralFeatures().get(7);
 	}
 
 	/**
@@ -205,7 +237,7 @@ public class PackagePackageImpl extends EPackageImpl implements PackagePackage {
 	 * @generated
 	 */
 	public EReference getPackage_Services() {
-		return (EReference)packageEClass.getEStructuralFeatures().get(7);
+		return (EReference)packageEClass.getEStructuralFeatures().get(6);
 	}
 
 	/**
@@ -285,6 +317,78 @@ public class PackagePackageImpl extends EPackageImpl implements PackagePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EClass getInterceptors() {
+		return interceptorsEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getInterceptors_Interceptor() {
+		return (EReference)interceptorsEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getExceptionMappings() {
+		return exceptionMappingsEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getExceptionMappings_ExceptionMapping() {
+		return (EReference)exceptionMappingsEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getServices() {
+		return servicesEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getServices_Service() {
+		return (EReference)servicesEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getActions() {
+		return actionsEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getActions_Action() {
+		return (EReference)actionsEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public PackageFactory getPackageFactory() {
 		return (PackageFactory)getEFactoryInstance();
 	}
@@ -309,14 +413,14 @@ public class PackagePackageImpl extends EPackageImpl implements PackagePackage {
 
 		// Create classes and their features
 		packageEClass = createEClass(PACKAGE);
-		createEAttribute(packageEClass, PACKAGE__NAME);
 		createEAttribute(packageEClass, PACKAGE__EXTENDS);
+		createEAttribute(packageEClass, PACKAGE__NAME);
 		createEAttribute(packageEClass, PACKAGE__NAMESPACE);
 		createEAttribute(packageEClass, PACKAGE__ABSTRACT);
 		createEReference(packageEClass, PACKAGE__INTERCEPTORS);
-		createEReference(packageEClass, PACKAGE__EXCEPTION_MAPPING);
-		createEReference(packageEClass, PACKAGE__ACTIONS);
+		createEReference(packageEClass, PACKAGE__EXCEPTION_MAPPINGS);
 		createEReference(packageEClass, PACKAGE__SERVICES);
+		createEReference(packageEClass, PACKAGE__ACTIONS);
 
 		interceptorEClass = createEClass(INTERCEPTOR);
 
@@ -330,6 +434,18 @@ public class PackagePackageImpl extends EPackageImpl implements PackagePackage {
 		baseElementEClass = createEClass(BASE_ELEMENT);
 		createEAttribute(baseElementEClass, BASE_ELEMENT__NAME);
 		createEAttribute(baseElementEClass, BASE_ELEMENT__CLASS);
+
+		interceptorsEClass = createEClass(INTERCEPTORS);
+		createEReference(interceptorsEClass, INTERCEPTORS__INTERCEPTOR);
+
+		exceptionMappingsEClass = createEClass(EXCEPTION_MAPPINGS);
+		createEReference(exceptionMappingsEClass, EXCEPTION_MAPPINGS__EXCEPTION_MAPPING);
+
+		servicesEClass = createEClass(SERVICES);
+		createEReference(servicesEClass, SERVICES__SERVICE);
+
+		actionsEClass = createEClass(ACTIONS);
+		createEReference(actionsEClass, ACTIONS__ACTION);
 	}
 
 	/**
@@ -367,14 +483,14 @@ public class PackagePackageImpl extends EPackageImpl implements PackagePackage {
 
 		// Initialize classes and features; add operations and parameters
 		initEClass(packageEClass, jot.model.package_.Package.class, "Package", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getPackage_Name(), ecorePackage.getEString(), "name", null, 0, 1, jot.model.package_.Package.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getPackage_Extends(), ecorePackage.getEString(), "extends", null, 0, 1, jot.model.package_.Package.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getPackage_Name(), ecorePackage.getEString(), "name", null, 0, 1, jot.model.package_.Package.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getPackage_Namespace(), ecorePackage.getEString(), "namespace", null, 0, 1, jot.model.package_.Package.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getPackage_Abstract(), ecorePackage.getEBoolean(), "abstract", null, 0, 1, jot.model.package_.Package.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getPackage_Interceptors(), this.getInterceptor(), null, "interceptors", null, 0, -1, jot.model.package_.Package.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getPackage_ExceptionMapping(), this.getExceptionMapping(), null, "exceptionMapping", null, 0, -1, jot.model.package_.Package.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getPackage_Actions(), this.getAction(), null, "actions", null, 0, -1, jot.model.package_.Package.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getPackage_Services(), this.getService(), null, "services", null, 0, -1, jot.model.package_.Package.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getPackage_Interceptors(), this.getInterceptors(), null, "interceptors", null, 0, 1, jot.model.package_.Package.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getPackage_ExceptionMappings(), this.getExceptionMappings(), null, "exceptionMappings", null, 0, 1, jot.model.package_.Package.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getPackage_Services(), this.getServices(), null, "services", null, 0, 1, jot.model.package_.Package.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getPackage_Actions(), this.getActions(), null, "actions", null, 0, 1, jot.model.package_.Package.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(interceptorEClass, Interceptor.class, "Interceptor", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
@@ -388,6 +504,18 @@ public class PackagePackageImpl extends EPackageImpl implements PackagePackage {
 		initEClass(baseElementEClass, BaseElement.class, "BaseElement", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getBaseElement_Name(), ecorePackage.getEString(), "name", null, 0, 1, BaseElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getBaseElement_Class(), ecorePackage.getEString(), "class", null, 0, 1, BaseElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(interceptorsEClass, Interceptors.class, "Interceptors", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getInterceptors_Interceptor(), this.getInterceptor(), null, "interceptor", null, 0, -1, Interceptors.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(exceptionMappingsEClass, ExceptionMappings.class, "ExceptionMappings", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getExceptionMappings_ExceptionMapping(), this.getExceptionMapping(), null, "exceptionMapping", null, 0, -1, ExceptionMappings.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(servicesEClass, Services.class, "Services", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getServices_Service(), this.getService(), null, "service", null, 0, -1, Services.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(actionsEClass, Actions.class, "Actions", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getActions_Action(), this.getAction(), null, "action", null, 0, -1, Actions.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		// Create resource
 		createResource(eNS_URI);

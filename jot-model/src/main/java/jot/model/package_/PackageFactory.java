@@ -67,6 +67,42 @@ public interface PackageFactory extends EFactory {
 	Service createService();
 
 	/**
+	 * Returns a new object of class '<em>Interceptors</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Interceptors</em>'.
+	 * @generated
+	 */
+	Interceptors createInterceptors();
+
+	/**
+	 * Returns a new object of class '<em>Exception Mappings</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Exception Mappings</em>'.
+	 * @generated
+	 */
+	ExceptionMappings createExceptionMappings();
+
+	/**
+	 * Returns a new object of class '<em>Services</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Services</em>'.
+	 * @generated
+	 */
+	Services createServices();
+
+	/**
+	 * Returns a new object of class '<em>Actions</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Actions</em>'.
+	 * @generated
+	 */
+	Actions createActions();
+
+	/**
 	 * Returns the package supported by this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

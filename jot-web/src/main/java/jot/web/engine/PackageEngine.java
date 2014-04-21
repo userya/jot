@@ -98,7 +98,7 @@ public class PackageEngine {
 
 	protected void loadInterceptor() {
 		interceptors.clear();
-		EList<Interceptor> list = pkg.getInterceptors();
+		EList<Interceptor> list = pkg.getInterceptors().getInterceptor();
 		if (list != null) {
 			for (Interceptor interceptor : list) {
 				String name = interceptor.getName();
@@ -117,7 +117,7 @@ public class PackageEngine {
 
 	protected void loadExceptionMapping() {
 		exceptionMappings.clear();
-		EList<ExceptionMapping> list = pkg.getExceptionMapping();
+		EList<ExceptionMapping> list = pkg.getExceptionMappings().getExceptionMapping();
 		if (list != null) {
 			for (ExceptionMapping mp : list) {
 				String cname = mp.getClass_();
@@ -140,7 +140,8 @@ public class PackageEngine {
 
 	protected void loadActions() {
 		actions.clear();
-		EList<Action> list = pkg.getActions();
+		EList<Action> list = pkg.getActions().getAction();
+		
 		if (list != null) {
 			for (Action mp : list) {
 				Object obj = newInstance(mp.getClass_());
@@ -158,7 +159,8 @@ public class PackageEngine {
 
 	protected void loadServices() {
 		services.clear();
-		EList<Service> list = pkg.getServices();
+		EList<Service> list = pkg.getServices().getService();
+		
 		if (list != null) {
 			for (Service mp : list) {
 				Object obj = newInstance(mp.getClass_());
