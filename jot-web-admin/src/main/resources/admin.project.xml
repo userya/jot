@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project:Project xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:project="http://www.jot.org/project/1.0">
+  <package name="login" resource="login/login.package.xml"/>
+</project:Project>

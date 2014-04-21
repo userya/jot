@@ -48,7 +48,6 @@ public class PackageEngine {
 
 	public PackageEngine(Package packageResource) {
 		this.packageResource = packageResource;
-		loadResource();
 	}
 
 	public void loadResource() {
@@ -58,6 +57,7 @@ public class PackageEngine {
 	}
 
 	public void reload() {
+		loadResource();
 		classLoader = project.createProjectClassLoader();
 
 		files.clear();

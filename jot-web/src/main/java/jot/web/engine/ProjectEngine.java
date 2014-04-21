@@ -54,6 +54,7 @@ public class ProjectEngine {
 
 	public ProjectEngine(Project projectResource) {
 		this.projectResource = projectResource;
+		reload();
 	}
 
 	public String getClassPathFileName() {

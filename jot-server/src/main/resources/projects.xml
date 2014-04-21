@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<projects:Projects xmlns:projects="http://www.jot.org/projects/1.0">
+	<project name="admin" resource="../../../jot-web-admin/target/classes/admin.project.xml" namespace="a" />
+</projects:Projects>

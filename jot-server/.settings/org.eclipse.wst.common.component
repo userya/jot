@@ -1,0 +1,36 @@
+<project-modules id="moduleCoreId" project-version="1.5.0">
+  <wb-module deploy-name="jot-server">
+    <property name="context-root" value="jot-server"/>
+    <wb-resource deploy-path="/" source-path="src/main/webapp"/>
+    <property name="java-output-path" value="/target/classes"/>
+    <dependent-module archiveName="commons-io-2.4.jar" deploy-path="/WEB-INF/lib" handle="module:/classpath/var/M2_REPO/commons-io/commons-io/2.4/commons-io-2.4.jar">
+      <dependency-type>uses</dependency-type>
+    </dependent-module>
+    <dependent-module archiveName="jot-base-1.0-SNAPSHOT.jar" deploy-path="/WEB-INF/lib" handle="module:/classpath/var/M2_REPO/jot/jot-base/1.0-SNAPSHOT/jot-base-1.0-SNAPSHOT.jar">
+      <dependency-type>uses</dependency-type>
+    </dependent-module>
+    <dependent-module archiveName="jot-model-1.0-SNAPSHOT.jar" deploy-path="/WEB-INF/lib" handle="module:/classpath/var/M2_REPO/jot/jot-model/1.0-SNAPSHOT/jot-model-1.0-SNAPSHOT.jar">
+      <dependency-type>uses</dependency-type>
+    </dependent-module>
+    <dependent-module archiveName="jot-persistent-1.0-SNAPSHOT.jar" deploy-path="/WEB-INF/lib" handle="module:/classpath/var/M2_REPO/jot/jot-persistent/1.0-SNAPSHOT/jot-persistent-1.0-SNAPSHOT.jar">
+      <dependency-type>uses</dependency-type>
+    </dependent-module>
+    <dependent-module archiveName="jot-web-1.0-SNAPSHOT.jar" deploy-path="/WEB-INF/lib" handle="module:/classpath/var/M2_REPO/jot/jot-web/1.0-SNAPSHOT/jot-web-1.0-SNAPSHOT.jar">
+      <dependency-type>uses</dependency-type>
+    </dependent-module>
+    <dependent-module archiveName="org.eclipse.emf.common-2.9.1-v20130827-0309.jar" deploy-path="/WEB-INF/lib" handle="module:/classpath/var/M2_REPO/org/eclipse/emf/org.eclipse.emf.common/2.9.1-v20130827-0309/org.eclipse.emf.common-2.9.1-v20130827-0309.jar">
+      <dependency-type>uses</dependency-type>
+    </dependent-module>
+    <dependent-module archiveName="org.eclipse.emf.ecore-2.9.1-v20130827-0309.jar" deploy-path="/WEB-INF/lib" handle="module:/classpath/var/M2_REPO/org/eclipse/emf/org.eclipse.emf.ecore/2.9.1-v20130827-0309/org.eclipse.emf.ecore-2.9.1-v20130827-0309.jar">
+      <dependency-type>uses</dependency-type>
+    </dependent-module>
+    <dependent-module archiveName="org.eclipse.emf.ecore.xmi-2.9.1-v20130827-0309.jar" deploy-path="/WEB-INF/lib" handle="module:/classpath/var/M2_REPO/org/eclipse/emf/org.eclipse.emf.ecore.xmi/2.9.1-v20130827-0309/org.eclipse.emf.ecore.xmi-2.9.1-v20130827-0309.jar">
+      <dependency-type>uses</dependency-type>
+    </dependent-module>
+    <dependent-module archiveName="org.eclipse.xsd-2.7.0-v20110606-0949.jar" deploy-path="/WEB-INF/lib" handle="module:/classpath/var/M2_REPO/org/eclipse/xsd/org.eclipse.xsd/2.7.0-v20110606-0949/org.eclipse.xsd-2.7.0-v20110606-0949.jar">
+      <dependency-type>uses</dependency-type>
+    </dependent-module>
+    <wb-resource deploy-path="/WEB-INF/classes" source-path="src/main/java"/>
+    <wb-resource deploy-path="/WEB-INF/classes" source-path="src/main/resources"/>
+  </wb-module>
+</project-modules>
