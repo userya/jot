@@ -1,50 +1,31 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <classpath>
-	<classpathentry including="**/*.java" kind="src" output="target/test-classes" path="src/test/java"/>
-	<classpathentry including="**/*.java" kind="src" path="src/main/java"/>
-	<classpathentry excluding="**/*.java" kind="src" path="src/main/resources"/>
-	<classpathentry kind="var" path="M2_REPO/javax/servlet/jstl/1.2/jstl-1.2.jar" sourcepath="M2_REPO/javax/servlet/jstl/1.2/jstl-1.2-sources.jar"/>
-	<classpathentry kind="var" path="M2_REPO/javax/servlet/servlet-api/2.5/servlet-api-2.5.jar" sourcepath="M2_REPO/javax/servlet/servlet-api/2.5/servlet-api-2.5-sources.jar"/>
-	<classpathentry kind="var" path="M2_REPO/org/eclipse/jetty/orbit/com.sun.el/1.0.0.v201105211818/com.sun.el-1.0.0.v201105211818.jar" sourcepath="M2_REPO/org/eclipse/jetty/orbit/com.sun.el/1.0.0.v201105211818/com.sun.el-1.0.0.v201105211818-sources.jar"/>
-	<classpathentry kind="var" path="M2_REPO/commons-io/commons-io/2.4/commons-io-2.4.jar" sourcepath="M2_REPO/commons-io/commons-io/2.4/commons-io-2.4-sources.jar">
+	<classpathentry kind="src" output="target/classes" path="src/main/java">
 		<attributes>
-			<attribute name="org.eclipse.jst.component.dependency" value="/WEB-INF/lib"/>
+			<attribute name="optional" value="true"/>
+			<attribute name="maven.pomderived" value="true"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="var" path="M2_REPO/org/eclipse/jetty/orbit/javax.el/2.1.0.v201105211819/javax.el-2.1.0.v201105211819.jar" sourcepath="M2_REPO/org/eclipse/jetty/orbit/javax.el/2.1.0.v201105211819/javax.el-2.1.0.v201105211819-sources.jar"/>
-	<classpathentry kind="var" path="M2_REPO/org/eclipse/jetty/orbit/javax.servlet/2.5.0.v201103041518/javax.servlet-2.5.0.v201103041518.jar" sourcepath="M2_REPO/org/eclipse/jetty/orbit/javax.servlet/2.5.0.v201103041518/javax.servlet-2.5.0.v201103041518-sources.jar"/>
-	<classpathentry kind="var" path="M2_REPO/org/eclipse/jetty/orbit/javax.servlet.jsp/2.1.0.v201105211820/javax.servlet.jsp-2.1.0.v201105211820.jar" sourcepath="M2_REPO/org/eclipse/jetty/orbit/javax.servlet.jsp/2.1.0.v201105211820/javax.servlet.jsp-2.1.0.v201105211820-sources.jar"/>
-	<classpathentry kind="var" path="M2_REPO/org/eclipse/jetty/orbit/javax.servlet.jsp.jstl/1.2.0.v201105211821/javax.servlet.jsp.jstl-1.2.0.v201105211821.jar" sourcepath="M2_REPO/org/eclipse/jetty/orbit/javax.servlet.jsp.jstl/1.2.0.v201105211821/javax.servlet.jsp.jstl-1.2.0.v201105211821-sources.jar"/>
-	<classpathentry kind="var" path="M2_REPO/org/eclipse/jetty/jetty-jsp/7.6.10.v20130312/jetty-jsp-7.6.10.v20130312.jar" sourcepath="M2_REPO/org/eclipse/jetty/jetty-jsp/7.6.10.v20130312/jetty-jsp-7.6.10.v20130312-sources.jar"/>
-	<classpathentry kind="var" path="M2_REPO/org/eclipse/jetty/aggregate/jetty-webapp/7.6.10.v20130312/jetty-webapp-7.6.10.v20130312.jar" sourcepath="M2_REPO/org/eclipse/jetty/aggregate/jetty-webapp/7.6.10.v20130312/jetty-webapp-7.6.10.v20130312-sources.jar"/>
-	<classpathentry kind="var" path="M2_REPO/junit/junit/3.8.1/junit-3.8.1.jar" sourcepath="M2_REPO/junit/junit/3.8.1/junit-3.8.1-sources.jar"/>
-	<classpathentry kind="var" path="M2_REPO/org/eclipse/jetty/orbit/org.apache.jasper.glassfish/2.1.0.v201110031002/org.apache.jasper.glassfish-2.1.0.v201110031002.jar" sourcepath="M2_REPO/org/eclipse/jetty/orbit/org.apache.jasper.glassfish/2.1.0.v201110031002/org.apache.jasper.glassfish-2.1.0.v201110031002-sources.jar"/>
-	<classpathentry kind="var" path="M2_REPO/org/eclipse/jetty/orbit/org.apache.taglibs.standard.glassfish/1.2.0.v201112081803/org.apache.taglibs.standard.glassfish-1.2.0.v201112081803.jar" sourcepath="M2_REPO/org/eclipse/jetty/orbit/org.apache.taglibs.standard.glassfish/1.2.0.v201112081803/org.apache.taglibs.standard.glassfish-1.2.0.v201112081803-sources.jar"/>
-	<classpathentry kind="var" path="M2_REPO/org/eclipse/emf/org.eclipse.emf.common/2.9.1-v20130827-0309/org.eclipse.emf.common-2.9.1-v20130827-0309.jar" sourcepath="M2_REPO/org/eclipse/emf/org.eclipse.emf.common/2.9.1-v20130827-0309/org.eclipse.emf.common-2.9.1-v20130827-0309-sources.jar">
+	<classpathentry excluding="**" kind="src" output="target/classes" path="src/main/resources">
 		<attributes>
-			<attribute name="org.eclipse.jst.component.dependency" value="/WEB-INF/lib"/>
+			<attribute name="maven.pomderived" value="true"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="var" path="M2_REPO/org/eclipse/emf/org.eclipse.emf.ecore/2.9.1-v20130827-0309/org.eclipse.emf.ecore-2.9.1-v20130827-0309.jar" sourcepath="M2_REPO/org/eclipse/emf/org.eclipse.emf.ecore/2.9.1-v20130827-0309/org.eclipse.emf.ecore-2.9.1-v20130827-0309-sources.jar">
+	<classpathentry kind="src" output="target/test-classes" path="src/test/java">
 		<attributes>
-			<attribute name="org.eclipse.jst.component.dependency" value="/WEB-INF/lib"/>
+			<attribute name="optional" value="true"/>
+			<attribute name="maven.pomderived" value="true"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="var" path="M2_REPO/org/eclipse/emf/org.eclipse.emf.ecore.xmi/2.9.1-v20130827-0309/org.eclipse.emf.ecore.xmi-2.9.1-v20130827-0309.jar" sourcepath="M2_REPO/org/eclipse/emf/org.eclipse.emf.ecore.xmi/2.9.1-v20130827-0309/org.eclipse.emf.ecore.xmi-2.9.1-v20130827-0309-sources.jar">
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.6">
 		<attributes>
-			<attribute name="org.eclipse.jst.component.dependency" value="/WEB-INF/lib"/>
+			<attribute name="maven.pomderived" value="true"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="var" path="M2_REPO/org/eclipse/jetty/orbit/org.eclipse.jdt.core/3.7.1/org.eclipse.jdt.core-3.7.1.jar" sourcepath="M2_REPO/org/eclipse/jetty/orbit/org.eclipse.jdt.core/3.7.1/org.eclipse.jdt.core-3.7.1-sources.jar"/>
-	<classpathentry kind="var" path="M2_REPO/org/eclipse/xsd/org.eclipse.xsd/2.7.0-v20110606-0949/org.eclipse.xsd-2.7.0-v20110606-0949.jar" sourcepath="M2_REPO/org/eclipse/xsd/org.eclipse.xsd/2.7.0-v20110606-0949/org.eclipse.xsd-2.7.0-v20110606-0949-sources.jar">
+	<classpathentry kind="con" path="org.eclipse.m2e.MAVEN2_CLASSPATH_CONTAINER">
 		<attributes>
-			<attribute name="org.eclipse.jst.component.dependency" value="/WEB-INF/lib"/>
+			<attribute name="maven.pomderived" value="true"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
-	<classpathentry combineaccessrules="false" kind="src" path="/jot-base"/>
-	<classpathentry combineaccessrules="false" kind="src" path="/jot-model"/>
-	<classpathentry combineaccessrules="false" kind="src" path="/jot-persistent"/>
-	<classpathentry combineaccessrules="false" kind="src" path="/jot-web"/>
 	<classpathentry kind="output" path="target/classes"/>
 </classpath>
