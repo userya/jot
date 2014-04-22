@@ -11,8 +11,10 @@ import java.util.Set;
 
 import jot.exception.BaseException;
 import jot.loader.JotClassLoader;
+import jot.model.project.ProjectFactory;
 import jot.model.projects.Project;
 import jot.utils.ClassUtils;
+import jot.web.engine.conf.PackageLoader;
 import jot.web.engine.conf.ProjectLoader;
 import jot.web.support.ActionContext;
 import jot.web.support.HttpStatusCode;
@@ -27,6 +29,8 @@ import org.apache.commons.io.monitor.FileAlterationObserver;
 public class ProjectEngine {
 
 	private ProjectLoader projectLoader = new ProjectLoader();
+	
+	private PackageLoader pkgLoader = new PackageLoader();
 
 	private Project projectResource;
 
@@ -122,11 +126,22 @@ public class ProjectEngine {
 		if (project == null || project.getPackage() == null) {
 			return;
 		}
+		String defaultPackage = "default.package.xml";
+		URL url = this.classLoader.findResource(defaultPackage);
+		if(url == null) {
+			url = ClassUtils.getDefaultClassLoader().getResource(defaultPackage);
+		}
+		if(url != null) {
+			jot.model.project.Package pkg = ProjectFactory.eINSTANCE.createPackage();
+			pkg.setName("default");
+			pkg.setResource(url.getFile());
+			project.getPackage().add(0, pkg);
+		}
 		for (jot.model.project.Package pkg : project.getPackage()) {
 			PackageEngine pkgEngine = new PackageEngine(pkg);
 			pkgEngine.setProject(this);
+			pkgEngine.loadResource();
 			pkgEngineMap.put(pkgEngine.getNamespace(), pkgEngine);
-
 		}
 		for (PackageEngine engine : pkgEngineMap.values()) {
 			engine.reload();

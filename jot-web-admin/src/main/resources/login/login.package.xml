@@ -1,15 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <package:Package xmlns:package="http://www.jot.org/package/1.0" name="test" namespace="login">
-	<interceptors>
-		<interceptor/>
-	</interceptors>
-	<exceptionMappings>
-		<exceptionMapping/>
-	</exceptionMappings>
-	<services>
-		<service/>
-	</services>
 	<actions>
-		<action class="" name="" method=""/>		
+		<action name="hello" class="jot.admin.web.HelloWorldAction"  method=""/>		
 	</actions>
 </package:Package>

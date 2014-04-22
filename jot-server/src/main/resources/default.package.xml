@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<package:Package xmlns:package="http://www.jot.org/package/1.0"
+	name="default" namespace="default" abstract="true">
+	<interceptors>
+		<interceptor name="default"  class="jot.web.interceptors.DefaultInterceptor" />
+	</interceptors>
+	<exceptionMappings>
+		<exceptionMapping name="default" class="jot.web.exception.DefaultExceptionHandler"/>
+	</exceptionMappings>
+</package:Package>

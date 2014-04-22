@@ -1,6 +1,7 @@
 package jot.web.engine;
 
 import java.io.File;
+import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.HashMap;
 import java.util.HashSet;
@@ -15,6 +16,8 @@ import jot.model.package_.ExceptionMapping;
 import jot.model.package_.Interceptor;
 import jot.model.package_.Service;
 import jot.model.project.Package;
+import jot.utils.ClassUtils;
+import jot.utils.StringUtils;
 import jot.web.engine.conf.PackageLoader;
 import jot.web.support.ActionContext;
 import jot.web.support.ActionInvoke;
@@ -51,13 +54,23 @@ public class PackageEngine {
 	}
 
 	public void loadResource() {
-		URL url = project.getProjectClassLoader().getResource(packageResource.getResource());
+		File file = new File(packageResource.getResource());
+		URL url = null;
+		if(file.exists()) {
+			try {
+				url = file.toURI().toURL();
+			} catch (MalformedURLException e) {
+				throw new BaseException(e);
+			}
+		}else {
+			url = project.getProjectClassLoader().getResource(packageResource.getResource());
+		}
+		
 		pkg = pkgLoader.load(url);
 		files.add(new File(url.getFile()));
 	}
 
 	public void reload() {
-		loadResource();
 		classLoader = project.createProjectClassLoader();
 
 		files.clear();
@@ -98,6 +111,9 @@ public class PackageEngine {
 
 	protected void loadInterceptor() {
 		interceptors.clear();
+		if(pkg.getInterceptors() == null || pkg.getInterceptors().getInterceptor() == null ) {
+			return;
+		}
 		EList<Interceptor> list = pkg.getInterceptors().getInterceptor();
 		if (list != null) {
 			for (Interceptor interceptor : list) {
@@ -117,6 +133,9 @@ public class PackageEngine {
 
 	protected void loadExceptionMapping() {
 		exceptionMappings.clear();
+		if(pkg.getExceptionMappings() == null ||pkg.getExceptionMappings().getExceptionMapping() == null ){
+			return;
+		}
 		EList<ExceptionMapping> list = pkg.getExceptionMappings().getExceptionMapping();
 		if (list != null) {
 			for (ExceptionMapping mp : list) {
@@ -124,7 +143,7 @@ public class PackageEngine {
 				Class<?> c;
 				try {
 					c = classLoader.loadClass(cname);
-					if (c.isInstance(Interceptor.class)) {
+					if (ClassUtils.isAssignable(ExceptionHandler.class, c)) {
 						Class<ExceptionHandler> cc = (Class<ExceptionHandler>) c;
 						exceptionMappings.put(mp.getName(), cc);
 					} else {
@@ -140,6 +159,9 @@ public class PackageEngine {
 
 	protected void loadActions() {
 		actions.clear();
+		if(pkg.getActions() == null ||pkg.getActions().getAction() == null  ) {
+			return;
+		}
 		EList<Action> list = pkg.getActions().getAction();
 		
 		if (list != null) {
@@ -159,6 +181,9 @@ public class PackageEngine {
 
 	protected void loadServices() {
 		services.clear();
+		if(pkg.getServices() == null || pkg.getServices().getService() == null) {
+			return;
+		}
 		EList<Service> list = pkg.getServices().getService();
 		
 		if (list != null) {
@@ -200,13 +225,22 @@ public class PackageEngine {
 		return files;
 	}
 
+	protected String getExtendsPackage() {
+		String extend = this.pkg.getExtends();
+		if(StringUtils.hasLength(extend)) {
+			return extend;
+		}else {
+			return "default";
+		}
+	}
+	
 	public Object invoke(String actionPath, ActionContext context) {
 		if (this.actions.containsKey(actionPath)) {
 			jot.web.support.ActionInvoke action = actions.get(actionPath);
 			return invoke(action, context);
 		} else {
 			// not found try parent action
-			String extend = this.pkg.getExtends();
+			String extend = getExtendsPackage();
 			if (project.getPkgEngineKeyWithNameMap().containsKey(extend)) {
 				PackageEngine engine = project.getPkgEngineKeyWithNameMap().get(extend);
 				return engine.invoke(actionPath, context);
