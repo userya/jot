@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <package:Package xmlns:package="http://www.jot.org/package/1.0" name="test" namespace="login">
 	<actions>
-		<action name="hello" class="jot.admin.web.HelloWorldAction"  method=""/>		
+		<action name="hello" class="jot.admin.web.HelloWorldAction"  method="aaaaaggaaaa"/>		
 	</actions>
 </package:Package>

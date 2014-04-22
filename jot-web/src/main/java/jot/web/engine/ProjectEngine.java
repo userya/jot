@@ -30,8 +30,6 @@ public class ProjectEngine {
 
 	private ProjectLoader projectLoader = new ProjectLoader();
 	
-	private PackageLoader pkgLoader = new PackageLoader();
-
 	private Project projectResource;
 
 	private FileAlterationMonitor fileMonitor;

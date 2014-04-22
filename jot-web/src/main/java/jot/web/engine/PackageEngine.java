@@ -67,14 +67,12 @@ public class PackageEngine {
 		}
 		
 		pkg = pkgLoader.load(url);
+		files.clear();
 		files.add(new File(url.getFile()));
 	}
 
 	public void reload() {
 		classLoader = project.createProjectClassLoader();
-
-		files.clear();
-
 		loadInterceptor();
 		loadExceptionMapping();
 		loadServices();
