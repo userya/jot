@@ -4,28 +4,26 @@ import jot.web.support.ExceptionHandler;
 
 public class DefaultExceptionHandler implements ExceptionHandler {
 
+	private Exception exception;
+	
 	@Override
 	public String getName() {
-		// TODO Auto-generated method stub
-		return null;
+		return "default exception handler";
 	}
 
 	@Override
 	public String getResult() {
-		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
 	public Exception getException() {
-		// TODO Auto-generated method stub
-		return null;
+		return exception;
 	}
 
 	@Override
 	public void setException(Exception e) {
-		// TODO Auto-generated method stub
-
+		this.exception = e;
 	}
 
 }
