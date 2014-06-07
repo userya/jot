@@ -112,5 +112,8 @@ public class SelectTest extends TestCase {
 		System.out.println(sb.getSQL());
 
 	}
+	
+	
+	
 
 }

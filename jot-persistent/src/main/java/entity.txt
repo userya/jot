@@ -1,0 +1,72 @@
+1.实体
+	增加，删除，修改
+2.查询
+	配置不同的条件，排序，权限(行，列，字段，赋权， 功能)
+	分类查询
+	查询条件
+		{
+			
+		}
+	
+	
+	
+1.实体分类
+	代码实体(缓存)
+	业务实体
+2.实体组成
+	简单类型
+	复杂类型
+		代码实体
+		//one2one实体 ignore
+		many2one实体
+		one2many实体
+		计算列 format, plugin
+		
+3.crud		
+	findById(id)
+	select(condition)
+	selectPage(condition,page)
+	count(condition)
+	getChildSession("one2many");
+	
+	
+select a.*, b.* from table1 a left join table2 b on a.pid = b.id
+	where
+	exists()
+	column = ? ...
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+		
