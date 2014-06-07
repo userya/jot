@@ -12,6 +12,10 @@ import jot.persistent.model.physical.impl.TableImpl;
 public class SelectBuilder {
 
 	private SelectImpl instance = new SelectImpl();
+	
+	public SelectImpl getInstance() {
+		return instance;
+	}
 
 	public SelectBuilder addColumn(SelectColumn column) {
 		instance.getSelectColumns().add(column);
@@ -47,6 +51,13 @@ public class SelectBuilder {
 		}
 	}
 
+	public SQL getSQL(){
+		SQL sql = new SQL();
+		this.instance.build(0);
+		this.instance.appendSql(sql);
+		return sql;
+	}
+	
 	public static void main(String[] args) {
 		
 		TableImpl sex = new TableImpl();
@@ -57,7 +68,6 @@ public class SelectBuilder {
 		ColumnImpl code = new ColumnImpl();
 		code.setName("code");
 		sex.addColumn(sexId).addColumn(code);
-
 		
 		/**
 		 * start

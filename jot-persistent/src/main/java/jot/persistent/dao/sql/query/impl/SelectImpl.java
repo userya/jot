@@ -21,13 +21,12 @@ public class SelectImpl implements Select {
 	private boolean distinct;
 	private List<SelectColumn> selectColumns = new ArrayList<SelectColumn>();
 	private SelectPart mainSelectPart;
-	private List<Join> joins  = new ArrayList<Join>();
+	private List<Join> joins = new ArrayList<Join>();
 	private Orders orders;
 	private Groups groups;
 	private Having having;
 	private String alias;
 	private Where where;
-	
 
 	@Override
 	public String getColumnAlias(Column column) {
@@ -60,16 +59,18 @@ public class SelectImpl implements Select {
 		List<SelectColumn> columns = this.getSelectColumns();
 		if (columns == null || columns.isEmpty()) {
 			// TODO
-			throw new RuntimeException("没有找到查询字段");
-		}
-		for (int i = 0; i < columns.size(); i++) {
-			SelectColumn selectColumn = columns.get(i);
-			sql.append(selectColumn.getColumnName());
-			// alias
-			sql.append(" ");
-			sql.append(selectColumn.getColumnAlias());
-			if (i != columns.size() - 1) {
-				sql.append(",");
+//			throw new RuntimeException("没有找到查询字段");
+			sql.append("*");
+		}else {
+			for (int i = 0; i < columns.size(); i++) {
+				SelectColumn selectColumn = columns.get(i);
+				sql.append(selectColumn.getColumnName());
+				// alias
+				sql.append(" ");
+				sql.append(selectColumn.getColumnAlias());
+				if (i != columns.size() - 1) {
+					sql.append(",");
+				}
 			}
 		}
 		sql.append(" from ");
@@ -117,7 +118,7 @@ public class SelectImpl implements Select {
 		main.setAlias(mainAlias);
 		if (main instanceof Select) {
 			Select select = (Select) main;
-			select.build(++level);
+			select.build(level + 1);
 		}
 		List<Join> joins = getJoins();
 		if (joins != null) {
@@ -127,7 +128,7 @@ public class SelectImpl implements Select {
 				sp.setAlias(jAlias);
 				if (sp instanceof Select) {
 					Select select = (Select) sp;
-					select.build(++level);
+					select.build(level + 1);
 				}
 			}
 		}

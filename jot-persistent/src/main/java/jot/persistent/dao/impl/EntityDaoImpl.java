@@ -15,6 +15,7 @@ public class EntityDaoImpl implements EntityDao {
 
 	@Override
 	public BaseObject findById(String id) {
+		
 		return null;
 	}
 

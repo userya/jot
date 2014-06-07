@@ -30,12 +30,18 @@ public class SelectTableImpl implements SelectTable {
 		sql.append(table.getName());
 	}
 
+	/**
+	 * 
+	 */
 	@Override
 	public String getColumnAlias(Column column) {
 		String c = getAlias() + "_" + column.getName();
 		return c;
 	}
 
+	/**
+	 * 
+	 */
 	@Override
 	public String getColumnName(Column column) {
 		String c = getAlias() + "." + column.getName();
